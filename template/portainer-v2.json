@@ -1,4 +1,144 @@
 {
-	"version": "2",
-	"templates": []
+  "version": "2",
+  "templates": [
+    {
+      "categories": [
+        "Other",
+        "Tools"
+      ],
+      "description": "[Adguardhome](https://adguard.com/en/adguard-home/overview.html) AdGuard Home is a network-wide software for blocking ads & tracking.",
+      "image": "adguard/adguardhome:latest",
+      "logo": "https://developer.asustor.com/uploadIcons/0020_999_1595573028_AdGuardhome_256.png",
+      "name": "Adguardhome",
+      "officialDoc": "https://github.com/AdguardTeam/AdGuardHome/wiki/Docker",
+      "platform": "linux",
+      "ports": [
+        "53:53/tcp",
+        "53:53/udp",
+        "67:67/udp",
+        "68:68/udp",
+        "80:80/tcp",
+        "443:443/tcp",
+        "443:443/udp",
+        "3000:3000/tcp",
+        "853:853/tcp",
+        "784:784/udp",
+        "853:853/udp",
+        "8853:8853/udp",
+        "5443:5443/tcp",
+        "5443:5443/udp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Adguardhome",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Config/AdguardHome/config",
+          "container": "/opt/adguardhome/conf"
+        },
+        {
+          "bind": "/portainer/Files/AppData/Config/AdguardHome/work",
+          "container": "/opt/adguardhome/work"
+        }
+      ],
+      "webpage": "https://adguard.com/en/adguard-home/overview.html"
+    },
+    {
+      "categories": [
+        "Other",
+        "Tools"
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/New_York",
+          "description": "Specify a timezone to use for example America/New_York"
+        },
+        {
+          "name": "CONFIGFILE",
+          "label": "CONFIGFILE",
+          "default": "/config/adguardhome-sync.yaml",
+          "description": "Set a custom config file."
+        }
+      ],
+      "description": "[Adguardhome-sync](https://github.com/bakito/adguardhome-sync/) is a tool to synchronize AdGuardHome config to replica instances.",
+      "image": "linuxserver/adguardhome-sync:latest",
+      "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/adguardhomesync-icon.png",
+      "name": "Adguardhome-sync",
+      "officialDoc": "https://github.com/linuxserver/docker-adguardhome-sync#usage",
+      "platform": "linux",
+      "ports": [
+        "8080:8080/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Adguardhome-sync",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Config/adguardhome-sync/config",
+          "container": "/config"
+        }
+      ],
+      "webpage": "https://adguard.com/en/adguard-home/overview.html"
+    },
+    {
+      "categories": [
+        "Other",
+        "Tools",
+        "Games"
+      ],
+      "env": [
+        {
+          "default": "1000",
+          "label": "PUID",
+          "name": "PUID"
+        },
+        {
+          "default": "1000",
+          "label": "PGID",
+          "name": "PGID"
+        }
+      ],
+      "description": "C# application with primary purpose of farming Steam cards from multiple accounts simultaneously.",
+      "image": "justarchi/archisteamfarm:latest",
+      "logo": "https://raw.githubusercontent.com/JustArchiNET/ArchiSteamFarm/main/resources/ASF_184x184.png",
+      "name": "ArchiSteamFarm",
+      "officialDoc": "https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Docker/",
+      "platform": "linux",
+      "ports": [
+        "1242:1242/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "ArchiSteamFarm",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/ArchiSteamFarm/config",
+          "container": "/app/config"
+        },
+        {
+          "bind": "/portainer/Files/AppData/ArchiSteamFarm/plugins",
+          "container": "/app/plugins"
+        },
+        {
+          "bind": "/portainer/Files/AppData/ArchiSteamFarm/logs",
+          "container": "/app/logs"
+        }
+      ],
+      "webpage": "https://github.com/JustArchiNET/ArchiSteamFarm/"
+    }
+  ]
 }
