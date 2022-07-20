@@ -1,2 +1,1 @@
-# selfhosted_templates
-Portainer templates for selfhosted services (Private for time being)
+# Personal Portainer Templates for Selfhosted Projects
