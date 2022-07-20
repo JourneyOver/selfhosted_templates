@@ -1,0 +1,46 @@
+{
+	"categories": [
+		"Other",
+		"Tools"
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "1000",
+      "description": "for UserID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "1000",
+      "description": "for GroupID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago",
+      "description": "Specify a timezone to use for example America/New_York"
+    }
+  ],
+  "command": "-B 0.0.0.0:31337 -p /kitana -P",
+	"description": "A responsive Plex plugin web frontend",
+	"image": "pannal/kitana:latest",
+	"logo": "https://raw.githubusercontent.com/pannal/Kitana/master/static/img/ms-icon-150x150.png",
+	"name": "Kitana",
+	"officialDoc": "https://github.com/pannal/Kitana#docker-the-easy-way-windows-included",
+	"platform": "linux",
+  "ports": [
+    "31337:31337/tcp"
+  ],
+	"restart_policy": "unless-stopped",
+	"title": "Kitana",
+	"type": 1,
+	"volumes": [
+    {
+      "bind": "/portainer/Files/AppData/Kitana/config",
+      "container": "/app/data"
+    }
+	],
+	"webpage": "https://github.com/pannal/Kitana"
+}

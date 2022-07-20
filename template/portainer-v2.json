@@ -193,26 +193,50 @@
           "description": "Specify a timezone to use for example America/New_York"
         }
       ],
-      "command": ["--joal-conf=/portainer/Files/AppData/Joal/config", "--spring.main.web-environment=true", "--server.port=7073", "--joal.ui.path.prefix=SECRET_OBFUSCATION_PATH", "--joal.ui.secret-token=SECRET_TOKEN"],
-      "description": "An open source command line RatioMaster with an optional WebUI.",
-      "image": "anthonyraymond/joal:latest",
-      "logo": "https://raw.githubusercontent.com/anthonyraymond/joal-desktop/master/resources/icon.png",
-      "name": "Joal",
-      "officialDoc": "https://github.com/anthonyraymond/joal#2-run-with-docker",
+      "command": "-B 0.0.0.0:31337 -p /kitana -P",
+      "description": "A responsive Plex plugin web frontend",
+      "image": "pannal/kitana:latest",
+      "logo": "https://raw.githubusercontent.com/pannal/Kitana/master/static/img/ms-icon-150x150.png",
+      "name": "Kitana",
+      "officialDoc": "https://github.com/pannal/Kitana#docker-the-easy-way-windows-included",
       "platform": "linux",
       "ports": [
-        "7073:7073/tcp"
+        "31337:31337/tcp"
       ],
       "restart_policy": "unless-stopped",
-      "title": "Joal",
+      "title": "Kitana",
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Joal/config",
-          "container": "/data"
+          "bind": "/portainer/Files/AppData/Kitana/config",
+          "container": "/app/data"
         }
       ],
-      "webpage": "https://github.com/anthonyraymond/joal"
+      "webpage": "https://github.com/pannal/Kitana"
+    },
+    {
+      "categories": [
+        "Other",
+        "Tools",
+        "Maintenance"
+      ],
+      "description": "With watchtower you can update the running version of your containerized app simply by pushing a new image to the Docker Hub or your own image registry. Watchtower will pull down your new image, gracefully shut down your existing container and restart it with the same options that were used when it was deployed initially.",
+      "image": "containrrr/watchtower:latest",
+      "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/watchtower.png",
+      "name": "Watchtower",
+      "note": "It is recommended to manually update your containers but we're including this for those of you that don't care",
+      "officialDoc": "https://containrrr.dev/watchtower/usage-overview/",
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "title": "Watchtower",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/var/run/docker.sock",
+          "container": "/var/run/docker.sock"
+        }
+      ],
+      "webpage": "https://containrrr.dev/watchtower/"
     }
   ]
 }
