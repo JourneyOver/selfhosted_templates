@@ -6,14 +6,22 @@
   ],
   "env": [
     {
-      "default": "1000",
+      "name": "PUID",
       "label": "PUID",
-      "name": "PUID"
+      "default": "1000",
+      "description": "for UserID"
     },
     {
-      "default": "1000",
+      "name": "PGID",
       "label": "PGID",
-      "name": "PGID"
+      "default": "1000",
+      "description": "for GroupID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago",
+      "description": "Specify a timezone to use for example America/New_York"
     }
   ],
   "description": "C# application with primary purpose of farming Steam cards from multiple accounts simultaneously.",

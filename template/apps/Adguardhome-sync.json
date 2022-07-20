@@ -19,7 +19,7 @@
     {
       "name": "TZ",
       "label": "TZ",
-      "default": "America/New_York",
+      "default": "America/Chicago",
       "description": "Specify a timezone to use for example America/New_York"
     },
     {
@@ -29,7 +29,7 @@
       "description": "Set a custom config file."
     }
   ],
-  "description": "[Adguardhome-sync](https://github.com/bakito/adguardhome-sync/) is a tool to synchronize AdGuardHome config to replica instances.",
+  "description": "Adguardhome-sync is a tool to synchronize AdGuardHome config to replica instances.",
   "image": "linuxserver/adguardhome-sync:latest",
   "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/adguardhomesync-icon.png",
   "name": "Adguardhome-sync",
@@ -43,9 +43,9 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Config/adguardhome-sync/config",
+      "bind": "/portainer/Files/AppData/AdGuardHomeSync/config",
       "container": "/config"
     }
   ],
-  "webpage": "https://adguard.com/en/adguard-home/overview.html"
+  "webpage": "https://github.com/bakito/adguardhome-sync/"
 }

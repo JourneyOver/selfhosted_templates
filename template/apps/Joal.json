@@ -1,0 +1,75 @@
+{
+  "categories": [
+    "Other",
+    "Tools"
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "1000",
+      "description": "for UserID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "1000",
+      "description": "for GroupID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago",
+      "description": "Specify a timezone to use for example America/New_York"
+    },
+    {
+      "name": "joal-conf",
+      "label": "joal-conf",
+      "default": "/data",
+      "description": "required argument: path to the joal-conf folder (ie: /home/anthony/joal-conf)"
+    },
+    {
+      "name": "spring.main.web-environment",
+      "label": "spring.main.web-environment",
+      "default": "true",
+      "description": "enable the web context"
+    },
+    {
+      "name": "server.port",
+      "label": "server.port",
+      "default": "7073",
+      "description": "port to be used for both HTTP and WebSocket connection"
+    },
+    {
+      "name": "joal.ui.path.prefix",
+      "label": "joal.ui.path.prefix",
+      "default": "joal",
+      "description": "use your own complicated path here (this will be your first layer of security to keep joal secret). This is security though obscurity, but it is required in our case. This must contains only alphanumeric characters (no slash, backslash, or any other non-alphanum char)"
+    },
+    {
+      "name": "joal.ui.secret-token",
+      "label": "joal.ui.secret-token",
+      "default": "change-me",
+      "description": "your own secret token here (this is some kind of a password, choose a complicated one)"
+    }
+  ],
+  "description": "An open source command line RatioMaster with an optional WebUI.",
+  "image": "anthonyraymond/joal:latest",
+  "logo": "https://raw.githubusercontent.com/anthonyraymond/joal-desktop/master/resources/icon.png",
+  "name": "Joal",
+  "officialDoc": "https://github.com/anthonyraymond/joal#2-run-with-docker",
+  "platform": "linux",
+  "ports": [
+    "7073:7073/tcp"
+  ],
+  "restart_policy": "unless-stopped",
+  "title": "Joal",
+  "type": 1,
+  "volumes": [
+    {
+      "bind": "/portainer/Files/AppData/Joal/config",
+      "container": "/data"
+    }
+  ],
+  "webpage": "https://github.com/anthonyraymond/joal"
+}
