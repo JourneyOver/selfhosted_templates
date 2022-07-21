@@ -1,6 +1,5 @@
 {
   "categories": [
-    "Other",
     "Tools",
     "Games"
   ],
@@ -27,7 +26,7 @@
   "description": "C# application with primary purpose of farming Steam cards from multiple accounts simultaneously.",
   "image": "justarchi/archisteamfarm:latest",
   "logo": "https://raw.githubusercontent.com/JustArchiNET/ArchiSteamFarm/main/resources/ASF_184x184.png",
-  "name": "ArchiSteamFarm",
+  "name": "archisteamfarm",
   "officialDoc": "https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Docker/",
   "platform": "linux",
   "ports": [
