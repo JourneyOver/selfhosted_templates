@@ -1,24 +1,53 @@
 {
-	"categories": [
-		"Other",
-		"Tools",
-		"Maintenance"
-	],
-	"description": "With watchtower you can update the running version of your containerized app simply by pushing a new image to the Docker Hub or your own image registry. Watchtower will pull down your new image, gracefully shut down your existing container and restart it with the same options that were used when it was deployed initially.",
-	"image": "containrrr/watchtower:latest",
-	"logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/watchtower.png",
-	"name": "Watchtower",
-	"note": "It is recommended to manually update your containers but we're including this for those of you that don't care",
-	"officialDoc": "https://containrrr.dev/watchtower/usage-overview/",
-	"platform": "linux",
-	"restart_policy": "unless-stopped",
-	"title": "Watchtower",
-	"type": 1,
-	"volumes": [
-		{
-			"bind": "/var/run/docker.sock",
-			"container": "/var/run/docker.sock"
-		}
-	],
-	"webpage": "https://containrrr.dev/watchtower/"
+  "categories": [
+    "Other",
+    "Tools",
+    "Maintenance"
+  ],
+  "env": [
+    {
+      "label": "WATCHTOWER_CLEANUP",
+      "name": "WATCHTOWER_CLEANUP",
+      "select": [
+        {
+          "default": true,
+          "text": "Delete unused images",
+          "value": "true"
+        },
+        {
+          "text": "Keep unused images",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "name": "WATCHTOWER_SCHEDULE",
+      "label": "WATCHTOWER_SCHEDULE",
+      "default": "-",
+      "description": "Cron expression in 6 fields (rather than the traditional 5) which defines when and how often to check for new images"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago",
+      "description": "Specify a timezone to use for example America/New_York"
+    }
+  ],
+  "description": "With watchtower you can update the running version of your containerized app simply by pushing a new image to the Docker Hub or your own image registry. Watchtower will pull down your new image, gracefully shut down your existing container and restart it with the same options that were used when it was deployed initially.",
+  "image": "containrrr/watchtower:latest",
+  "logo": "https://raw.githubusercontent.com/pi-hosted/pi-hosted/master/images/watchtower.png",
+  "name": "Watchtower",
+  "note": "It is recommended to manually update your containers but we're including this for those of you that don't care",
+  "officialDoc": "https://containrrr.dev/watchtower/usage-overview/",
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "title": "Watchtower",
+  "type": 1,
+  "volumes": [
+    {
+      "bind": "/var/run/docker.sock",
+      "container": "/var/run/docker.sock"
+    }
+  ],
+  "webpage": "https://containrrr.dev/watchtower/"
 }
