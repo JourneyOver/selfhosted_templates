@@ -26,7 +26,7 @@
   "command": "-B 0.0.0.0:31337 -p /kitana -P",
   "description": "A responsive Plex plugin web frontend",
   "image": "pannal/kitana:latest",
-  "logo": "https://raw.githubusercontent.com/pannal/Kitana/master/static/img/ms-icon-150x150.png",
+  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/kitana-logo.png",
   "name": "kitana",
   "officialDoc": "https://github.com/pannal/Kitana#docker-the-easy-way-windows-included",
   "platform": "linux",

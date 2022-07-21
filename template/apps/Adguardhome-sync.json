@@ -31,7 +31,7 @@
   ],
   "description": "Adguardhome-sync is a tool to synchronize AdGuardHome config to replica instances.",
   "image": "linuxserver/adguardhome-sync:latest",
-  "logo": "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/adguardhomesync-icon.png",
+  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/adguardhomesync-logo.png",
   "name": "adguardhome-sync",
   "officialDoc": "https://github.com/linuxserver/docker-adguardhome-sync#usage",
   "platform": "linux",
