@@ -36,6 +36,7 @@
   "image": "containrrr/watchtower:latest",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/watchtower-logo.png",
   "name": "watchtower",
+  "hostname": "watchtower",
   "note": "It is recommended to manually update your containers but we're including this for those of you that don't care",
   "officialDoc": "https://containrrr.dev/watchtower/usage-overview/",
   "platform": "linux",

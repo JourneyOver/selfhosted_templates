@@ -34,6 +34,7 @@
   "image": "luolongfei/freenom:latest",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/freenom-logo.png",
   "name": "freenom",
+  "hostname": "freenom",
   "officialDoc": "https://hub.docker.com/r/luolongfei/freenom",
   "platform": "linux",
   "restart_policy": "unless-stopped",
@@ -41,11 +42,11 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Freenom/config",
+      "bind": "/portainer/Files/AppData/Config/Freenom/config",
       "container": "/conf"
     },
     {
-      "bind": "/portainer/Files/AppData/Freenom/log",
+      "bind": "/portainer/Files/AppData/Config/Freenom/log",
       "container": "/app/logs"
     }
   ],

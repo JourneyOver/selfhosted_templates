@@ -1,0 +1,47 @@
+{
+  "categories": [
+    "Web",
+    "Proxy"
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "1000",
+      "description": "for UserID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "1000",
+      "description": "for GroupID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago",
+      "description": "Specify a timezone to use for example America/New_York"
+    }
+  ],
+  "description": "Nginx is a web server with a strong focus on high concurrency, performance and low memory usage. It can also act as a reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer and an HTTP cache.",
+  "image": "linuxserver/nginx:latest",
+  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/nginx-logo.png",
+  "name": "nginx",
+  "hostname": "nginx",
+  "officialDoc": "https://docs.linuxserver.io/images/docker-nginx",
+  "platform": "linux",
+  "ports": [
+    "80:80/tcp",
+    "443:443/tcp"
+  ],
+  "restart_policy": "unless-stopped",
+  "title": "Nginx",
+  "type": 1,
+  "volumes": [
+    {
+      "bind": "/portainer/Files/AppData/Config/Nginx",
+      "container": "/config"
+    }
+  ],
+  "webpage": "https://nginx.org/en/"
+}

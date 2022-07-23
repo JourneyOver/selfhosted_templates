@@ -56,6 +56,7 @@
   "image": "anthonyraymond/joal:latest",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/joal-logo.png",
   "name": "joal",
+  "hostname": "joal",
   "officialDoc": "https://github.com/anthonyraymond/joal#2-run-with-docker",
   "platform": "linux",
   "ports": [
@@ -66,7 +67,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Joal/config",
+      "bind": "/portainer/Files/AppData/Config/Joal/config",
       "container": "/data"
     }
   ],

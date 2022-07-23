@@ -28,6 +28,7 @@
   "image": "pannal/kitana:latest",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/kitana-logo.png",
   "name": "kitana",
+  "hostname": "kitana",
   "officialDoc": "https://github.com/pannal/Kitana#docker-the-easy-way-windows-included",
   "platform": "linux",
   "ports": [
@@ -38,7 +39,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Kitana/config",
+      "bind": "/portainer/Files/AppData/Config/Kitana/config",
       "container": "/app/data"
     }
   ],

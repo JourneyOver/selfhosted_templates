@@ -27,6 +27,7 @@
   "image": "justarchi/archisteamfarm:latest",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/archisteamfarm-logo.png",
   "name": "archisteamfarm",
+  "hostname": "archisteamfarm",
   "officialDoc": "https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Docker/",
   "platform": "linux",
   "ports": [
@@ -37,15 +38,15 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/ArchiSteamFarm/config",
+      "bind": "/portainer/Files/AppData/Config/ArchiSteamFarm/config",
       "container": "/app/config"
     },
     {
-      "bind": "/portainer/Files/AppData/ArchiSteamFarm/plugins",
+      "bind": "/portainer/Files/AppData/Config/ArchiSteamFarm/plugins",
       "container": "/app/plugins"
     },
     {
-      "bind": "/portainer/Files/AppData/ArchiSteamFarm/logs",
+      "bind": "/portainer/Files/AppData/Config/ArchiSteamFarm/logs",
       "container": "/app/logs"
     }
   ],

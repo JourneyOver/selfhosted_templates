@@ -1,5 +1,10 @@
 #!/bin/bash
 
+function error {
+  echo -e "\\e[91m$1\\e[39m"
+  exit 1
+}
+
 echo "Creating directories..."
 sudo mkdir -p /portainer/Files/AppData/Joal/config/torrents/archived || error "Failed to create Joal torrents folder!"
 sudo mkdir -p /portainer/Files/AppData/Joal/config/clients || error "Failed to create Joal clients folder!"

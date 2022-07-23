@@ -29,6 +29,7 @@
       "image": "adguard/adguardhome:latest",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/adguardhome-logo.png",
       "name": "adguardhome",
+      "hostname": "adguardhome",
       "officialDoc": "https://github.com/AdguardTeam/AdGuardHome/wiki/Docker",
       "platform": "linux",
       "ports": [
@@ -48,15 +49,15 @@
         "5443:5443/udp"
       ],
       "restart_policy": "unless-stopped",
-      "title": "Adguardhome",
+      "title": "AdGuardHome",
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/AdguardHome/config",
+          "bind": "/portainer/Files/AppData/Config/AdguardHome/config",
           "container": "/opt/adguardhome/conf"
         },
         {
-          "bind": "/portainer/Files/AppData/AdguardHome/work",
+          "bind": "/portainer/Files/AppData/Config/AdguardHome/work",
           "container": "/opt/adguardhome/work"
         }
       ],
@@ -85,29 +86,24 @@
           "label": "TZ",
           "default": "America/Chicago",
           "description": "Specify a timezone to use for example America/New_York"
-        },
-        {
-          "name": "CONFIGFILE",
-          "label": "CONFIGFILE",
-          "default": "/config/adguardhome-sync.yaml",
-          "description": "Set a custom config file."
         }
       ],
       "description": "Adguardhome-sync is a tool to synchronize AdGuardHome config to replica instances.",
       "image": "linuxserver/adguardhome-sync:latest",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/adguardhomesync-logo.png",
       "name": "adguardhome-sync",
+      "hostname": "adguardhome-sync",
       "officialDoc": "https://github.com/linuxserver/docker-adguardhome-sync#usage",
       "platform": "linux",
       "ports": [
         "8080:8080/tcp"
       ],
       "restart_policy": "unless-stopped",
-      "title": "Adguardhome-sync",
+      "title": "AdGuardHome-Sync",
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/AdGuardHomeSync/config",
+          "bind": "/portainer/Files/AppData/Config/AdGuardHomeSync/config",
           "container": "/config"
         }
       ],
@@ -142,6 +138,7 @@
       "image": "justarchi/archisteamfarm:latest",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/archisteamfarm-logo.png",
       "name": "archisteamfarm",
+      "hostname": "archisteamfarm",
       "officialDoc": "https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Docker/",
       "platform": "linux",
       "ports": [
@@ -152,15 +149,15 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/ArchiSteamFarm/config",
+          "bind": "/portainer/Files/AppData/Config/ArchiSteamFarm/config",
           "container": "/app/config"
         },
         {
-          "bind": "/portainer/Files/AppData/ArchiSteamFarm/plugins",
+          "bind": "/portainer/Files/AppData/Config/ArchiSteamFarm/plugins",
           "container": "/app/plugins"
         },
         {
-          "bind": "/portainer/Files/AppData/ArchiSteamFarm/logs",
+          "bind": "/portainer/Files/AppData/Config/ArchiSteamFarm/logs",
           "container": "/app/logs"
         }
       ],
@@ -202,6 +199,7 @@
       "image": "luolongfei/freenom:latest",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/freenom-logo.png",
       "name": "freenom",
+      "hostname": "freenom",
       "officialDoc": "https://hub.docker.com/r/luolongfei/freenom",
       "platform": "linux",
       "restart_policy": "unless-stopped",
@@ -209,11 +207,11 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Freenom/config",
+          "bind": "/portainer/Files/AppData/Config/Freenom/config",
           "container": "/conf"
         },
         {
-          "bind": "/portainer/Files/AppData/Freenom/log",
+          "bind": "/portainer/Files/AppData/Config/Freenom/log",
           "container": "/app/logs"
         }
       ],
@@ -277,6 +275,7 @@
       "image": "anthonyraymond/joal:latest",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/joal-logo.png",
       "name": "joal",
+      "hostname": "joal",
       "officialDoc": "https://github.com/anthonyraymond/joal#2-run-with-docker",
       "platform": "linux",
       "ports": [
@@ -287,7 +286,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Joal/config",
+          "bind": "/portainer/Files/AppData/Config/Joal/config",
           "container": "/data"
         }
       ],
@@ -323,6 +322,7 @@
       "image": "pannal/kitana:latest",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/kitana-logo.png",
       "name": "kitana",
+      "hostname": "kitana",
       "officialDoc": "https://github.com/pannal/Kitana#docker-the-easy-way-windows-included",
       "platform": "linux",
       "ports": [
@@ -333,11 +333,58 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Kitana/config",
+          "bind": "/portainer/Files/AppData/Config/Kitana/config",
           "container": "/app/data"
         }
       ],
       "webpage": "https://github.com/pannal/Kitana"
+    },
+    {
+      "categories": [
+        "Web",
+        "Proxy"
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
+        }
+      ],
+      "description": "Nginx is a web server with a strong focus on high concurrency, performance and low memory usage. It can also act as a reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer and an HTTP cache.",
+      "image": "linuxserver/nginx:latest",
+      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/nginx-logo.png",
+      "name": "nginx",
+      "hostname": "nginx",
+      "officialDoc": "https://docs.linuxserver.io/images/docker-nginx",
+      "platform": "linux",
+      "ports": [
+        "80:80/tcp",
+        "443:443/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Nginx",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Config/Nginx",
+          "container": "/config"
+        }
+      ],
+      "webpage": "https://nginx.org/en/"
     },
     {
       "categories": [
@@ -368,6 +415,7 @@
       "image": "lscr.io/linuxserver/tautulli:latest",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/tautulli-logo.png",
       "name": "tautulli",
+      "hostname": "tautulli",
       "officialDoc": "https://docs.linuxserver.io/images/docker-tautulli",
       "platform": "linux",
       "ports": [
@@ -378,7 +426,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Tautulli/config",
+          "bind": "/portainer/Files/AppData/Config/Tautulli/config",
           "container": "/config"
         }
       ],
@@ -401,6 +449,7 @@
       "image": "louislam/uptime-kuma:latest",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/uptime-kuma-logo.png",
       "name": "uptime-kuma",
+      "hostname": "uptime-kuma",
       "officialDoc": "https://github.com/louislam/uptime-kuma/wiki/%F0%9F%94%A7-How-to-Install#-docker",
       "platform": "linux",
       "ports": [
@@ -411,7 +460,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Uptime-Kuma/config",
+          "bind": "/portainer/Files/AppData/Config/Uptime-Kuma/config",
           "container": "/app/data"
         }
       ],
@@ -455,6 +504,7 @@
       "image": "containrrr/watchtower:latest",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/watchtower-logo.png",
       "name": "watchtower",
+      "hostname": "watchtower",
       "note": "It is recommended to manually update your containers but we're including this for those of you that don't care",
       "officialDoc": "https://containrrr.dev/watchtower/usage-overview/",
       "platform": "linux",

@@ -27,6 +27,7 @@
   "image": "lscr.io/linuxserver/tautulli:latest",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/tautulli-logo.png",
   "name": "tautulli",
+  "hostname": "tautulli",
   "officialDoc": "https://docs.linuxserver.io/images/docker-tautulli",
   "platform": "linux",
   "ports": [
@@ -37,7 +38,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Tautulli/config",
+      "bind": "/portainer/Files/AppData/Config/Tautulli/config",
       "container": "/config"
     }
   ],
