@@ -6,12 +6,12 @@ function error {
 }
 
 echo "Creating directories..."
-sudo mkdir -p /portainer/Files/AppData/Joal/config/torrents/archived || error "Failed to create Joal torrents folder!"
-sudo mkdir -p /portainer/Files/AppData/Joal/config/clients || error "Failed to create Joal clients folder!"
+sudo mkdir -p /portainer/Files/AppData/Config/Joal/config/torrents/archived || error "Failed to create Joal torrents folder!"
+sudo mkdir -p /portainer/Files/AppData/Config/Joal/config/clients || error "Failed to create Joal clients folder!"
 echo "Downloading joal config file"
-sudo wget -O /portainer/Files/AppData/Joal/config/config.json https://raw.githubusercontent.com/anthonyraymond/joal/master/resources/config.json || error "Failed to download joal config!"
+sudo wget -O /portainer/Files/AppData/Config/Joal/config/config.json https://raw.githubusercontent.com/anthonyraymond/joal/master/resources/config.json || error "Failed to download joal config!"
 echo "Changing owner of config folder and files to ${USER}"
-sudo chown -R ${USER}:${USER} /portainer/Files/AppData/Joal/config || error "Failed to make ${USER} owner of Joal config folder!"
+sudo chown -R ${USER}:${USER} /portainer/Files/AppData/Config/Joal/config || error "Failed to make ${USER} owner of Joal config folder!"
 echo "Running qbit client maker to get the latest release of qbittorrent"
 cd ./qbit_client_maker
 sh ./qBittorrent.sh
