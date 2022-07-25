@@ -23,7 +23,7 @@
     }
   ],
   "description": "AdGuard Home is a network-wide software for blocking ads & tracking.",
-  "image": "adguard/adguardhome:latest",
+  "image": "adguard/adguardhome:beta",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/adguardhome-logo.png",
   "name": "adguardhome",
   "hostname": "adguardhome",
