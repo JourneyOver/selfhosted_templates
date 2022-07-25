@@ -24,7 +24,7 @@
     }
   ],
   "description": "Nginx is a web server with a strong focus on high concurrency, performance and low memory usage. It can also act as a reverse proxy server for HTTP, HTTPS, SMTP, POP3, and IMAP protocols, as well as a load balancer and an HTTP cache.",
-  "image": "linuxserver/nginx:latest",
+  "image": "lscr.io/linuxserver/nginx:latest",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/nginx-logo.png",
   "name": "nginx",
   "hostname": "nginx",
