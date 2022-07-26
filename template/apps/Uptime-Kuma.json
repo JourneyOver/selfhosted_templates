@@ -26,7 +26,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Config/Uptime-Kuma/config",
+      "bind": "/portainer/Files/AppData/Config/Uptime-Kuma",
       "container": "/app/data"
     }
   ],

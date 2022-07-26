@@ -38,7 +38,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Config/Tautulli/config",
+      "bind": "/portainer/Files/AppData/Config/Tautulli",
       "container": "/config"
     }
   ],

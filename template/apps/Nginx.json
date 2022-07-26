@@ -28,7 +28,6 @@
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/nginx-logo.png",
   "name": "nginx",
   "hostname": "nginx",
-  "network": "host",
   "officialDoc": "https://docs.linuxserver.io/images/docker-nginx",
   "platform": "linux",
   "ports": [

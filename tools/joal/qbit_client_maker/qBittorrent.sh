@@ -64,9 +64,9 @@ echo "key : qBittorent is using libtorrent => $(libtorrent_get_key_format)"
 
 # Make Client File
 BlankFile="./blankclients/qbittorrent-0.0.0.client"
-NewClient="/portainer/Files/AppData/Config/Joal/config/clients/qbittorrent-$QBT_VERSION_2.client"
+NewClient="/portainer/Files/AppData/Config/Joal/clients/qbittorrent-$QBT_VERSION_2.client"
 cp $BlankFile $NewClient && sed -i "s/-qB0000-/$peer_id_prefix/;s/0.0.0/$QBT_VERSION_2/" $NewClient
-sed -i "s/utorrent-3.5.0_43916/qbittorrent-$QBT_VERSION_2/" /portainer/Files/AppData/Config/Joal/config/config.json
+sed -i "s/utorrent-3.5.0_43916/qbittorrent-$QBT_VERSION_2/" /portainer/Files/AppData/Config/Joal/config.json
 
 # clean tempSource folder
 rm -rf $qBittorrentTempFolder
