@@ -53,11 +53,11 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/AdguardHome/config",
+          "bind": "/portainer/Files/AppData/Config/AdGuardHome/config",
           "container": "/opt/adguardhome/conf"
         },
         {
-          "bind": "/portainer/Files/AppData/Config/AdguardHome/work",
+          "bind": "/portainer/Files/AppData/Config/AdGuardHome/work",
           "container": "/opt/adguardhome/work"
         }
       ],
