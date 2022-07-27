@@ -45,6 +45,18 @@
       "label": "EMAIL",
       "default": "",
       "description": "Optional e-mail address used for cert expiration notifications (Required for ZeroSSL)."
+    },
+    {
+      "name": "DOCKER_MODS",
+      "label": "DOCKER_MODS",
+      "default": "",
+      "description": "linuxserver Docker Mods"
+    },
+    {
+      "name": "WATCHLIST",
+      "label": "WATCHLIST",
+      "default": "",
+      "description": "To be used with linuxserver/mods:swag-auto-reload"
     }
   ],
   "description": "This container sets up an Nginx webserver and reverse proxy with php support and a built-in letsencrypt client that automates free SSL server certificate generation and renewal processes. It also contains fail2ban for intrusion prevention.",
@@ -52,8 +64,6 @@
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/swag-logo.png",
   "name": "swag",
   "hostname": "swag",
-  "cap_add": "NET_ADMIN",
-  "net": "bunni_network",
   "note": "Before running this container, make sure that the url and subdomains are properly forwarded to this container's host.<ul><li>- Port 443 on the internet side of the router should be forwarded to this container's port 443.</li><li>- If you need a dynamic dns provider, you can use the free provider duckdns.org where the url will be yoursubdomain.duckdns.org and the subdomains can be www,ftp,cloud</li><li>- The container detects changes to url and subdomains, revokes existing certs and generates new ones during start.</li><li>- It also detects changes to the DHLEVEL parameter and replaces the dhparams file.</li><li>- If you'd like to password protect your sites, you can use htpasswd. Run the following command on your host to generate the htpasswd file <code>docker exec -it letsencrypt htpasswd -c /config/nginx/.htpasswd \u0026lt;username\u0026gt;</code>",
   "officialDoc": "https://docs.linuxserver.io/images/docker-swag",
   "platform": "linux",
