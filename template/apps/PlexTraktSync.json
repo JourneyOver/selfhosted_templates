@@ -1,0 +1,45 @@
+{
+  "categories": [
+    "Plex",
+    "Trakt",
+    "Scrobbler",
+    "Tools"
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "1000",
+      "description": "for UserID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "1000",
+      "description": "for GroupID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago",
+      "description": "Specify a timezone to use for example America/New_York"
+    }
+  ],
+  "description": "A python script that syncs the movies, shows and ratings between trakt and Plex (without needing a PlexPass or Trakt VIP subscription)",
+  "image": "ghcr.io/taxel/plextraktsync:latest",
+  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/plextraktsync-logo.png",
+  "name": "plextraktsync",
+  "hostname": "plextraktsync",
+  "officialDoc": "https://github.com/Taxel/PlexTraktSync#docker-compose",
+  "platform": "linux",
+  "restart_policy": "on-failure",
+  "title": "PlexTraktSync",
+  "type": 1,
+  "volumes": [
+    {
+      "bind": "/portainer/Files/AppData/Config/PlexTraktSync",
+      "container": "/app/config"
+    }
+  ],
+  "webpage": "https://github.com/Taxel/PlexTraktSync"
+}
