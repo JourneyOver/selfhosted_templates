@@ -12,17 +12,17 @@ cd "$scriptDir/.." || exit
 
 # Parsing all json files in apps folder
 for app in template/apps/*.json; do
-	# Output app name to easy debug
-	echo "adding $app to template..."
+  # Output app name to easy debug
+  echo "adding $app to template..."
 
-	appjson=$( cat "$app" )
+  appjson=$( cat "$app" )
 
-	if [[ -n "$appjson" ]]; then
-		json=$( echo "$json" | jq --argjson newApp "$appjson" '.templates += [$newApp]' )
-	fi
+  if [[ -n "$appjson" ]]; then
+    json=$( echo "$json" | jq --argjson newApp "$appjson" '.templates += [$newApp]' )
+  fi
 
-	# clean variables before next loop
-	unset appjson
+  # clean variables before next loop
+  unset appjson
 done
 
 # Create Templates
