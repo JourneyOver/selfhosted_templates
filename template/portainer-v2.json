@@ -363,6 +363,12 @@
           "label": "TZ",
           "default": "America/Chicago",
           "description": "Specify a timezone to use for example America/New_York"
+        },
+        {
+          "name": "PMM_NO_COUNTDOWN",
+          "label": "PMM_NO_COUNTDOWN",
+          "default": "false",
+          "description": "Run without displaying a countdown to the next scheduled run."
         }
       ],
       "description": "Python script to update metadata information for items in plex as well as automatically build collections and playlists.",
@@ -378,7 +384,7 @@
       "volumes": [
         {
           "bind": "/portainer/Files/AppData/Config/Pmm",
-          "container": "/config:rw"
+          "container": "/config"
         }
       ],
       "webpage": "https://github.com/meisnate12/Plex-Meta-Manager"
