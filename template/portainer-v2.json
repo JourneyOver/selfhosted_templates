@@ -383,7 +383,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/Pmm",
+          "bind": "/portainer/Files/AppData/Config/PlexMetaManager",
           "container": "/config"
         }
       ],
@@ -684,7 +684,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/Uptime-Kuma",
+          "bind": "/portainer/Files/AppData/Config/UptimeKuma",
           "container": "/app/data"
         }
       ],

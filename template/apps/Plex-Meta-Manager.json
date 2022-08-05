@@ -42,7 +42,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Config/Pmm",
+      "bind": "/portainer/Files/AppData/Config/PlexMetaManager",
       "container": "/config"
     }
   ],
