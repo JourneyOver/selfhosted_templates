@@ -658,6 +658,74 @@
     },
     {
       "categories": [
+        "Tools",
+        "Twitch",
+        "Drops",
+        "channel points",
+        "Claimer"
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
+        },
+        {
+          "name": "TERM",
+          "label": "TERM",
+          "default": "xterm-256color",
+          "description": ""
+        }
+      ],
+      "description": "A simple script that will watch a stream for you and earn the channel points.",
+      "image": "tkdalex/twitch-channel-points-miner-v2:latest",
+      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/twitch-miner-logo.png",
+      "name": "twitch-miner",
+      "hostname": "twitch-miner",
+      "note": "First of all please create a run.py file. You can just copy [example.py](https://github.com/Tkd-Alex/Twitch-Channel-Points-Miner-v2/blob/master/example.py) and modify it according to your needs.",
+      "officialDoc": "https://github.com/Tkd-Alex/Twitch-Channel-Points-Miner-v2#docker",
+      "platform": "linux",
+      "ports": [
+        "5000:5000/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Twitch Miner",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Config/TwitchMiner/analytics",
+          "container": "/usr/src/app/analytics"
+        },
+        {
+          "bind": "/portainer/Files/AppData/Config/TwitchMiner/cookies",
+          "container": "/usr/src/app/cookies"
+        },
+        {
+          "bind": "/portainer/Files/AppData/Config/TwitchMiner/logs",
+          "container": "/usr/src/app/logs"
+        },
+        {
+          "bind": "/portainer/Files/AppData/Config/TwitchMiner/run.py",
+          "container": "/usr/src/app/run.py"
+        }
+      ],
+      "webpage": "https://github.com/Tkd-Alex/Twitch-Channel-Points-Miner-v2"
+    },
+    {
+      "categories": [
         "Network",
         "Tools"
       ],
