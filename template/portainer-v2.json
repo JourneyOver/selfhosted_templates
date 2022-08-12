@@ -661,6 +661,51 @@
         "Tools",
         "Twitch",
         "Drops",
+        "Claimer"
+      ],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
+        }
+      ],
+      "description": "A Node.js bot that uses Puppeteer to automatically watch Twitch streams and claim drop rewards.",
+      "image": "ghcr.io/tychothetaco/twitch-drops-bot:latest",
+      "logo": "",
+      "name": "twitch-drops-bot",
+      "hostname": "twitch-drops-bot",
+      "officialDoc": "https://github.com/TychoTheTaco/Twitch-Drops-Bot#docker",
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "title": "Twitch Drops Bot",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/portainer/Files/AppData/Config/TwitchDropsBot",
+          "container": "/app/data"
+        }
+      ],
+      "webpage": "https://github.com/TychoTheTaco/Twitch-Drops-Bot"
+    },
+    {
+      "categories": [
+        "Tools",
+        "Twitch",
+        "Drops",
         "channel points",
         "Claimer"
       ],
