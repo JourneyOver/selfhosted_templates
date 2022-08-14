@@ -42,11 +42,11 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Config/Freenom/config",
+      "bind": "/mnt/Docker/Freenom/config",
       "container": "/conf"
     },
     {
-      "bind": "/portainer/Files/AppData/Config/Freenom/log",
+      "bind": "/mnt/Docker/Freenom/log",
       "container": "/app/logs"
     }
   ],

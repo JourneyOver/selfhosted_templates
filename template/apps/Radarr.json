@@ -38,7 +38,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Config/Radarr",
+      "bind": "/mnt/Docker/Radarr",
       "container": "/config"
     }
   ],

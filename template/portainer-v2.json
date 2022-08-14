@@ -53,11 +53,11 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/AdGuardHome/config",
+          "bind": "/mnt/Docker/AdGuardHome/config",
           "container": "/opt/adguardhome/conf"
         },
         {
-          "bind": "/portainer/Files/AppData/Config/AdGuardHome/work",
+          "bind": "/mnt/Docker/AdGuardHome/work",
           "container": "/opt/adguardhome/work"
         }
       ],
@@ -103,7 +103,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/AdGuardHomeSync",
+          "bind": "/mnt/Docker/AdGuardHomeSync",
           "container": "/config"
         }
       ],
@@ -149,15 +149,15 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/ArchiSteamFarm/config",
+          "bind": "/mnt/Docker/ArchiSteamFarm/config",
           "container": "/app/config"
         },
         {
-          "bind": "/portainer/Files/AppData/Config/ArchiSteamFarm/plugins",
+          "bind": "/mnt/Docker/ArchiSteamFarm/plugins",
           "container": "/app/plugins"
         },
         {
-          "bind": "/portainer/Files/AppData/Config/ArchiSteamFarm/logs",
+          "bind": "/mnt/Docker/ArchiSteamFarm/logs",
           "container": "/app/logs"
         }
       ],
@@ -207,11 +207,11 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/Freenom/config",
+          "bind": "/mnt/Docker/Freenom/config",
           "container": "/conf"
         },
         {
-          "bind": "/portainer/Files/AppData/Config/Freenom/log",
+          "bind": "/mnt/Docker/Freenom/log",
           "container": "/app/logs"
         }
       ],
@@ -286,7 +286,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/Joal",
+          "bind": "/mnt/Docker/Joal",
           "container": "/data"
         }
       ],
@@ -333,7 +333,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/Kitana",
+          "bind": "/mnt/Docker/Kitana",
           "container": "/app/data"
         }
       ],
@@ -383,8 +383,16 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/PlexMetaManager",
+          "bind": "/mnt/Docker/PlexMetaManager/config",
           "container": "/config"
+        },
+        {
+          "bind": "/mnt/Docker/PlexMetaManager/metadata",
+          "container": "/metadata"
+        },
+        {
+          "bind": "/mnt/Docker/PlexMetaManager/assets",
+          "container": "/assets"
         }
       ],
       "webpage": "https://github.com/meisnate12/Plex-Meta-Manager"
@@ -428,7 +436,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/PlexTraktSync",
+          "bind": "/mnt/Docker/PlexTraktSync",
           "container": "/app/config"
         }
       ],
@@ -474,7 +482,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/Prowlarr",
+          "bind": "/mnt/Docker/Prowlarr",
           "container": "/config"
         }
       ],
@@ -520,7 +528,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/Radarr",
+          "bind": "/mnt/Docker/Radarr",
           "container": "/config"
         }
       ],
@@ -604,7 +612,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/Swag",
+          "bind": "/mnt/Docker/Swag",
           "container": "/config"
         }
       ],
@@ -650,7 +658,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/Tautulli",
+          "bind": "/mnt/Docker/Tautulli",
           "container": "/config"
         }
       ],
@@ -695,7 +703,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/TwitchDropsBot",
+          "bind": "/mnt/Docker/TwitchDropsBot",
           "container": "/app/data"
         }
       ],
@@ -751,19 +759,19 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/TwitchMiner/analytics",
+          "bind": "/mnt/Docker/TwitchMiner/analytics",
           "container": "/usr/src/app/analytics"
         },
         {
-          "bind": "/portainer/Files/AppData/Config/TwitchMiner/cookies",
+          "bind": "/mnt/Docker/TwitchMiner/cookies",
           "container": "/usr/src/app/cookies"
         },
         {
-          "bind": "/portainer/Files/AppData/Config/TwitchMiner/logs",
+          "bind": "/mnt/Docker/TwitchMiner/logs",
           "container": "/usr/src/app/logs"
         },
         {
-          "bind": "/portainer/Files/AppData/Config/TwitchMiner/run.py",
+          "bind": "/mnt/Docker/TwitchMiner/run.py",
           "container": "/usr/src/app/run.py"
         }
       ],
@@ -797,7 +805,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/portainer/Files/AppData/Config/UptimeKuma",
+          "bind": "/mnt/Docker/UptimeKuma",
           "container": "/app/data"
         }
       ],

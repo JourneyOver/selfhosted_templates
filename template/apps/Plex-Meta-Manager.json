@@ -42,8 +42,16 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Config/PlexMetaManager",
+      "bind": "/mnt/Docker/PlexMetaManager/config",
       "container": "/config"
+    },
+    {
+      "bind": "/mnt/Docker/PlexMetaManager/metadata",
+      "container": "/metadata"
+    },
+    {
+      "bind": "/mnt/Docker/PlexMetaManager/assets",
+      "container": "/assets"
     }
   ],
   "webpage": "https://github.com/meisnate12/Plex-Meta-Manager"

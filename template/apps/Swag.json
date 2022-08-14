@@ -76,7 +76,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Config/Swag",
+      "bind": "/mnt/Docker/Swag",
       "container": "/config"
     }
   ],

@@ -38,7 +38,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Config/AdGuardHomeSync",
+      "bind": "/mnt/Docker/AdGuardHomeSync",
       "container": "/config"
     }
   ],

@@ -50,11 +50,11 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Config/AdGuardHome/config",
+      "bind": "/mnt/Docker/AdGuardHome/config",
       "container": "/opt/adguardhome/conf"
     },
     {
-      "bind": "/portainer/Files/AppData/Config/AdGuardHome/work",
+      "bind": "/mnt/Docker/AdGuardHome/work",
       "container": "/opt/adguardhome/work"
     }
   ],

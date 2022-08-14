@@ -38,7 +38,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Config/Tautulli",
+      "bind": "/mnt/Docker/Tautulli",
       "container": "/config"
     }
   ],

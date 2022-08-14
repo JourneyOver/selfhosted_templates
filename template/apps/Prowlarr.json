@@ -38,7 +38,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Config/Prowlarr",
+      "bind": "/mnt/Docker/Prowlarr",
       "container": "/config"
     }
   ],

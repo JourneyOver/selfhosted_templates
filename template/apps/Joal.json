@@ -67,7 +67,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Config/Joal",
+      "bind": "/mnt/Docker/Joal",
       "container": "/data"
     }
   ],

@@ -48,19 +48,19 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/portainer/Files/AppData/Config/TwitchMiner/analytics",
+      "bind": "/mnt/Docker/TwitchMiner/analytics",
       "container": "/usr/src/app/analytics"
     },
     {
-      "bind": "/portainer/Files/AppData/Config/TwitchMiner/cookies",
+      "bind": "/mnt/Docker/TwitchMiner/cookies",
       "container": "/usr/src/app/cookies"
     },
     {
-      "bind": "/portainer/Files/AppData/Config/TwitchMiner/logs",
+      "bind": "/mnt/Docker/TwitchMiner/logs",
       "container": "/usr/src/app/logs"
     },
     {
-      "bind": "/portainer/Files/AppData/Config/TwitchMiner/run.py",
+      "bind": "/mnt/Docker/TwitchMiner/run.py",
       "container": "/usr/src/app/run.py"
     }
   ],
