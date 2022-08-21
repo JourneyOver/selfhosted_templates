@@ -1,0 +1,44 @@
+{
+  "categories": [
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "1000",
+      "description": "for UserID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "1000",
+      "description": "for GroupID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago",
+      "description": "Specify a timezone to use for example America/New_York"
+    }
+  ],
+  "description": "Automation for downloads.",
+  "image": "ghcr.io/autobrr/autobrr:latest",
+  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/autobrr-logo.png",
+  "name": "autobrr",
+  "hostname": "autobrr",
+  "officialDoc": "https://autobrr.com/installation/docker",
+  "platform": "linux",
+  "ports": [
+    "7474:7474/tcp"
+  ],
+  "restart_policy": "unless-stopped",
+  "title": "Autobrr",
+  "type": 1,
+  "volumes": [
+    {
+      "bind": "/mnt/Docker/Autobrr/config",
+      "container": "/config"
+    }
+  ],
+  "webpage": "https://github.com/autobrr/autobrr"
+}
