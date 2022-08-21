@@ -1,9 +1,5 @@
 {
   "categories": [
-    "Plex",
-    "Trakt",
-    "Scrobbler",
-    "Tools"
   ],
   "env": [
     {

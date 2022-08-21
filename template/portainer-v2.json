@@ -2,9 +2,7 @@
   "version": "2",
   "templates": [
     {
-      "categories": [
-        "Adblocking"
-      ],
+      "categories": [],
       "env": [
         {
           "name": "PUID",
@@ -64,10 +62,7 @@
       "webpage": "https://adguard.com/en/adguard-home/overview.html"
     },
     {
-      "categories": [
-        "Adblocking",
-        "Tools"
-      ],
+      "categories": [],
       "env": [
         {
           "name": "PUID",
@@ -110,10 +105,7 @@
       "webpage": "https://github.com/bakito/adguardhome-sync/"
     },
     {
-      "categories": [
-        "Tools",
-        "Games"
-      ],
+      "categories": [],
       "env": [
         {
           "name": "PUID",
@@ -207,11 +199,7 @@
       "webpage": "https://github.com/autobrr/autobrr"
     },
     {
-      "categories": [
-        "Freenom",
-        "DNS",
-        "Tool"
-      ],
+      "categories": [],
       "env": [
         {
           "name": "PUID",
@@ -261,9 +249,7 @@
       "webpage": "https://github.com/luolongfei/freenom"
     },
     {
-      "categories": [
-        "Tools"
-      ],
+      "categories": [],
       "env": [
         {
           "name": "PUID",
@@ -336,10 +322,7 @@
       "webpage": "https://github.com/anthonyraymond/joal"
     },
     {
-      "categories": [
-        "Plex",
-        "Tools"
-      ],
+      "categories": [],
       "env": [
         {
           "name": "PUID",
@@ -383,11 +366,7 @@
       "webpage": "https://github.com/pannal/Kitana"
     },
     {
-      "categories": [
-        "Plex",
-        "Metadata",
-        "Tools"
-      ],
+      "categories": [],
       "env": [
         {
           "name": "PUID",
@@ -441,12 +420,7 @@
       "webpage": "https://github.com/meisnate12/Plex-Meta-Manager"
     },
     {
-      "categories": [
-        "Plex",
-        "Trakt",
-        "Scrobbler",
-        "Tools"
-      ],
+      "categories": [],
       "env": [
         {
           "name": "PUID",
@@ -486,10 +460,7 @@
       "webpage": "https://github.com/Taxel/PlexTraktSync"
     },
     {
-      "categories": [
-        "Downloaders",
-        "Video"
-      ],
+      "categories": [],
       "env": [
         {
           "name": "PUID",
@@ -532,10 +503,7 @@
       "webpage": "https://prowlarr.com/"
     },
     {
-      "categories": [
-        "Downloaders",
-        "Video"
-      ],
+      "categories": [],
       "env": [
         {
           "name": "PUID",
@@ -578,10 +546,7 @@
       "webpage": "https://radarr.video/"
     },
     {
-      "categories": [
-        "Web",
-        "Proxy"
-      ],
+      "categories": [],
       "env": [
         {
           "name": "PUID",
@@ -662,10 +627,7 @@
       "webpage": "https://github.com/linuxserver/docker-swag"
     },
     {
-      "categories": [
-        "Plex",
-        "Tools"
-      ],
+      "categories": [],
       "env": [
         {
           "name": "PUID",
@@ -708,12 +670,7 @@
       "webpage": "https://tautulli.com/"
     },
     {
-      "categories": [
-        "Tools",
-        "Twitch",
-        "Drops",
-        "Claimer"
-      ],
+      "categories": [],
       "env": [
         {
           "name": "PUID",
@@ -753,13 +710,7 @@
       "webpage": "https://github.com/TychoTheTaco/Twitch-Drops-Bot"
     },
     {
-      "categories": [
-        "Tools",
-        "Twitch",
-        "Drops",
-        "channel points",
-        "Claimer"
-      ],
+      "categories": [],
       "env": [
         {
           "name": "PUID",
@@ -821,10 +772,7 @@
       "webpage": "https://github.com/Tkd-Alex/Twitch-Channel-Points-Miner-v2"
     },
     {
-      "categories": [
-        "Network",
-        "Tools"
-      ],
+      "categories": [],
       "env": [
         {
           "name": "TZ",
@@ -855,10 +803,7 @@
       "webpage": "https://github.com/louislam/uptime-kuma"
     },
     {
-      "categories": [
-        "Tools",
-        "Maintenance"
-      ],
+      "categories": [],
       "env": [
         {
           "label": "WATCHTOWER_CLEANUP",
