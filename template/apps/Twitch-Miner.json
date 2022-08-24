@@ -28,11 +28,13 @@
     }
   ],
   "description": "A simple script that will watch a stream for you and earn the channel points.",
-  "image": "docker.io/tkdalex/twitch-channel-points-miner-v2:latest",
+  "image": "tkdalex/twitch-channel-points-miner-v2:latest",
+  "registry": "docker.io",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/twitch-miner-logo.png",
   "name": "twitch-miner",
   "hostname": "twitch-miner",
-  "note": "First of all please create a run.py file. You can just copy [example.py](https://github.com/Tkd-Alex/Twitch-Channel-Points-Miner-v2/blob/master/example.py) and modify it according to your needs.",
+  "network": "bunni_network",
+  "note": "First create a run.py file before running container. You can just copy [example.py](https://github.com/Tkd-Alex/Twitch-Channel-Points-Miner-v2/blob/master/example.py) and modify it according to your needs.",
   "officialDoc": "https://github.com/Tkd-Alex/Twitch-Channel-Points-Miner-v2#docker",
   "platform": "linux",
   "ports": [

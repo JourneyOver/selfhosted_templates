@@ -22,10 +22,12 @@
     }
   ],
   "description": "Snippet Box is a simple self-hosted app for organizing your code snippets.",
-  "image": "docker.io/pawelmalak/snippet-box:latest",
+  "image": "pawelmalak/snippet-box:latest",
+  "registry": "docker.io",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/snibox-logo.png",
   "name": "snippet-box",
   "hostname": "snippet-box",
+  "network": "bunni_network",
   "officialDoc": "https://github.com/pawelmalak/snippet-box#with-docker",
   "platform": "linux",
   "ports": [
@@ -37,7 +39,7 @@
   "volumes": [
     {
       "bind": "/mnt/Docker/Snippetbox",
-      "container": "/config"
+      "container": "/app/data"
     }
   ],
   "webpage": "https://github.com/pawelmalak/snippet-box"

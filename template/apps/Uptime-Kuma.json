@@ -3,6 +3,18 @@
   ],
   "env": [
     {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "1000",
+      "description": "for UserID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "1000",
+      "description": "for GroupID"
+    },
+    {
       "name": "TZ",
       "label": "TZ",
       "default": "America/Chicago",
@@ -10,10 +22,12 @@
     }
   ],
   "description": "It is a self-hosted monitoring tool like 'Uptime Robot'.",
-  "image": "docker.io/louislam/uptime-kuma:latest",
+  "image": "louislam/uptime-kuma:latest",
+  "registry": "docker.io",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/uptime-kuma-logo.png",
   "name": "uptime-kuma",
   "hostname": "uptime-kuma",
+  "network": "bunni_network",
   "officialDoc": "https://github.com/louislam/uptime-kuma/wiki/%F0%9F%94%A7-How-to-Install#-docker",
   "platform": "linux",
   "ports": [

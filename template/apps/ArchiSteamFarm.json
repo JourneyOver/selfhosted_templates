@@ -22,10 +22,12 @@
     }
   ],
   "description": "C# application with primary purpose of farming Steam cards from multiple accounts simultaneously.",
-  "image": "ghcr.io/justarchinet/archisteamfarm:latest",
+  "image": "justarchinet/archisteamfarm:latest",
+  "registry": "ghcr.io",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/archisteamfarm-logo.png",
   "name": "archisteamfarm",
   "hostname": "archisteamfarm",
+  "network": "bunni_network",
   "officialDoc": "https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Docker/",
   "platform": "linux",
   "ports": [

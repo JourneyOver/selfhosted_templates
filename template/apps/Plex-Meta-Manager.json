@@ -23,15 +23,26 @@
     {
       "name": "PMM_NO_COUNTDOWN",
       "label": "PMM_NO_COUNTDOWN",
-      "default": "false",
-      "description": "Run without displaying a countdown to the next scheduled run."
+      "select": [
+        {
+          "default": "true",
+          "text": "Run without displaying a countdown to the next scheduled run.",
+          "value": "true"
+        },
+        {
+          "text": "Run with displaying a countdown to the next scheduled run.",
+          "value": "false"
+        }
+      ]
     }
   ],
   "description": "Python script to update metadata information for items in plex as well as automatically build collections and playlists.",
-  "image": "docker.io/meisnate12/plex-meta-manager:nightly",
+  "image": "meisnate12/plex-meta-manager:nightly",
+  "registry": "docker.io",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/pmm-logo.png",
   "name": "plex-meta-manager",
   "hostname": "plex-meta-manager",
+  "network": "bunni_network",
   "officialDoc": "https://metamanager.wiki/en/latest/home/guides/docker.html",
   "platform": "linux",
   "restart_policy": "unless-stopped",

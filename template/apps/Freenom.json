@@ -28,10 +28,12 @@
     }
   ],
   "description": "Automatically renew your freenom domain. ",
-  "image": "docker.io/luolongfei/freenom:latest",
+  "image": "luolongfei/freenom:latest",
+  "registry": "docker.io",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/freenom-logo.png",
   "name": "freenom",
   "hostname": "freenom",
+  "network": "bunni_network",
   "officialDoc": "https://hub.docker.com/r/luolongfei/freenom",
   "platform": "linux",
   "restart_policy": "unless-stopped",

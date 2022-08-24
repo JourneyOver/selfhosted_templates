@@ -23,10 +23,12 @@
   ],
   "command": "-B 0.0.0.0:31337 -p /kitana -P",
   "description": "A responsive Plex plugin web frontend",
-  "image": "docker.io/pannal/kitana:latest",
+  "image": "pannal/kitana:latest",
+  "registry": "docker.io",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/kitana-logo.png",
   "name": "kitana",
   "hostname": "kitana",
+  "network": "bunni_network",
   "officialDoc": "https://github.com/pannal/Kitana#docker-the-easy-way-windows-included",
   "platform": "linux",
   "ports": [

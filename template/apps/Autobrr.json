@@ -22,10 +22,12 @@
     }
   ],
   "description": "Automation for downloads.",
-  "image": "ghcr.io/autobrr/autobrr:latest",
+  "image": "autobrr/autobrr:latest",
+  "registry": "ghcr.io",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/autobrr-logo.png",
   "name": "autobrr",
   "hostname": "autobrr",
+  "network": "bunni_network",
   "officialDoc": "https://autobrr.com/installation/docker",
   "platform": "linux",
   "ports": [

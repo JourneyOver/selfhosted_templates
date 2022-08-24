@@ -24,10 +24,12 @@
         }
       ],
       "description": "AdGuard Home is a network-wide software for blocking ads & tracking.",
-      "image": "docker.io/adguard/adguardhome:beta",
+      "image": "adguard/adguardhome:beta",
+      "registry": "docker.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/adguardhome-logo.png",
       "name": "adguardhome",
       "hostname": "adguardhome",
+      "network": "bunni_network",
       "officialDoc": "https://github.com/AdguardTeam/AdGuardHome/wiki/Docker",
       "platform": "linux",
       "ports": [
@@ -84,10 +86,12 @@
         }
       ],
       "description": "Adguardhome-sync is a tool to synchronize AdGuardHome config to replica instances.",
-      "image": "lscr.io/linuxserver/adguardhome-sync:latest",
+      "image": "linuxserver/adguardhome-sync:latest",
+      "registry": "lscr.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/adguardhomesync-logo.png",
       "name": "adguardhome-sync",
       "hostname": "adguardhome-sync",
+      "network": "bunni_network",
       "officialDoc": "https://github.com/linuxserver/docker-adguardhome-sync#usage",
       "platform": "linux",
       "ports": [
@@ -127,10 +131,12 @@
         }
       ],
       "description": "C# application with primary purpose of farming Steam cards from multiple accounts simultaneously.",
-      "image": "ghcr.io/justarchinet/archisteamfarm:latest",
+      "image": "justarchinet/archisteamfarm:latest",
+      "registry": "ghcr.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/archisteamfarm-logo.png",
       "name": "archisteamfarm",
       "hostname": "archisteamfarm",
+      "network": "bunni_network",
       "officialDoc": "https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Docker/",
       "platform": "linux",
       "ports": [
@@ -178,10 +184,12 @@
         }
       ],
       "description": "Automation for downloads.",
-      "image": "ghcr.io/autobrr/autobrr:latest",
+      "image": "autobrr/autobrr:latest",
+      "registry": "ghcr.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/autobrr-logo.png",
       "name": "autobrr",
       "hostname": "autobrr",
+      "network": "bunni_network",
       "officialDoc": "https://autobrr.com/installation/docker",
       "platform": "linux",
       "ports": [
@@ -227,10 +235,12 @@
         }
       ],
       "description": "Automatically renew your freenom domain. ",
-      "image": "docker.io/luolongfei/freenom:latest",
+      "image": "luolongfei/freenom:latest",
+      "registry": "docker.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/freenom-logo.png",
       "name": "freenom",
       "hostname": "freenom",
+      "network": "bunni_network",
       "officialDoc": "https://hub.docker.com/r/luolongfei/freenom",
       "platform": "linux",
       "restart_policy": "unless-stopped",
@@ -301,10 +311,12 @@
         }
       ],
       "description": "An open source command line RatioMaster with an optional WebUI.",
-      "image": "docker.io/anthonyraymond/joal:latest",
+      "image": "anthonyraymond/joal:latest",
+      "registry": "docker.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/joal-logo.png",
       "name": "joal",
       "hostname": "joal",
+      "network": "bunni_network",
       "officialDoc": "https://github.com/anthonyraymond/joal#2-run-with-docker",
       "platform": "linux",
       "ports": [
@@ -345,10 +357,12 @@
       ],
       "command": "-B 0.0.0.0:31337 -p /kitana -P",
       "description": "A responsive Plex plugin web frontend",
-      "image": "docker.io/pannal/kitana:latest",
+      "image": "pannal/kitana:latest",
+      "registry": "docker.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/kitana-logo.png",
       "name": "kitana",
       "hostname": "kitana",
+      "network": "bunni_network",
       "officialDoc": "https://github.com/pannal/Kitana#docker-the-easy-way-windows-included",
       "platform": "linux",
       "ports": [
@@ -389,15 +403,26 @@
         {
           "name": "PMM_NO_COUNTDOWN",
           "label": "PMM_NO_COUNTDOWN",
-          "default": "false",
-          "description": "Run without displaying a countdown to the next scheduled run."
+          "select": [
+            {
+              "default": "true",
+              "text": "Run without displaying a countdown to the next scheduled run.",
+              "value": "true"
+            },
+            {
+              "text": "Run with displaying a countdown to the next scheduled run.",
+              "value": "false"
+            }
+          ]
         }
       ],
       "description": "Python script to update metadata information for items in plex as well as automatically build collections and playlists.",
-      "image": "docker.io/meisnate12/plex-meta-manager:nightly",
+      "image": "meisnate12/plex-meta-manager:nightly",
+      "registry": "docker.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/pmm-logo.png",
       "name": "plex-meta-manager",
       "hostname": "plex-meta-manager",
+      "network": "bunni_network",
       "officialDoc": "https://metamanager.wiki/en/latest/home/guides/docker.html",
       "platform": "linux",
       "restart_policy": "unless-stopped",
@@ -442,10 +467,12 @@
         }
       ],
       "description": "A python script that syncs the movies, shows and ratings between trakt and Plex (without needing a PlexPass or Trakt VIP subscription)",
-      "image": "ghcr.io/taxel/plextraktsync:latest",
+      "image": "taxel/plextraktsync:latest",
+      "registry": "ghcr.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/plextraktsync-logo.png",
       "name": "plextraktsync",
       "hostname": "plextraktsync",
+      "network": "bunni_network",
       "officialDoc": "https://github.com/Taxel/PlexTraktSync#docker-compose",
       "platform": "linux",
       "restart_policy": "on-failure",
@@ -482,10 +509,12 @@
         }
       ],
       "description": "Prowlarr is a indexer manager/proxy built on the popular arr .net/reactjs base stack to integrate with your various PVR apps. Prowlarr supports both Torrent Trackers and Usenet Indexers. It integrates seamlessly with Sonarr, Radarr, Lidarr, and Readarr offering complete management of your indexers with no per app Indexer setup required (we do it all).",
-      "image": "lscr.io/linuxserver/prowlarr:nightly",
+      "image": "linuxserver/prowlarr:nightly",
+      "registry": "lscr.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/prowlarr-logo.png",
       "name": "prowlarr",
       "hostname": "prowlarr",
+      "network": "bunni_network",
       "officialDoc": "https://github.com/linuxserver/docker-prowlarr/",
       "platform": "linux",
       "ports": [
@@ -525,10 +554,12 @@
         }
       ],
       "description": "Radarr - A fork of Sonarr to work with movies à la Couchpotato.",
-      "image": "lscr.io/linuxserver/radarr:nightly",
+      "image": "linuxserver/radarr:nightly",
+      "registry": "lscr.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/radarr-logo.png",
       "name": "radarr",
       "hostname": "radarr",
+      "network": "bunni_network",
       "officialDoc": "https://docs.linuxserver.io/images/docker-radarr",
       "platform": "linux",
       "ports": [
@@ -568,10 +599,12 @@
         }
       ],
       "description": "Snippet Box is a simple self-hosted app for organizing your code snippets.",
-      "image": "docker.io/pawelmalak/snippet-box:latest",
+      "image": "pawelmalak/snippet-box:latest",
+      "registry": "docker.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/snibox-logo.png",
       "name": "snippet-box",
       "hostname": "snippet-box",
+      "network": "bunni_network",
       "officialDoc": "https://github.com/pawelmalak/snippet-box#with-docker",
       "platform": "linux",
       "ports": [
@@ -583,7 +616,7 @@
       "volumes": [
         {
           "bind": "/mnt/Docker/Snippetbox",
-          "container": "/config"
+          "container": "/app/data"
         }
       ],
       "webpage": "https://github.com/pawelmalak/snippet-box"
@@ -618,7 +651,21 @@
         {
           "name": "VALIDATION",
           "label": "VALIDATION",
-          "default": "http",
+          "select": [
+            {
+              "default": "http",
+              "text": "Use HTTP Method",
+              "value": "http"
+            },
+            {
+              "text": "Use DNS Method",
+              "value": "dns"
+            },
+            {
+              "text": "Use DUCKDNS Method",
+              "value": "duckdns"
+            }
+          ],
           "description": "Certbot validation method to use, options are http, dns or duckdns (dns method also requires DNSPLUGIN variable set) (duckdns method requires DUCKDNSTOKEN variable set, and the SUBDOMAINS variable must be either empty or set to wildcard)."
         },
         {
@@ -647,10 +694,12 @@
         }
       ],
       "description": "This container sets up an Nginx webserver and reverse proxy with php support and a built-in letsencrypt client that automates free SSL server certificate generation and renewal processes. It also contains fail2ban for intrusion prevention.",
-      "image": "lscr.io/linuxserver/swag:latest",
+      "image": "linuxserver/swag:latest",
+      "registry": "lscr.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/swag-logo.png",
       "name": "swag",
       "hostname": "swag",
+      "network": "bunni_network",
       "note": "Before running this container, make sure that the url and subdomains are properly forwarded to this container's host.<ul><li>- Port 443 on the internet side of the router should be forwarded to this container's port 443.</li><li>- If you need a dynamic dns provider, you can use the free provider duckdns.org where the url will be yoursubdomain.duckdns.org and the subdomains can be www,ftp,cloud</li><li>- The container detects changes to url and subdomains, revokes existing certs and generates new ones during start.</li><li>- It also detects changes to the DHLEVEL parameter and replaces the dhparams file.</li><li>- If you'd like to password protect your sites, you can use htpasswd. Run the following command on your host to generate the htpasswd file <code>docker exec -it letsencrypt htpasswd -c /config/nginx/.htpasswd &lt;username&gt;</code>",
       "officialDoc": "https://docs.linuxserver.io/images/docker-swag",
       "platform": "linux",
@@ -692,10 +741,12 @@
         }
       ],
       "description": "Tautulli is a 3rd party application that you can run along side your Plex Media Server to monitor activity and track various statistics. Most importantly, these statistics include what has been watched, who watched it, when and where they watched it, and how it was watched. All statistics are presented in a nice and clean interface with many tables and graphs, which makes it easy to brag about your server to everyone else.",
-      "image": "lscr.io/linuxserver/tautulli:latest",
+      "image": "linuxserver/tautulli:latest",
+      "registry": "lscr.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/tautulli-logo.png",
       "name": "tautulli",
       "hostname": "tautulli",
+      "network": "bunni_network",
       "officialDoc": "https://docs.linuxserver.io/images/docker-tautulli",
       "platform": "linux",
       "ports": [
@@ -735,10 +786,12 @@
         }
       ],
       "description": "A Node.js bot that uses Puppeteer to automatically watch Twitch streams and claim drop rewards.",
-      "image": "ghcr.io/tychothetaco/twitch-drops-bot:latest",
+      "image": "tychothetaco/twitch-drops-bot:latest",
+      "registry": "ghcr.io",
       "logo": "",
       "name": "twitch-drops-bot",
       "hostname": "twitch-drops-bot",
+      "network": "bunni_network",
       "officialDoc": "https://github.com/TychoTheTaco/Twitch-Drops-Bot#docker",
       "platform": "linux",
       "restart_policy": "unless-stopped",
@@ -781,11 +834,13 @@
         }
       ],
       "description": "A simple script that will watch a stream for you and earn the channel points.",
-      "image": "docker.io/tkdalex/twitch-channel-points-miner-v2:latest",
+      "image": "tkdalex/twitch-channel-points-miner-v2:latest",
+      "registry": "docker.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/twitch-miner-logo.png",
       "name": "twitch-miner",
       "hostname": "twitch-miner",
-      "note": "First of all please create a run.py file. You can just copy [example.py](https://github.com/Tkd-Alex/Twitch-Channel-Points-Miner-v2/blob/master/example.py) and modify it according to your needs.",
+      "network": "bunni_network",
+      "note": "First create a run.py file before running container. You can just copy [example.py](https://github.com/Tkd-Alex/Twitch-Channel-Points-Miner-v2/blob/master/example.py) and modify it according to your needs.",
       "officialDoc": "https://github.com/Tkd-Alex/Twitch-Channel-Points-Miner-v2#docker",
       "platform": "linux",
       "ports": [
@@ -818,6 +873,18 @@
       "categories": [],
       "env": [
         {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
           "name": "TZ",
           "label": "TZ",
           "default": "America/Chicago",
@@ -825,10 +892,12 @@
         }
       ],
       "description": "It is a self-hosted monitoring tool like 'Uptime Robot'.",
-      "image": "docker.io/louislam/uptime-kuma:latest",
+      "image": "louislam/uptime-kuma:latest",
+      "registry": "docker.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/uptime-kuma-logo.png",
       "name": "uptime-kuma",
       "hostname": "uptime-kuma",
+      "network": "bunni_network",
       "officialDoc": "https://github.com/louislam/uptime-kuma/wiki/%F0%9F%94%A7-How-to-Install#-docker",
       "platform": "linux",
       "ports": [
@@ -853,7 +922,7 @@
           "name": "WATCHTOWER_CLEANUP",
           "select": [
             {
-              "default": true,
+              "default": "true",
               "text": "Delete unused images",
               "value": "true"
             },
@@ -877,10 +946,12 @@
         }
       ],
       "description": "With watchtower you can update the running version of your containerized app simply by pushing a new image to the Docker Hub or your own image registry. Watchtower will pull down your new image, gracefully shut down your existing container and restart it with the same options that were used when it was deployed initially.",
-      "image": "ghcr.io/containrrr/watchtower:latest",
+      "image": "containrrr/watchtower:latest",
+      "registry": "ghcr.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/watchtower-logo.png",
       "name": "watchtower",
       "hostname": "watchtower",
+      "network": "bunni_network",
       "note": "It is recommended to manually update your containers but we're including this for those of you that don't care",
       "officialDoc": "https://containrrr.dev/watchtower/usage-overview/",
       "platform": "linux",

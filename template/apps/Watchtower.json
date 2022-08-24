@@ -7,7 +7,7 @@
       "name": "WATCHTOWER_CLEANUP",
       "select": [
         {
-          "default": true,
+          "default": "true",
           "text": "Delete unused images",
           "value": "true"
         },
@@ -31,10 +31,12 @@
     }
   ],
   "description": "With watchtower you can update the running version of your containerized app simply by pushing a new image to the Docker Hub or your own image registry. Watchtower will pull down your new image, gracefully shut down your existing container and restart it with the same options that were used when it was deployed initially.",
-  "image": "ghcr.io/containrrr/watchtower:latest",
+  "image": "containrrr/watchtower:latest",
+  "registry": "ghcr.io",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/watchtower-logo.png",
   "name": "watchtower",
   "hostname": "watchtower",
+  "network": "bunni_network",
   "note": "It is recommended to manually update your containers but we're including this for those of you that don't care",
   "officialDoc": "https://containrrr.dev/watchtower/usage-overview/",
   "platform": "linux",

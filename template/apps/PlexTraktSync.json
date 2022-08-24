@@ -22,10 +22,12 @@
     }
   ],
   "description": "A python script that syncs the movies, shows and ratings between trakt and Plex (without needing a PlexPass or Trakt VIP subscription)",
-  "image": "ghcr.io/taxel/plextraktsync:latest",
+  "image": "taxel/plextraktsync:latest",
+  "registry": "ghcr.io",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/plextraktsync-logo.png",
   "name": "plextraktsync",
   "hostname": "plextraktsync",
+  "network": "bunni_network",
   "officialDoc": "https://github.com/Taxel/PlexTraktSync#docker-compose",
   "platform": "linux",
   "restart_policy": "on-failure",

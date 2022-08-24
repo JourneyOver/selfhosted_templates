@@ -22,10 +22,12 @@
     }
   ],
   "description": "AdGuard Home is a network-wide software for blocking ads & tracking.",
-  "image": "docker.io/adguard/adguardhome:beta",
+  "image": "adguard/adguardhome:beta",
+  "registry": "docker.io",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/adguardhome-logo.png",
   "name": "adguardhome",
   "hostname": "adguardhome",
+  "network": "bunni_network",
   "officialDoc": "https://github.com/AdguardTeam/AdGuardHome/wiki/Docker",
   "platform": "linux",
   "ports": [

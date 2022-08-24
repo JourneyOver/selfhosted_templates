@@ -22,10 +22,12 @@
     }
   ],
   "description": "Radarr - A fork of Sonarr to work with movies à la Couchpotato.",
-  "image": "lscr.io/linuxserver/radarr:nightly",
+  "image": "linuxserver/radarr:nightly",
+  "registry": "lscr.io",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/radarr-logo.png",
   "name": "radarr",
   "hostname": "radarr",
+  "network": "bunni_network",
   "officialDoc": "https://docs.linuxserver.io/images/docker-radarr",
   "platform": "linux",
   "ports": [
