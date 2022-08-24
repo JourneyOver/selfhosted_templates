@@ -22,7 +22,7 @@
     }
   ],
   "description": "C# application with primary purpose of farming Steam cards from multiple accounts simultaneously.",
-  "image": "justarchi/archisteamfarm:latest",
+  "image": "ghcr.io/justarchinet/archisteamfarm:latest",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/archisteamfarm-logo.png",
   "name": "archisteamfarm",
   "hostname": "archisteamfarm",

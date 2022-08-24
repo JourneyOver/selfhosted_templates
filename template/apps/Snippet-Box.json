@@ -21,25 +21,24 @@
       "description": "Specify a timezone to use for example America/New_York"
     }
   ],
-  "command": "-B 0.0.0.0:31337 -p /kitana -P",
-  "description": "A responsive Plex plugin web frontend",
-  "image": "docker.io/pannal/kitana:latest",
-  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/kitana-logo.png",
-  "name": "kitana",
-  "hostname": "kitana",
-  "officialDoc": "https://github.com/pannal/Kitana#docker-the-easy-way-windows-included",
+  "description": "Snippet Box is a simple self-hosted app for organizing your code snippets.",
+  "image": "docker.io/pawelmalak/snippet-box:latest",
+  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/snibox-logo.png",
+  "name": "snippet-box",
+  "hostname": "snippet-box",
+  "officialDoc": "https://github.com/pawelmalak/snippet-box#with-docker",
   "platform": "linux",
   "ports": [
-    "31337:31337/tcp"
+    "5010:5000/tcp"
   ],
   "restart_policy": "unless-stopped",
-  "title": "Kitana",
+  "title": "Snippet-box",
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/Kitana",
-      "container": "/app/data"
+      "bind": "/mnt/Docker/Snippetbox",
+      "container": "/config"
     }
   ],
-  "webpage": "https://github.com/pannal/Kitana"
+  "webpage": "https://github.com/pawelmalak/snippet-box"
 }

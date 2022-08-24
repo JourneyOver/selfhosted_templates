@@ -28,7 +28,7 @@
     }
   ],
   "description": "Automatically renew your freenom domain. ",
-  "image": "luolongfei/freenom:latest",
+  "image": "docker.io/luolongfei/freenom:latest",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/freenom-logo.png",
   "name": "freenom",
   "hostname": "freenom",

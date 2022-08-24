@@ -52,7 +52,7 @@
     }
   ],
   "description": "An open source command line RatioMaster with an optional WebUI.",
-  "image": "anthonyraymond/joal:latest",
+  "image": "docker.io/anthonyraymond/joal:latest",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/joal-logo.png",
   "name": "joal",
   "hostname": "joal",

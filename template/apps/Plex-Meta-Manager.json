@@ -28,7 +28,7 @@
     }
   ],
   "description": "Python script to update metadata information for items in plex as well as automatically build collections and playlists.",
-  "image": "meisnate12/plex-meta-manager:nightly",
+  "image": "docker.io/meisnate12/plex-meta-manager:nightly",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/pmm-logo.png",
   "name": "plex-meta-manager",
   "hostname": "plex-meta-manager",

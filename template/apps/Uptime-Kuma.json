@@ -10,7 +10,7 @@
     }
   ],
   "description": "It is a self-hosted monitoring tool like 'Uptime Robot'.",
-  "image": "louislam/uptime-kuma:latest",
+  "image": "docker.io/louislam/uptime-kuma:latest",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/uptime-kuma-logo.png",
   "name": "uptime-kuma",
   "hostname": "uptime-kuma",

@@ -24,7 +24,7 @@
         }
       ],
       "description": "AdGuard Home is a network-wide software for blocking ads & tracking.",
-      "image": "adguard/adguardhome:beta",
+      "image": "docker.io/adguard/adguardhome:beta",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/adguardhome-logo.png",
       "name": "adguardhome",
       "hostname": "adguardhome",
@@ -127,7 +127,7 @@
         }
       ],
       "description": "C# application with primary purpose of farming Steam cards from multiple accounts simultaneously.",
-      "image": "justarchi/archisteamfarm:latest",
+      "image": "ghcr.io/justarchinet/archisteamfarm:latest",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/archisteamfarm-logo.png",
       "name": "archisteamfarm",
       "hostname": "archisteamfarm",
@@ -227,7 +227,7 @@
         }
       ],
       "description": "Automatically renew your freenom domain. ",
-      "image": "luolongfei/freenom:latest",
+      "image": "docker.io/luolongfei/freenom:latest",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/freenom-logo.png",
       "name": "freenom",
       "hostname": "freenom",
@@ -301,7 +301,7 @@
         }
       ],
       "description": "An open source command line RatioMaster with an optional WebUI.",
-      "image": "anthonyraymond/joal:latest",
+      "image": "docker.io/anthonyraymond/joal:latest",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/joal-logo.png",
       "name": "joal",
       "hostname": "joal",
@@ -345,7 +345,7 @@
       ],
       "command": "-B 0.0.0.0:31337 -p /kitana -P",
       "description": "A responsive Plex plugin web frontend",
-      "image": "pannal/kitana:latest",
+      "image": "docker.io/pannal/kitana:latest",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/kitana-logo.png",
       "name": "kitana",
       "hostname": "kitana",
@@ -394,7 +394,7 @@
         }
       ],
       "description": "Python script to update metadata information for items in plex as well as automatically build collections and playlists.",
-      "image": "meisnate12/plex-meta-manager:nightly",
+      "image": "docker.io/meisnate12/plex-meta-manager:nightly",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/pmm-logo.png",
       "name": "plex-meta-manager",
       "hostname": "plex-meta-manager",
@@ -544,6 +544,49 @@
         }
       ],
       "webpage": "https://radarr.video/"
+    },
+    {
+      "categories": [],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
+        }
+      ],
+      "description": "Snippet Box is a simple self-hosted app for organizing your code snippets.",
+      "image": "docker.io/pawelmalak/snippet-box:latest",
+      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/snibox-logo.png",
+      "name": "snippet-box",
+      "hostname": "snippet-box",
+      "officialDoc": "https://github.com/pawelmalak/snippet-box#with-docker",
+      "platform": "linux",
+      "ports": [
+        "5010:5000/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Snippet-box",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/mnt/Docker/Snippetbox",
+          "container": "/config"
+        }
+      ],
+      "webpage": "https://github.com/pawelmalak/snippet-box"
     },
     {
       "categories": [],
@@ -738,7 +781,7 @@
         }
       ],
       "description": "A simple script that will watch a stream for you and earn the channel points.",
-      "image": "tkdalex/twitch-channel-points-miner-v2:latest",
+      "image": "docker.io/tkdalex/twitch-channel-points-miner-v2:latest",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/twitch-miner-logo.png",
       "name": "twitch-miner",
       "hostname": "twitch-miner",
@@ -782,7 +825,7 @@
         }
       ],
       "description": "It is a self-hosted monitoring tool like 'Uptime Robot'.",
-      "image": "louislam/uptime-kuma:latest",
+      "image": "docker.io/louislam/uptime-kuma:latest",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/uptime-kuma-logo.png",
       "name": "uptime-kuma",
       "hostname": "uptime-kuma",
@@ -834,7 +877,7 @@
         }
       ],
       "description": "With watchtower you can update the running version of your containerized app simply by pushing a new image to the Docker Hub or your own image registry. Watchtower will pull down your new image, gracefully shut down your existing container and restart it with the same options that were used when it was deployed initially.",
-      "image": "containrrr/watchtower:latest",
+      "image": "ghcr.io/containrrr/watchtower:latest",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/watchtower-logo.png",
       "name": "watchtower",
       "hostname": "watchtower",
