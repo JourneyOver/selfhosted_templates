@@ -401,6 +401,100 @@
           "description": "Specify a timezone to use for example America/New_York"
         },
         {
+          "name": "WEB_CONCURRENCY",
+          "label": "WEB_CONCURRENCY",
+          "default": "2",
+          "description": "Override the automatic definition of number of workers."
+        },
+        {
+          "name": "MAX_WORKERS",
+          "label": "MAX_WORKERS",
+          "default": "8",
+          "description": "Set the maximum number of workers to use. Default is not set meaning unlimited."
+        },
+        {
+          "name": "RECIPE_PUBLIC",
+          "label": "RECIPE_PUBLIC",
+          "default": "true",
+          "description": "Default Recipe Settings - Make Recipe Public."
+        },
+        {
+          "name": "RECIPE_SHOW_NUTRITION",
+          "label": "RECIPE_SHOW_NUTRITION",
+          "default": "true",
+          "description": "Default Recipe Settings - Show Recipe Nutrition."
+        },
+        {
+          "name": "RECIPE_SHOW_ASSETS",
+          "label": "RECIPE_SHOW_ASSETS",
+          "default": "true",
+          "description": "Default Recipe Settings - Show Recipe Assets."
+        },
+        {
+          "name": "RECIPE_LANDSCAPE_VIEW",
+          "label": "RECIPE_LANDSCAPE_VIEW",
+          "default": "true",
+          "description": "Default Recipe Settings - Set Landscape View."
+        },
+        {
+          "name": "RECIPE_DISABLE_COMMENTS",
+          "label": "RECIPE_DISABLE_COMMENTS",
+          "default": "false",
+          "description": "Default Recipe Settings - Disable Comments."
+        },
+        {
+          "name": "RECIPE_DISABLE_AMOUNT",
+          "label": "RECIPE_DISABLE_AMOUNT",
+          "default": "false",
+          "description": "Default Recipe Settings - Disable Amount."
+        }
+      ],
+      "description": "A self-hosted recipe manager and meal planner",
+      "image": "hkotel/mealie:latest",
+      "registry": "docker.io",
+      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/mealie-logo.png",
+      "name": "mealie",
+      "hostname": "mealie",
+      "network": "bunni_network",
+      "note": "Default Credentials: Username: changeme@email.com Password: MyPassword. Documentation is Available <a href='https://hay-kot.github.io/mealie/documentation/getting-started/install/'>here</a>.",
+      "officialDoc": "https://hay-kot.github.io/mealie/documentation/getting-started/install/",
+      "platform": "linux",
+      "ports": [
+        "9925:80/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Mealie",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/mnt/Docker/Mealie",
+          "container": "/app/data"
+        }
+      ],
+      "webpage": "https://hay-kot.github.io/mealie/"
+    },
+    {
+      "categories": [],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
+        },
+        {
           "name": "PMM_NO_COUNTDOWN",
           "label": "PMM_NO_COUNTDOWN",
           "select": [
