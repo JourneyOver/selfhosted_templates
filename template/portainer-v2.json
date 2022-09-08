@@ -737,6 +737,63 @@
           "description": "Specify a timezone to use for example America/New_York"
         },
         {
+          "name": "OOKLA_EULA_GDPR",
+          "label": "OOKLA_EULA_GDPR",
+          "default": "true",
+          "description": "Set to 'true' to accept the Ookla EULA and privacy agreement. If this is not set, the container will not start"
+        },
+        {
+          "name": "AUTH",
+          "label": "AUTH",
+          "default": "true",
+          "description": "Optional. Set to 'true' to enable authentication for the app"
+        }
+      ],
+      "description": "Run a Speedtest every hour and graph the results.",
+      "image": "henrywhitaker3/speedtest-tracker:dev",
+      "registry": "docker.io",
+      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/speedtest-tracker-logo.png",
+      "name": "speedtest-tracker",
+      "hostname": "speedtest-tracker",
+      "network": "bunni_network",
+      "officialDoc": "https://github.com/henrywhitaker3/Speedtest-Tracker#using-docker",
+      "platform": "linux",
+      "ports": [
+        "8765:80/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Speedtest Tracker",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/mnt/Docker/SpeedtestTracker",
+          "container": "/config"
+        }
+      ],
+      "webpage": "https://github.com/henrywhitaker3/Speedtest-Tracker"
+    },
+    {
+      "categories": [],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
+        },
+        {
           "name": "URL",
           "label": "URL",
           "default": "yourdomain.url",
