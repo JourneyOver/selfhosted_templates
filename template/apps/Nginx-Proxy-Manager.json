@@ -1,0 +1,52 @@
+{
+  "categories": [
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "1000",
+      "description": "for UserID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "1000",
+      "description": "for GroupID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago",
+      "description": "Specify a timezone to use for example America/New_York"
+    }
+  ],
+  "description": "Nginx Proxy Manager enables you to easily forward to your websites running at home or otherwise, including free SSL, without having to know too much about Nginx or Letsencrypt.",
+  "image": "jc21/nginx-proxy-manager:latest",
+  "registry": "docker.io",
+  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/proxy_mgr-logo.png",
+  "name": "nginx-proxy-manager",
+  "hostname": "nginx-proxy-manager",
+  "network": "bunni_network",
+  "officialDoc": "https://nginxproxymanager.com/setup/",
+  "platform": "linux",
+  "ports": [
+    "80:80/tcp",
+    "81:81/tcp",
+    "443:443/tcp"
+  ],
+  "restart_policy": "unless-stopped",
+  "title": "Nginx Proxy Manager",
+  "type": 1,
+  "volumes": [
+    {
+      "bind": "/mnt/Docker/NPM/data",
+      "container": "/data"
+    },
+    {
+      "bind": "/mnt/Docker/NPM/letsencrypt",
+      "container": "/etc/letsencrypt"
+    }
+  ],
+  "webpage": "https://nginxproxymanager.com/"
+}
