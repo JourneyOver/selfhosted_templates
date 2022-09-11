@@ -20,7 +20,7 @@
     {
       "name": "WATCHTOWER_SCHEDULE",
       "label": "WATCHTOWER_SCHEDULE",
-      "default": "-",
+      "default": "0 0 */8 * * *",
       "description": "Cron expression in 6 fields (rather than the traditional 5) which defines when and how often to check for new images"
     },
     {

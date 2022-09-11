@@ -1,0 +1,43 @@
+{
+  "categories": [
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "1000",
+      "description": "for UserID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "1000",
+      "description": "for GroupID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago",
+      "description": "Specify a timezone to use for example America/New_York"
+    }
+  ],
+  "description": "A bot for steamgifts.com",
+  "image": "mcinj/docker-steamgifts-bot:latest",
+  "registry": "docker.io",
+  "logo": "",
+  "name": "steamgifts-bot",
+  "hostname": "steamgifts-bot",
+  "network": "bunni_network",
+  "officialDoc": "https://github.com/mcinj/steamgifts-bot#docker",
+  "platform": "linux",
+  "restart_policy": "unless-stopped",
+  "title": "SteamGifts Bot",
+  "type": 1,
+  "volumes": [
+    {
+      "bind": "/mnt/Docker/SteamGiftsBot",
+      "container": "/config"
+    }
+  ],
+  "webpage": "https://github.com/mcinj/steamgifts-bot"
+}

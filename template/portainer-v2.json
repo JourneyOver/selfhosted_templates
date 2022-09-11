@@ -230,8 +230,23 @@
         {
           "name": "RUN_AT",
           "label": "RUN_AT",
-          "default": "9 11 * * *",
+          "default": "0 9 * * 0",
           "description": "CRON command"
+        },
+        {
+          "label": "CUSTOM_LANGUAGE",
+          "name": "CUSTOM_LANGUAGE",
+          "select": [
+            {
+              "default": "en",
+              "text": "English",
+              "value": "en"
+            },
+            {
+              "text": "Chinese",
+              "value": "zh"
+            }
+          ]
         }
       ],
       "description": "Automatically renew your freenom domain. ",
@@ -792,6 +807,48 @@
           "label": "TZ",
           "default": "America/Chicago",
           "description": "Specify a timezone to use for example America/New_York"
+        }
+      ],
+      "description": "A bot for steamgifts.com",
+      "image": "mcinj/docker-steamgifts-bot:latest",
+      "registry": "docker.io",
+      "logo": "",
+      "name": "steamgifts-bot",
+      "hostname": "steamgifts-bot",
+      "network": "bunni_network",
+      "officialDoc": "https://github.com/mcinj/steamgifts-bot#docker",
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "title": "SteamGifts Bot",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/mnt/Docker/SteamGiftsBot",
+          "container": "/config"
+        }
+      ],
+      "webpage": "https://github.com/mcinj/steamgifts-bot"
+    },
+    {
+      "categories": [],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
         },
         {
           "name": "URL",
@@ -824,6 +881,18 @@
           "label": "SUBDOMAINS",
           "default": "www,",
           "description": "Subdomains you'd like the cert to cover (comma separated, no spaces) ie. www,ftp,cloud. For a wildcard cert, set this exactly to wildcard (wildcard cert is available via dns and duckdns validation only)"
+        },
+        {
+          "name": "EXTRA_DOMAINS",
+          "label": "EXTRA_DOMAINS",
+          "default": "",
+          "description": "Additional fully qualified domain names (comma separated, no spaces) ie. extradomain.com,subdomain.anotherdomain.org,*.anotherdomain.org"
+        },
+        {
+          "name": "DNSPLUGIN",
+          "label": "DNSPLUGIN",
+          "default": "",
+          "description": "DNS plugin to use for dns validation (only required if using dns validation method)"
         },
         {
           "name": "EMAIL",
@@ -1086,7 +1155,7 @@
         {
           "name": "WATCHTOWER_SCHEDULE",
           "label": "WATCHTOWER_SCHEDULE",
-          "default": "-",
+          "default": "0 0 */8 * * *",
           "description": "Cron expression in 6 fields (rather than the traditional 5) which defines when and how often to check for new images"
         },
         {
