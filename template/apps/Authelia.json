@@ -40,7 +40,7 @@
   "volumes": [
     {
       "bind": "/mnt/Docker/Authelia",
-      "container": "/etc/authelia/"
+      "container": "/config"
     }
   ],
   "webpage": "https://www.authelia.com/"
