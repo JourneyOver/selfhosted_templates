@@ -849,26 +849,32 @@
           "description": "Specify a timezone to use for example America/New_York"
         },
         {
-          "name": "OOKLA_EULA_GDPR",
-          "label": "OOKLA_EULA_GDPR",
-          "default": "true",
-          "description": "Set to 'true' to accept the Ookla EULA and privacy agreement. If this is not set, the container will not start"
+          "name": "PHP_POOL_NAME",
+          "label": "PHP_POOL_NAME",
+          "default": "speedtest-tracker_php",
+          "description": "PHP Pool Name"
         },
         {
-          "name": "AUTH",
-          "label": "AUTH",
-          "default": "true",
-          "description": "Optional. Set to 'true' to enable authentication for the app"
+          "name": "DB_CONNECTION",
+          "label": "DB_CONNECTION",
+          "default": "sqlite",
+          "description": "Database Connection"
+        },
+        {
+          "name": "DB_DATABASE",
+          "label": "DB_DATABASE",
+          "default": "/app/database.sqlite",
+          "description": "Database Name"
         }
       ],
       "description": "Run a Speedtest every hour and graph the results.",
-      "image": "henrywhitaker3/speedtest-tracker:dev",
-      "registry": "docker.io",
+      "image": "alexjustesen/speedtest-tracker:latest",
+      "registry": "ghcr.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/speedtest-tracker-logo.png",
       "name": "speedtest-tracker",
       "hostname": "speedtest-tracker",
       "network": "bunni_network",
-      "officialDoc": "https://github.com/henrywhitaker3/Speedtest-Tracker#using-docker",
+      "officialDoc": "https://github.com/alexjustesen/speedtest-tracker#deployment",
       "platform": "linux",
       "ports": [
         "8765:80/tcp"
@@ -879,10 +885,10 @@
       "volumes": [
         {
           "bind": "/mnt/Docker/SpeedtestTracker",
-          "container": "/config"
+          "container": "/app"
         }
       ],
-      "webpage": "https://github.com/henrywhitaker3/Speedtest-Tracker"
+      "webpage": "https://github.com/alexjustesen/speedtest-tracker"
     },
     {
       "categories": [],
