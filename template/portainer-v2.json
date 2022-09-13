@@ -339,6 +339,55 @@
           "label": "TZ",
           "default": "America/Chicago",
           "description": "Specify a timezone to use for example America/New_York"
+        }
+      ],
+      "description": "Homarr is a simple and lightweight homepage for your server, that helps you easily access all of your services in one place.",
+      "image": "ajnart/homarr:latest",
+      "registry": "ghcr.io",
+      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/homarr-logo.png",
+      "name": "homarr",
+      "hostname": "homarr",
+      "network": "bunni_network",
+      "officialDoc": "https://homarr.vercel.app/docs/introduction/installation#-installation-using-docker",
+      "platform": "linux",
+      "ports": [
+        "7575:7575/tcp"
+      ],
+      "restart_policy": "unless-stopped",
+      "title": "Homarr",
+      "type": 1,
+      "volumes": [
+        {
+          "bind": "/mnt/Docker/Homarr/configs",
+          "container": "/app/data/configs"
+        },
+        {
+          "bind": "/mnt/Docker/Homarr/icons",
+          "container": "/app/public/icons"
+        }
+      ],
+      "webpage": "https://github.com/ajnart/homarr"
+    },
+    {
+      "categories": [],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
         },
         {
           "name": "joal-conf",
