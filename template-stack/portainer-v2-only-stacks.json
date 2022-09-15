@@ -95,6 +95,63 @@
           "description": "Specify a timezone to use for example America/New_York"
         },
         {
+          "name": "RUN_AT",
+          "label": "RUN_AT",
+          "default": "0 9 * * 0",
+          "description": "CRON command"
+        },
+        {
+          "label": "CUSTOM_LANGUAGE",
+          "name": "CUSTOM_LANGUAGE",
+          "select": [
+            {
+              "default": "en",
+              "text": "English",
+              "value": "en"
+            },
+            {
+              "text": "Chinese",
+              "value": "zh"
+            }
+          ]
+        }
+      ],
+      "description": "Automatically renew your freenom domain.",
+      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/freenom-logo.png",
+      "name": "freenom",
+      "officialDoc": "https://hub.docker.com/r/luolongfei/freenom",
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "title": "Freenom",
+      "type": 3,
+      "repository": {
+        "stackfile": "template-stack/stacks/Freenom.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
+      },
+      "webpage": "https://github.com/luolongfei/freenom"
+    },
+    {
+      "categories": [],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
+        },
+        {
           "name": "URL",
           "label": "URL",
           "default": "yourdomain.url",

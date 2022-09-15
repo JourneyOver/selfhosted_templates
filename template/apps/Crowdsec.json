@@ -50,23 +50,23 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/Crowdsec/crowdsec-config",
+      "bind": "/mnt/Docker/Apps/Crowdsec/crowdsec-config",
       "container": "/etc/crowdsec"
     },
     {
-      "bind": "/mnt/Docker/Crowdsec/crowdsec-db",
+      "bind": "/mnt/Docker/Apps/Crowdsec/crowdsec-db",
       "container": "/var/lib/crowdsec/data"
     },
     {
-      "bind": "/mnt/Docker/Crowdsec/acquis.yaml",
+      "bind": "/mnt/Docker/Apps/Crowdsec/acquis.yaml",
       "container": "/etc/crowdsec/acquis.yaml"
     },
     {
-      "bind": "/mnt/Docker/Swag/log/nginx",
+      "bind": "/mnt/Docker/Apps/Swag/log/nginx",
       "container": "/var/log/nginx"
     },
     {
-      "bind": "/mnt/Docker/Authelia/authelia.log",
+      "bind": "/mnt/Docker/Apps/Authelia/authelia.log",
       "container": "/var/log/Authelia.log"
     },
     {

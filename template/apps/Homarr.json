@@ -38,11 +38,11 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/Homarr/configs",
+      "bind": "/mnt/Docker/Apps/Homarr/configs",
       "container": "/app/data/configs"
     },
     {
-      "bind": "/mnt/Docker/Homarr/icons",
+      "bind": "/mnt/Docker/Apps/Homarr/icons",
       "container": "/app/public/icons"
     }
   ],

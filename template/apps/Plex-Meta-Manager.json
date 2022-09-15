@@ -50,15 +50,15 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/PlexMetaManager/config",
+      "bind": "/mnt/Docker/Apps/PlexMetaManager/config",
       "container": "/config"
     },
     {
-      "bind": "/mnt/Docker/PlexMetaManager/metadata",
+      "bind": "/mnt/Docker/Apps/PlexMetaManager/metadata",
       "container": "/metadata"
     },
     {
-      "bind": "/mnt/Docker/PlexMetaManager/assets",
+      "bind": "/mnt/Docker/Apps/PlexMetaManager/assets",
       "container": "/assets"
     }
   ],

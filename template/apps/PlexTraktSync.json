@@ -35,7 +35,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/PlexTraktSync",
+      "bind": "/mnt/Docker/Apps/PlexTraktSync",
       "container": "/app/config"
     }
   ],

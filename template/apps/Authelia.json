@@ -39,7 +39,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/Authelia",
+      "bind": "/mnt/Docker/Apps/Authelia",
       "container": "/config"
     }
   ],

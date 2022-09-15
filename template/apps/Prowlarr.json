@@ -38,7 +38,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/Prowlarr",
+      "bind": "/mnt/Docker/Apps/Prowlarr",
       "container": "/config"
     }
   ],

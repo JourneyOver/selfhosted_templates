@@ -39,7 +39,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/Kitana",
+      "bind": "/mnt/Docker/Apps/Kitana",
       "container": "/app/data"
     }
   ],

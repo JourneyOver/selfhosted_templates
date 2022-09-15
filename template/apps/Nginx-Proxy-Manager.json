@@ -40,11 +40,11 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/NPM/data",
+      "bind": "/mnt/Docker/Apps/NPM/data",
       "container": "/data"
     },
     {
-      "bind": "/mnt/Docker/NPM/letsencrypt",
+      "bind": "/mnt/Docker/Apps/NPM/letsencrypt",
       "container": "/etc/letsencrypt"
     }
   ],

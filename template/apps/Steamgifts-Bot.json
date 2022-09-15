@@ -35,7 +35,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/SteamGiftsBot",
+      "bind": "/mnt/Docker/Apps/SteamGiftsBot",
       "container": "/config"
     }
   ],

@@ -53,11 +53,11 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/AdGuardHome/config",
+          "bind": "/mnt/Docker/Apps/AdGuardHome/config",
           "container": "/opt/adguardhome/conf"
         },
         {
-          "bind": "/mnt/Docker/AdGuardHome/work",
+          "bind": "/mnt/Docker/Apps/AdGuardHome/work",
           "container": "/opt/adguardhome/work"
         }
       ],
@@ -102,7 +102,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/AdGuardHomeSync",
+          "bind": "/mnt/Docker/Apps/AdGuardHomeSync",
           "container": "/config"
         }
       ],
@@ -147,15 +147,15 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/ArchiSteamFarm/config",
+          "bind": "/mnt/Docker/Apps/ArchiSteamFarm/config",
           "container": "/app/config"
         },
         {
-          "bind": "/mnt/Docker/ArchiSteamFarm/plugins",
+          "bind": "/mnt/Docker/Apps/ArchiSteamFarm/plugins",
           "container": "/app/plugins"
         },
         {
-          "bind": "/mnt/Docker/ArchiSteamFarm/logs",
+          "bind": "/mnt/Docker/Apps/ArchiSteamFarm/logs",
           "container": "/app/logs"
         }
       ],
@@ -201,7 +201,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/Authelia",
+          "bind": "/mnt/Docker/Apps/Authelia",
           "container": "/config"
         }
       ],
@@ -246,7 +246,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/Autobrr/config",
+          "bind": "/mnt/Docker/Apps/Autobrr/config",
           "container": "/config"
         }
       ],
@@ -304,23 +304,23 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/Crowdsec/crowdsec-config",
+          "bind": "/mnt/Docker/Apps/Crowdsec/crowdsec-config",
           "container": "/etc/crowdsec"
         },
         {
-          "bind": "/mnt/Docker/Crowdsec/crowdsec-db",
+          "bind": "/mnt/Docker/Apps/Crowdsec/crowdsec-db",
           "container": "/var/lib/crowdsec/data"
         },
         {
-          "bind": "/mnt/Docker/Crowdsec/acquis.yaml",
+          "bind": "/mnt/Docker/Apps/Crowdsec/acquis.yaml",
           "container": "/etc/crowdsec/acquis.yaml"
         },
         {
-          "bind": "/mnt/Docker/Swag/log/nginx",
+          "bind": "/mnt/Docker/Apps/Swag/log/nginx",
           "container": "/var/log/nginx"
         },
         {
-          "bind": "/mnt/Docker/Authelia/authelia.log",
+          "bind": "/mnt/Docker/Apps/Authelia/authelia.log",
           "container": "/var/log/Authelia.log"
         },
         {
@@ -377,7 +377,7 @@
           ]
         }
       ],
-      "description": "Automatically renew your freenom domain. ",
+      "description": "Automatically renew your freenom domain.",
       "image": "luolongfei/freenom:latest",
       "registry": "docker.io",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/freenom-logo.png",
@@ -391,11 +391,11 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/Freenom/config",
+          "bind": "/mnt/Docker/Apps/Freenom/config",
           "container": "/conf"
         },
         {
-          "bind": "/mnt/Docker/Freenom/log",
+          "bind": "/mnt/Docker/Apps/Freenom/log",
           "container": "/app/logs"
         }
       ],
@@ -440,11 +440,11 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/Homarr/configs",
+          "bind": "/mnt/Docker/Apps/Homarr/configs",
           "container": "/app/data/configs"
         },
         {
-          "bind": "/mnt/Docker/Homarr/icons",
+          "bind": "/mnt/Docker/Apps/Homarr/icons",
           "container": "/app/public/icons"
         }
       ],
@@ -519,7 +519,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/Joal",
+          "bind": "/mnt/Docker/Apps/Joal",
           "container": "/data"
         }
       ],
@@ -565,7 +565,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/Kitana",
+          "bind": "/mnt/Docker/Apps/Kitana",
           "container": "/app/data"
         }
       ],
@@ -659,7 +659,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/Mealie",
+          "bind": "/mnt/Docker/Apps/Mealie",
           "container": "/app/data"
         }
       ],
@@ -706,11 +706,11 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/NPM/data",
+          "bind": "/mnt/Docker/Apps/NPM/data",
           "container": "/data"
         },
         {
-          "bind": "/mnt/Docker/NPM/letsencrypt",
+          "bind": "/mnt/Docker/Apps/NPM/letsencrypt",
           "container": "/etc/letsencrypt"
         }
       ],
@@ -767,15 +767,15 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/PlexMetaManager/config",
+          "bind": "/mnt/Docker/Apps/PlexMetaManager/config",
           "container": "/config"
         },
         {
-          "bind": "/mnt/Docker/PlexMetaManager/metadata",
+          "bind": "/mnt/Docker/Apps/PlexMetaManager/metadata",
           "container": "/metadata"
         },
         {
-          "bind": "/mnt/Docker/PlexMetaManager/assets",
+          "bind": "/mnt/Docker/Apps/PlexMetaManager/assets",
           "container": "/assets"
         }
       ],
@@ -817,7 +817,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/PlexTraktSync",
+          "bind": "/mnt/Docker/Apps/PlexTraktSync",
           "container": "/app/config"
         }
       ],
@@ -862,7 +862,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/Prowlarr",
+          "bind": "/mnt/Docker/Apps/Prowlarr",
           "container": "/config"
         }
       ],
@@ -907,7 +907,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/Radarr",
+          "bind": "/mnt/Docker/Apps/Radarr",
           "container": "/config"
         }
       ],
@@ -952,7 +952,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/Snippetbox",
+          "bind": "/mnt/Docker/Apps/Snippetbox",
           "container": "/app/data"
         }
       ],
@@ -1015,7 +1015,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/SpeedtestTracker",
+          "bind": "/mnt/Docker/Apps/SpeedtestTracker",
           "container": "/app"
         }
       ],
@@ -1057,7 +1057,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/SteamGiftsBot",
+          "bind": "/mnt/Docker/Apps/SteamGiftsBot",
           "container": "/config"
         }
       ],
@@ -1166,7 +1166,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/Swag",
+          "bind": "/mnt/Docker/Apps/Swag",
           "container": "/config"
         }
       ],
@@ -1211,7 +1211,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/Tautulli",
+          "bind": "/mnt/Docker/Apps/Tautulli",
           "container": "/config"
         }
       ],
@@ -1258,15 +1258,15 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/Traefik/traefik.yml",
+          "bind": "/mnt/Docker/Apps/Traefik/traefik.yml",
           "container": "/traefik.yml"
         },
         {
-          "bind": "/mnt/Docker/Traefik/config.yml",
+          "bind": "/mnt/Docker/Apps/Traefik/config.yml",
           "container": "/config.yml"
         },
         {
-          "bind": "/mnt/Docker/Traefik/acme.json",
+          "bind": "/mnt/Docker/Apps/Traefik/acme.json",
           "container": "/acme.json"
         },
         {
@@ -1312,7 +1312,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/TwitchDropsBot",
+          "bind": "/mnt/Docker/Apps/TwitchDropsBot",
           "container": "/app/data"
         }
       ],
@@ -1364,19 +1364,19 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/TwitchMiner/analytics",
+          "bind": "/mnt/Docker/Apps/TwitchMiner/analytics",
           "container": "/usr/src/app/analytics"
         },
         {
-          "bind": "/mnt/Docker/TwitchMiner/cookies",
+          "bind": "/mnt/Docker/Apps/TwitchMiner/cookies",
           "container": "/usr/src/app/cookies"
         },
         {
-          "bind": "/mnt/Docker/TwitchMiner/logs",
+          "bind": "/mnt/Docker/Apps/TwitchMiner/logs",
           "container": "/usr/src/app/logs"
         },
         {
-          "bind": "/mnt/Docker/TwitchMiner/run.py",
+          "bind": "/mnt/Docker/Apps/TwitchMiner/run.py",
           "container": "/usr/src/app/run.py"
         }
       ],
@@ -1421,7 +1421,7 @@
       "type": 1,
       "volumes": [
         {
-          "bind": "/mnt/Docker/UptimeKuma",
+          "bind": "/mnt/Docker/Apps/UptimeKuma",
           "container": "/app/data"
         }
       ],

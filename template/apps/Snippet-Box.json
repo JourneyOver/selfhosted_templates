@@ -38,7 +38,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/Snippetbox",
+      "bind": "/mnt/Docker/Apps/Snippetbox",
       "container": "/app/data"
     }
   ],

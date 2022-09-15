@@ -56,7 +56,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/SpeedtestTracker",
+      "bind": "/mnt/Docker/Apps/SpeedtestTracker",
       "container": "/app"
     }
   ],

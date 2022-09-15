@@ -102,7 +102,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/Swag",
+      "bind": "/mnt/Docker/Apps/Swag",
       "container": "/config"
     }
   ],

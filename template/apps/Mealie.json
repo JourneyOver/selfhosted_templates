@@ -87,7 +87,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/Mealie",
+      "bind": "/mnt/Docker/Apps/Mealie",
       "container": "/app/data"
     }
   ],

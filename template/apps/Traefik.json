@@ -40,15 +40,15 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/Traefik/traefik.yml",
+      "bind": "/mnt/Docker/Apps/Traefik/traefik.yml",
       "container": "/traefik.yml"
     },
     {
-      "bind": "/mnt/Docker/Traefik/config.yml",
+      "bind": "/mnt/Docker/Apps/Traefik/config.yml",
       "container": "/config.yml"
     },
     {
-      "bind": "/mnt/Docker/Traefik/acme.json",
+      "bind": "/mnt/Docker/Apps/Traefik/acme.json",
       "container": "/acme.json"
     },
     {

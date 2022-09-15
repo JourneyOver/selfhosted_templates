@@ -38,15 +38,15 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/ArchiSteamFarm/config",
+      "bind": "/mnt/Docker/Apps/ArchiSteamFarm/config",
       "container": "/app/config"
     },
     {
-      "bind": "/mnt/Docker/ArchiSteamFarm/plugins",
+      "bind": "/mnt/Docker/Apps/ArchiSteamFarm/plugins",
       "container": "/app/plugins"
     },
     {
-      "bind": "/mnt/Docker/ArchiSteamFarm/logs",
+      "bind": "/mnt/Docker/Apps/ArchiSteamFarm/logs",
       "container": "/app/logs"
     }
   ],

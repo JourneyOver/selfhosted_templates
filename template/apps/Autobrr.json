@@ -38,7 +38,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/Autobrr/config",
+      "bind": "/mnt/Docker/Apps/Autobrr/config",
       "container": "/config"
     }
   ],

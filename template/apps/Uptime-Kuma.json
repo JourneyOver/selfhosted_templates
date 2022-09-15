@@ -38,7 +38,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/UptimeKuma",
+      "bind": "/mnt/Docker/Apps/UptimeKuma",
       "container": "/app/data"
     }
   ],

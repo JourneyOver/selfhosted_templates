@@ -35,7 +35,7 @@
   "type": 1,
   "volumes": [
     {
-      "bind": "/mnt/Docker/TwitchDropsBot",
+      "bind": "/mnt/Docker/Apps/TwitchDropsBot",
       "container": "/app/data"
     }
   ],

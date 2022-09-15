@@ -1,0 +1,25 @@
+---
+version: "3.8"
+
+services:
+
+  freenom:
+    image: docker.io/luolongfei/freenom:latest
+    container_name: freenom
+    hostname: freenom
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - RUN_AT=${RUN_AT}
+      - CUSTOM_LANGUAGE=${CUSTOM_LANGUAGE}
+    volumes:
+      - /mnt/Docker/Apps/Freenom/config:/conf
+      - /mnt/Docker/Apps/Freenom/log:/app/logs
+
+networks:
+  bunni_network:
+    external: true
