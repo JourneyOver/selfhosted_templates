@@ -1,0 +1,57 @@
+---
+version: "3.8"
+
+services:
+
+  authelia:
+    image: ghcr.io/authelia/authelia:latest
+    container_name: authelia
+    hostname: authelia
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    expose:
+      - 9091
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/Authelia:/config
+
+  swag:
+    image: lscr.io/linuxserver/swag:latest
+    container_name: swag
+    hostname: swag
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    cap_add:
+      - NET_ADMIN
+    depends_on:
+      - authelia
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - URL=${URL}
+      - VALIDATION=${VALIDATION}
+      - SUBDOMAINS=${SUBDOMAINS}
+      - EMAIL=${EMAIL}
+      - DOCKER_MODS=${DOCKER_MODS}
+      - WATCHLIST=${WATCHLIST}
+      - ONLY_SUBDOMAINS=false
+      - EXTRA_DOMAINS=${EXTRA_DOMAINS}
+      - DNSPLUGIN=${DNSPLUGIN}
+      - MAXMINDDB_LICENSE_KEY=${MAXMIND_LICENSE_KEY}
+    volumes:
+      - /mnt/Docker/Apps/Swag:/config
+      - /mnt/Docker/Apps/Authelia/authelia.log:/authelia/authelia.log:ro
+    ports:
+      - 80:80
+      - 81:81
+      - 443:443
+
+networks:
+  bunni_network:
+    external: true

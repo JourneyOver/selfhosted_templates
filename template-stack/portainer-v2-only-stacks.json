@@ -1,0 +1,177 @@
+{
+  "version": "2",
+  "templates": [
+    {
+      "categories": [],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
+        }
+      ],
+      "description": "AdGuard Home is a network-wide software for blocking ads & tracking. Including AdGuardHome Sync",
+      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/adguardhome-logo.png",
+      "name": "agh-aghsync",
+      "officialDoc": "https://github.com/AdguardTeam/AdGuardHome/wiki/Docker",
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "title": "AdGuardHome with AdGuardHome-Sync",
+      "type": 3,
+      "repository": {
+        "stackfile": "template-stack/stacks/AGH-AGHSync.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
+      },
+      "webpage": "https://adguard.com/en/adguard-home/overview.html"
+    },
+    {
+      "categories": [],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
+        }
+      ],
+      "description": "C# application with primary purpose of farming Steam cards from multiple accounts simultaneously.",
+      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/archisteamfarm-logo.png",
+      "name": "archisteamfarm",
+      "officialDoc": "https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Docker/",
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "title": "ArchiSteamFarm",
+      "type": 3,
+      "repository": {
+        "stackfile": "template-stack/stacks/ArchiSteamFarm.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
+      },
+      "webpage": "https://github.com/JustArchiNET/ArchiSteamFarm/"
+    },
+    {
+      "categories": [],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
+        },
+        {
+          "name": "URL",
+          "label": "URL",
+          "default": "yourdomain.url",
+          "description": "Top url you have control over (customdomain.com if you own it, or customsubdomain.ddnsprovider.com if dynamic dns)."
+        },
+        {
+          "name": "VALIDATION",
+          "label": "VALIDATION",
+          "select": [
+            {
+              "default": "http",
+              "text": "Use HTTP Method",
+              "value": "http"
+            },
+            {
+              "text": "Use DNS Method",
+              "value": "dns"
+            }
+          ],
+          "description": "Certbot validation method to use, options are http or dns (dns method also requires DNSPLUGIN variable set)."
+        },
+        {
+          "name": "SUBDOMAINS",
+          "label": "SUBDOMAINS",
+          "default": "www,",
+          "description": "Subdomains you'd like the cert to cover (comma separated, no spaces) ie. www,ftp,cloud. For a wildcard cert, set this exactly to wildcard (wildcard cert is available via dns validation only)"
+        },
+        {
+          "name": "EXTRA_DOMAINS",
+          "label": "EXTRA_DOMAINS",
+          "default": "",
+          "description": "Additional fully qualified domain names (comma separated, no spaces) ie. extradomain.com,subdomain.anotherdomain.org,*.anotherdomain.org"
+        },
+        {
+          "name": "DNSPLUGIN",
+          "label": "DNSPLUGIN",
+          "default": "",
+          "description": "DNS plugin to use for dns validation (only required if using dns validation method)"
+        },
+        {
+          "name": "EMAIL",
+          "label": "EMAIL",
+          "default": "",
+          "description": "Optional e-mail address used for cert expiration notifications (Required for ZeroSSL)."
+        },
+        {
+          "name": "DOCKER_MODS",
+          "label": "DOCKER_MODS",
+          "default": "",
+          "description": "linuxserver Docker Mods"
+        },
+        {
+          "name": "WATCHLIST",
+          "label": "WATCHLIST",
+          "default": "",
+          "description": "To be used with linuxserver/mods:swag-auto-reload"
+        },
+        {
+          "name": "MAXMIND_LICENSE_KEY",
+          "label": "MAXMIND_LICENSE_KEY",
+          "default": "",
+          "description": "MaxMind License Key"
+        }
+      ],
+      "description": "This container sets up an Nginx webserver and reverse proxy with php support and a built-in letsencrypt client that automates free SSL server certificate generation and renewal processes. It also contains fail2ban for intrusion prevention. Includes Authelia for SSO.",
+      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/swag-logo.png",
+      "name": "swag-authelia",
+      "officialDoc": "https://docs.linuxserver.io/images/docker-swag",
+      "platform": "linux",
+      "restart_policy": "unless-stopped",
+      "title": "SWAG with Authelia",
+      "type": 3,
+      "repository": {
+        "stackfile": "template-stack/stacks/Swag-Authelia.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
+      },
+      "webpage": "https://github.com/linuxserver/docker-swag"
+    }
+  ]
+}

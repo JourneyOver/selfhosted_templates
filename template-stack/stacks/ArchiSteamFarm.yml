@@ -1,0 +1,26 @@
+---
+version: "3.8"
+
+services:
+
+  archisteamfarm:
+    image: ghcr.io/justarchinet/archisteamfarm:latest
+    container_name: archisteamfarm
+    hostname: archisteamfarm
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/ArchiSteamFarm/config:/app/config
+      - /mnt/Docker/Apps/ArchiSteamFarm/plugins:/app/plugins
+      - /mnt/Docker/Apps/ArchiSteamFarm/logs:/app/logs
+    ports:
+      - 20022:1242/tcp
+
+networks:
+  bunni_network:
+    external: true
