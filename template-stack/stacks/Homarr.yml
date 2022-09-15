@@ -1,0 +1,25 @@
+---
+version: "3.8"
+
+services:
+
+  homarr:
+    image: ghcr.io/ajnart/homarr:latest
+    container_name: homarr
+    hostname: homarr
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/Homarr/configs:/app/data/configs
+      - /mnt/Docker/Apps/Homarr/icons:/app/public/icons
+    ports:
+      - 20036:7575/tcp
+
+networks:
+  bunni_network:
+    external: true
