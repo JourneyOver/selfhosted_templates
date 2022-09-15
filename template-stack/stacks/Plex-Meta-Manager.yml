@@ -1,0 +1,25 @@
+---
+version: "3.8"
+
+services:
+
+  plex-meta-manager:
+    image: docker.io/meisnate12/plex-meta-manager:nightly
+    container_name: plex-meta-manager
+    hostname: plex-meta-manager
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - PMM_NO_COUNTDOWN=${PMM_NO_COUNTDOWN}
+    volumes:
+      - /mnt/Docker/Apps/PlexMetaManager/config:/config
+      - /mnt/Docker/Apps/PlexMetaManager/metadata:/metadata:ro
+      - /mnt/Docker/Apps/PlexMetaManager/assets:/assets:ro
+
+networks:
+  bunni_network:
+    external: true
