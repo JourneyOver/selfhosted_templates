@@ -1,0 +1,25 @@
+---
+version: "3.8"
+
+services:
+
+  joal:
+    image: docker.io/anthonyraymond/joal:latest
+    container_name: joal
+    hostname: joal
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/Joal:${joal-conf}
+    ports:
+      - ${server.port}:${server.port}/tcp
+    command: ["--joal-conf=${joal-conf}", "--spring.main.web-environment=${spring.main.web-environment}", "--server.port=${server.port}", "--joal.ui.path.prefix=${joal.ui.path.prefix}", "--joal.ui.secret-token=${joal.ui.secret-token}"]
+
+networks:
+  bunni_network:
+    external: true
