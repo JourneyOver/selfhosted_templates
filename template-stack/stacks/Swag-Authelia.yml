@@ -44,6 +44,7 @@ services:
       - EXTRA_DOMAINS=${EXTRA_DOMAINS}
       - DNSPLUGIN=${DNSPLUGIN}
       - MAXMINDDB_LICENSE_KEY=${MAXMIND_LICENSE_KEY}
+      - CERTPROVIDER=${CERTPROVIDER}
     volumes:
       - /mnt/Docker/Apps/Swag:/config
       - /mnt/Docker/Apps/Authelia/authelia.log:/authelia/authelia.log:ro
