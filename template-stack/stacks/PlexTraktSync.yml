@@ -16,6 +16,7 @@ services:
       - TZ=${TZ}
     volumes:
       - /mnt/Docker/Apps/PlexTraktSync:/app/config
+    command: ["watch"]
 
 networks:
   bunni_network:
