@@ -1,0 +1,22 @@
+---
+version: "3.8"
+
+services:
+
+  steamgifts-bot:
+    image: docker.io/mcinj/docker-steamgifts-bot:latest
+    container_name: steamgifts-bot
+    hostname: steamgifts-bot
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/SteamGiftsBot:/config
+
+networks:
+  bunni_network:
+    external: true

@@ -1,0 +1,22 @@
+---
+version: "3.8"
+
+services:
+
+  twitch-drops-bot:
+    image: ghcr.io/tychothetaco/twitch-drops-bot:latest
+    container_name: twitch-drops-bot
+    hostname: twitch-drops-bot
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/TwitchDropsBot:/app/data
+
+networks:
+  bunni_network:
+    external: true
