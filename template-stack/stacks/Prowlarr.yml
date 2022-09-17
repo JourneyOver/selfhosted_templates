@@ -1,0 +1,25 @@
+---
+version: "3.8"
+
+services:
+
+  prowlarr:
+    image: cr.hotio.dev/hotio/prowlarr:nightly
+    container_name: prowlarr
+    hostname: prowlarr
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK_SET=002
+    volumes:
+      - /mnt/Docker/Apps/Prowlarr:/config
+    ports:
+      - 20049:9696/tcp
+
+networks:
+  bunni_network:
+    external: true

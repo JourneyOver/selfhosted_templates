@@ -1,0 +1,22 @@
+---
+version: "3.8"
+
+services:
+
+  plextraktsync:
+    image: ghcr.io/taxel/plextraktsync:latest
+    container_name: plextraktsync
+    hostname: plextraktsync
+    restart: on-failure:2
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/PlexTraktSync:/app/config
+
+networks:
+  bunni_network:
+    external: true

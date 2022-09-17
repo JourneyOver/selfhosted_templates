@@ -1,0 +1,36 @@
+{
+  "categories": [
+  ],
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "1000",
+      "description": "for UserID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "1000",
+      "description": "for GroupID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago",
+      "description": "Specify a timezone to use for example America/New_York"
+    }
+  ],
+  "description": "Tautulli is a 3rd party application that you can run along side your Plex Media Server to monitor activity and track various statistics. Most importantly, these statistics include what has been watched, who watched it, when and where they watched it, and how it was watched. All statistics are presented in a nice and clean interface with many tables and graphs, which makes it easy to brag about your server to everyone else.",
+  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/tautulli-logo.png",
+  "name": "tautulli",
+  "officialDoc": "https://hotio.dev/containers/tautulli/",
+  "platform": "linux",
+  "title": "Tautulli",
+  "type": 3,
+  "repository": {
+    "stackfile": "template-stack/stacks/Tautulli.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
+  },
+  "webpage": "https://tautulli.com/"
+}

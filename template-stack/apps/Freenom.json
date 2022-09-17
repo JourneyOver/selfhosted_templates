@@ -47,7 +47,6 @@
   "name": "freenom",
   "officialDoc": "https://hub.docker.com/r/luolongfei/freenom",
   "platform": "linux",
-  "restart_policy": "unless-stopped",
   "title": "Freenom",
   "type": 3,
   "repository": {

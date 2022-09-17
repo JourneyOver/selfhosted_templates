@@ -1,0 +1,26 @@
+---
+version: "3.8"
+
+services:
+
+  radarr:
+    image: cr.hotio.dev/hotio/radarr:nightly
+    container_name: radarr
+    hostname: radarr
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK_SET=002
+    volumes:
+      - /mnt/Docker/Apps/Radarr:/config
+      - /media/bunni/Zeta:/movies
+    ports:
+      - 20023:7878/tcp
+
+networks:
+  bunni_network:
+    external: true

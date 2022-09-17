@@ -41,7 +41,6 @@
   "name": "plex-meta-manager",
   "officialDoc": "https://metamanager.wiki/en/latest/home/guides/docker.html",
   "platform": "linux",
-  "restart_policy": "unless-stopped",
   "title": "Plex Meta Manager",
   "type": 3,
   "repository": {

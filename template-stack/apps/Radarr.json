@@ -21,16 +21,16 @@
       "description": "Specify a timezone to use for example America/New_York"
     }
   ],
-  "description": "Homarr is a simple and lightweight homepage for your server, that helps you easily access all of your services in one place.",
-  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/homarr-logo.png",
-  "name": "homarr",
-  "officialDoc": "https://homarr.vercel.app/docs/introduction/installation#-installation-using-docker",
+  "description": "Radarr - A fork of Sonarr to work with movies à la Couchpotato.",
+  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/radarr-logo.png",
+  "name": "radarr",
+  "officialDoc": "https://hotio.dev/containers/radarr/",
   "platform": "linux",
-  "title": "Homarr",
+  "title": "Radarr",
   "type": 3,
   "repository": {
-    "stackfile": "template-stack/stacks/Homarr.yml",
+    "stackfile": "template-stack/stacks/Radarr.yml",
     "url": "https://github.com/JourneyOver/selfhosted_templates"
   },
-  "webpage": "https://github.com/ajnart/homarr"
+  "webpage": "https://radarr.video/"
 }

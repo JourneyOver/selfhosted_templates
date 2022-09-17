@@ -90,7 +90,6 @@
   "name": "swag-authelia",
   "officialDoc": "https://docs.linuxserver.io/images/docker-swag",
   "platform": "linux",
-  "restart_policy": "unless-stopped",
   "title": "SWAG with Authelia",
   "type": 3,
   "repository": {

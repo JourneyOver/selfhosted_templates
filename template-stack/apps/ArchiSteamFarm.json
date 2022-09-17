@@ -26,7 +26,6 @@
   "name": "archisteamfarm",
   "officialDoc": "https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Docker/",
   "platform": "linux",
-  "restart_policy": "unless-stopped",
   "title": "ArchiSteamFarm",
   "type": 3,
   "repository": {

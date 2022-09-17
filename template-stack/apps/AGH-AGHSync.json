@@ -26,7 +26,6 @@
   "name": "agh-aghsync",
   "officialDoc": "https://github.com/AdguardTeam/AdGuardHome/wiki/Docker",
   "platform": "linux",
-  "restart_policy": "unless-stopped",
   "title": "AdGuardHome with AdGuardHome-Sync",
   "type": 3,
   "repository": {

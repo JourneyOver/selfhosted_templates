@@ -1,0 +1,25 @@
+---
+version: "3.8"
+
+services:
+
+  tautulli:
+    image: cr.hotio.dev/hotio/tautulli:latest
+    container_name: tautulli
+    hostname: tautulli
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK_SET=002
+    volumes:
+      - /mnt/Docker/Apps/Tautulli:/config
+    ports:
+      - 20042:8181/tcp
+
+networks:
+  bunni_network:
+    external: true
