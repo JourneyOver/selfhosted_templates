@@ -26,7 +26,7 @@
   "title": "Radarr",
   "type": 3,
   "repository": {
-    "stackfile": "template/stacks/Radarr.yml",
-    "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+    "stackfile": "template-stack/stacks/Radarr.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

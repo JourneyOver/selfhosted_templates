@@ -26,7 +26,7 @@
   "title": "PlexTraktSync",
   "type": 3,
   "repository": {
-    "stackfile": "template/stacks/PlexTraktSync.yml",
-    "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+    "stackfile": "template-stack/stacks/PlexTraktSync.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

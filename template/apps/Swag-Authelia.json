@@ -29,11 +29,11 @@
       "label": "VALIDATION",
       "select": [
         {
-          "default": "http",
           "text": "Use HTTP Method",
           "value": "http"
         },
         {
+          "default": true,
           "text": "Use DNS Method",
           "value": "dns"
         }
@@ -96,7 +96,7 @@
   "title": "SWAG with Authelia",
   "type": 3,
   "repository": {
-    "stackfile": "template/stacks/Swag-Authelia.yml",
-    "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+    "stackfile": "template-stack/stacks/Swag-Authelia.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

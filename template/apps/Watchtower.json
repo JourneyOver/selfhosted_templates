@@ -5,7 +5,7 @@
       "name": "WATCHTOWER_CLEANUP",
       "select": [
         {
-          "default": "true",
+          "default": true,
           "text": "Delete unused images",
           "value": "true"
         },
@@ -36,7 +36,7 @@
   "title": "Watchtower",
   "type": 3,
   "repository": {
-    "stackfile": "template/stacks/Watchtower.yml",
-    "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+    "stackfile": "template-stack/stacks/Watchtower.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

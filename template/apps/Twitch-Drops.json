@@ -26,7 +26,7 @@
   "title": "Twitch Drops Bot",
   "type": 3,
   "repository": {
-    "stackfile": "template/stacks/Twitch-Drops.yml",
-    "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+    "stackfile": "template-stack/stacks/Twitch-Drops.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

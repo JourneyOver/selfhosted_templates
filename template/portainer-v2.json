@@ -29,8 +29,8 @@
       "title": "AdGuardHome with AdGuardHome-Sync",
       "type": 3,
       "repository": {
-        "stackfile": "template/stacks/AGH-AGHSync.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+        "stackfile": "template-stack/stacks/AGH-AGHSync.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
     {
@@ -61,8 +61,8 @@
       "title": "ArchiSteamFarm",
       "type": 3,
       "repository": {
-        "stackfile": "template/stacks/ArchiSteamFarm.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+        "stackfile": "template-stack/stacks/ArchiSteamFarm.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
     {
@@ -96,7 +96,7 @@
           "name": "CUSTOM_LANGUAGE",
           "select": [
             {
-              "default": "en",
+              "default": true,
               "text": "English",
               "value": "en"
             },
@@ -114,8 +114,8 @@
       "title": "Freenom",
       "type": 3,
       "repository": {
-        "stackfile": "template/stacks/Freenom.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+        "stackfile": "template-stack/stacks/Freenom.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
     {
@@ -146,8 +146,8 @@
       "title": "Homarr",
       "type": 3,
       "repository": {
-        "stackfile": "template/stacks/Homarr.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+        "stackfile": "template-stack/stacks/Homarr.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
     {
@@ -196,8 +196,8 @@
       "title": "Joal",
       "type": 3,
       "repository": {
-        "stackfile": "template/stacks/Joal.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+        "stackfile": "template-stack/stacks/Joal.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
     {
@@ -225,7 +225,7 @@
           "label": "PMM_NO_COUNTDOWN",
           "select": [
             {
-              "default": "true",
+              "default": true,
               "text": "Run without displaying a countdown to the next scheduled run.",
               "value": "true"
             },
@@ -243,8 +243,8 @@
       "title": "Plex Meta Manager",
       "type": 3,
       "repository": {
-        "stackfile": "template/stacks/Plex-Meta-Manager.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+        "stackfile": "template-stack/stacks/Plex-Meta-Manager.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
     {
@@ -275,8 +275,8 @@
       "title": "PlexTraktSync",
       "type": 3,
       "repository": {
-        "stackfile": "template/stacks/PlexTraktSync.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+        "stackfile": "template-stack/stacks/PlexTraktSync.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
     {
@@ -307,8 +307,8 @@
       "title": "Prowlarr",
       "type": 3,
       "repository": {
-        "stackfile": "template/stacks/Prowlarr.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+        "stackfile": "template-stack/stacks/Prowlarr.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
     {
@@ -339,8 +339,8 @@
       "title": "Radarr",
       "type": 3,
       "repository": {
-        "stackfile": "template/stacks/Radarr.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+        "stackfile": "template-stack/stacks/Radarr.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
     {
@@ -371,8 +371,8 @@
       "title": "Snippet Box",
       "type": 3,
       "repository": {
-        "stackfile": "template/stacks/Snippet-Box.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+        "stackfile": "template-stack/stacks/Snippet-Box.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
     {
@@ -403,8 +403,8 @@
       "title": "SteamGifts Bot",
       "type": 3,
       "repository": {
-        "stackfile": "template/stacks/Steamgifts-Bot.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+        "stackfile": "template-stack/stacks/Steamgifts-Bot.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
     {
@@ -438,11 +438,11 @@
           "label": "VALIDATION",
           "select": [
             {
-              "default": "http",
               "text": "Use HTTP Method",
               "value": "http"
             },
             {
+              "default": true,
               "text": "Use DNS Method",
               "value": "dns"
             }
@@ -505,8 +505,8 @@
       "title": "SWAG with Authelia",
       "type": 3,
       "repository": {
-        "stackfile": "template/stacks/Swag-Authelia.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+        "stackfile": "template-stack/stacks/Swag-Authelia.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
     {
@@ -537,8 +537,8 @@
       "title": "Tautulli",
       "type": 3,
       "repository": {
-        "stackfile": "template/stacks/Tautulli.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+        "stackfile": "template-stack/stacks/Tautulli.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
     {
@@ -569,8 +569,8 @@
       "title": "Twitch Drops Bot",
       "type": 3,
       "repository": {
-        "stackfile": "template/stacks/Twitch-Drops.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+        "stackfile": "template-stack/stacks/Twitch-Drops.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
     {
@@ -580,7 +580,7 @@
           "name": "WATCHTOWER_CLEANUP",
           "select": [
             {
-              "default": "true",
+              "default": true,
               "text": "Delete unused images",
               "value": "true"
             },
@@ -611,8 +611,8 @@
       "title": "Watchtower",
       "type": 3,
       "repository": {
-        "stackfile": "template/stacks/Watchtower.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+        "stackfile": "template-stack/stacks/Watchtower.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     }
   ]

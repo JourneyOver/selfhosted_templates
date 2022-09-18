@@ -29,7 +29,7 @@
       "name": "CUSTOM_LANGUAGE",
       "select": [
         {
-          "default": "en",
+          "default": true,
           "text": "English",
           "value": "en"
         },
@@ -47,7 +47,7 @@
   "title": "Freenom",
   "type": 3,
   "repository": {
-    "stackfile": "template/stacks/Freenom.yml",
-    "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+    "stackfile": "template-stack/stacks/Freenom.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

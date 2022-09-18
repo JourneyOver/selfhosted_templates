@@ -26,7 +26,7 @@
   "title": "Snippet Box",
   "type": 3,
   "repository": {
-    "stackfile": "template/stacks/Snippet-Box.yml",
-    "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+    "stackfile": "template-stack/stacks/Snippet-Box.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

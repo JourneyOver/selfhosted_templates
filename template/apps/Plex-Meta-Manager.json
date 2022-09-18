@@ -23,7 +23,7 @@
       "label": "PMM_NO_COUNTDOWN",
       "select": [
         {
-          "default": "true",
+          "default": true,
           "text": "Run without displaying a countdown to the next scheduled run.",
           "value": "true"
         },
@@ -41,7 +41,7 @@
   "title": "Plex Meta Manager",
   "type": 3,
   "repository": {
-    "stackfile": "template/stacks/Plex-Meta-Manager.yml",
-    "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+    "stackfile": "template-stack/stacks/Plex-Meta-Manager.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

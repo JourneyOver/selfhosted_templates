@@ -26,7 +26,7 @@
   "title": "Homarr",
   "type": 3,
   "repository": {
-    "stackfile": "template/stacks/Homarr.yml",
-    "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+    "stackfile": "template-stack/stacks/Homarr.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }
