@@ -1,6 +1,4 @@
 {
-  "categories": [
-  ],
   "env": [
     {
       "name": "PUID",
@@ -22,33 +20,13 @@
     }
   ],
   "description": "C# application with primary purpose of farming Steam cards from multiple accounts simultaneously.",
-  "image": "justarchinet/archisteamfarm:latest",
-  "registry": "ghcr.io",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/archisteamfarm-logo.png",
   "name": "archisteamfarm",
-  "hostname": "archisteamfarm",
-  "network": "bunni_network",
-  "officialDoc": "https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Docker/",
   "platform": "linux",
-  "ports": [
-    "1242:1242/tcp"
-  ],
-  "restart_policy": "unless-stopped",
   "title": "ArchiSteamFarm",
-  "type": 1,
-  "volumes": [
-    {
-      "bind": "/mnt/Docker/Apps/ArchiSteamFarm/config",
-      "container": "/app/config"
-    },
-    {
-      "bind": "/mnt/Docker/Apps/ArchiSteamFarm/plugins",
-      "container": "/app/plugins"
-    },
-    {
-      "bind": "/mnt/Docker/Apps/ArchiSteamFarm/logs",
-      "container": "/app/logs"
-    }
-  ],
-  "webpage": "https://github.com/JustArchiNET/ArchiSteamFarm/"
+  "type": 3,
+  "repository": {
+    "stackfile": "template/stacks/ArchiSteamFarm.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+  }
 }

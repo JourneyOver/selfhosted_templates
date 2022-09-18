@@ -1,6 +1,4 @@
 {
-  "categories": [
-  ],
   "env": [
     {
       "name": "PUID",
@@ -21,56 +19,32 @@
       "description": "Specify a timezone to use for example America/New_York"
     },
     {
-      "name": "joal-conf",
-      "label": "joal-conf",
-      "default": "/data",
-      "description": "required argument: path to the joal-conf folder (ie: /home/anthony/joal-conf)"
-    },
-    {
-      "name": "spring.main.web-environment",
-      "label": "spring.main.web-environment",
-      "default": "true",
-      "description": "enable the web context"
-    },
-    {
-      "name": "server.port",
-      "label": "server.port",
-      "default": "7073",
+      "name": "JOAL_SERVER_PORT",
+      "label": "JOAL_SERVER_PORT",
+      "default": "20026",
       "description": "port to be used for both HTTP and WebSocket connection"
     },
     {
-      "name": "joal.ui.path.prefix",
-      "label": "joal.ui.path.prefix",
+      "name": "JOAL_PATH_PREFIX",
+      "label": "JOAL_PATH_PREFIX",
       "default": "joal",
       "description": "use your own complicated path here (this will be your first layer of security to keep joal secret). This is security though obscurity, but it is required in our case. This must contains only alphanumeric characters (no slash, backslash, or any other non-alphanum char)"
     },
     {
-      "name": "joal.ui.secret-token",
-      "label": "joal.ui.secret-token",
-      "default": "change-me",
+      "name": "JOAL_SECRET_TOKEN",
+      "label": "JOAL_SECRET_TOKEN",
+      "default": "changeme",
       "description": "your own secret token here (this is some kind of a password, choose a complicated one)"
     }
   ],
-  "description": "An open source command line RatioMaster with an optional WebUI.",
-  "image": "anthonyraymond/joal:latest",
-  "registry": "docker.io",
+  "description": "An open source command line RatioMaster with WebUI.",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/joal-logo.png",
   "name": "joal",
-  "hostname": "joal",
-  "network": "bunni_network",
-  "officialDoc": "https://github.com/anthonyraymond/joal#2-run-with-docker",
   "platform": "linux",
-  "ports": [
-    "7073:7073/tcp"
-  ],
-  "restart_policy": "unless-stopped",
   "title": "Joal",
-  "type": 1,
-  "volumes": [
-    {
-      "bind": "/mnt/Docker/Apps/Joal",
-      "container": "/data"
-    }
-  ],
-  "webpage": "https://github.com/anthonyraymond/joal"
+  "type": 3,
+  "repository": {
+    "stackfile": "template/stacks/Joal.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+  }
 }

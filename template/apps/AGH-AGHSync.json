@@ -1,6 +1,4 @@
 {
-  "categories": [
-  ],
   "env": [
     {
       "name": "PUID",
@@ -21,16 +19,14 @@
       "description": "Specify a timezone to use for example America/New_York"
     }
   ],
-  "description": "Radarr - A fork of Sonarr to work with movies à la Couchpotato.",
-  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/radarr-logo.png",
-  "name": "radarr",
-  "officialDoc": "https://hotio.dev/containers/radarr/",
+  "description": "AdGuard Home is a network-wide software for blocking ads & tracking. Including AdGuardHome Sync",
+  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/adguardhome-logo.png",
+  "name": "agh-aghsync",
   "platform": "linux",
-  "title": "Radarr",
+  "title": "AdGuardHome with AdGuardHome-Sync",
   "type": 3,
   "repository": {
-    "stackfile": "template-stack/stacks/Radarr.yml",
-    "url": "https://github.com/JourneyOver/selfhosted_templates"
-  },
-  "webpage": "https://radarr.video/"
+    "stackfile": "template/stacks/AGH-AGHSync.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates/tree/cleanup"
+  }
 }
