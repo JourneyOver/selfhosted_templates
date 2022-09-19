@@ -19,7 +19,7 @@
       "description": "Specify a timezone to use for example America/New_York"
     }
   ],
-  "description": "AdGuard Home is a network-wide software for blocking ads & tracking. Including AdGuardHome Sync",
+  "description": "AdGuard Home is a network-wide software for blocking ads & tracking, includes AdGuardHome Sync",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/adguardhome-logo.png",
   "name": "agh-aghsync",
   "platform": "linux",

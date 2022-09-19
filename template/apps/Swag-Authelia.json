@@ -89,7 +89,7 @@
       "description": "Optionally define the cert provider. Set to zerossl for ZeroSSL certs (requires existing ZeroSSL account and the e-mail address entered in EMAIL env var). Otherwise defaults to Let's Encrypt."
     }
   ],
-  "description": "This container sets up an Nginx webserver and reverse proxy with php support and a built-in letsencrypt client that automates free SSL server certificate generation and renewal processes. It also contains fail2ban for intrusion prevention. Includes Authelia for SSO.",
+  "description": "This container sets up an Nginx webserver and reverse proxy with php support and a built-in letsencrypt client that automates free SSL server certificate generation and renewal processes. It also contains fail2ban for intrusion prevention, includes Authelia for SSO.",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/swag-logo.png",
   "name": "swag-authelia",
   "platform": "linux",
