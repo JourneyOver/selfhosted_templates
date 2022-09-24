@@ -26,7 +26,7 @@
   "title": "Prowlarr",
   "type": 3,
   "repository": {
-    "stackfile": "template-stack/stacks/Prowlarr.yml",
+    "stackfile": "template/stacks/Prowlarr.yml",
     "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

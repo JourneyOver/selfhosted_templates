@@ -26,7 +26,7 @@
   "title": "AdGuardHome with AdGuardHome-Sync",
   "type": 3,
   "repository": {
-    "stackfile": "template-stack/stacks/AGH-AGHSync.yml",
+    "stackfile": "template/stacks/AGH-AGHSync.yml",
     "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

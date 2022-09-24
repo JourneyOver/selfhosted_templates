@@ -44,7 +44,7 @@
   "title": "Joal",
   "type": 3,
   "repository": {
-    "stackfile": "template-stack/stacks/Joal.yml",
+    "stackfile": "template/stacks/Joal.yml",
     "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

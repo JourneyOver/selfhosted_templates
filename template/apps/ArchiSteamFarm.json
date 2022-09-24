@@ -26,7 +26,7 @@
   "title": "ArchiSteamFarm",
   "type": 3,
   "repository": {
-    "stackfile": "template-stack/stacks/ArchiSteamFarm.yml",
+    "stackfile": "template/stacks/ArchiSteamFarm.yml",
     "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

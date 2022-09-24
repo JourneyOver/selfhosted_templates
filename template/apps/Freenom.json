@@ -47,7 +47,7 @@
   "title": "Freenom",
   "type": 3,
   "repository": {
-    "stackfile": "template-stack/stacks/Freenom.yml",
+    "stackfile": "template/stacks/Freenom.yml",
     "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

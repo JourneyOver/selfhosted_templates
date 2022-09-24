@@ -96,7 +96,7 @@
   "title": "SWAG with Authelia",
   "type": 3,
   "repository": {
-    "stackfile": "template-stack/stacks/Swag-Authelia.yml",
+    "stackfile": "template/stacks/Swag-Authelia.yml",
     "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

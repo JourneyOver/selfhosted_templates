@@ -26,7 +26,7 @@
   "title": "PlexTraktSync",
   "type": 3,
   "repository": {
-    "stackfile": "template-stack/stacks/PlexTraktSync.yml",
+    "stackfile": "template/stacks/PlexTraktSync.yml",
     "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

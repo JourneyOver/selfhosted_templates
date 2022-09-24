@@ -26,7 +26,7 @@
   "title": "Tautulli",
   "type": 3,
   "repository": {
-    "stackfile": "template-stack/stacks/Tautulli.yml",
+    "stackfile": "template/stacks/Tautulli.yml",
     "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

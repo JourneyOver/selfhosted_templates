@@ -22,14 +22,14 @@
           "description": "Specify a timezone to use for example America/New_York"
         }
       ],
-      "description": "AdGuard Home is a network-wide software for blocking ads & tracking. Including AdGuardHome Sync",
+      "description": "AdGuard Home is a network-wide software for blocking ads & tracking, includes AdGuardHome Sync",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/adguardhome-logo.png",
       "name": "agh-aghsync",
       "platform": "linux",
       "title": "AdGuardHome with AdGuardHome-Sync",
       "type": 3,
       "repository": {
-        "stackfile": "template-stack/stacks/AGH-AGHSync.yml",
+        "stackfile": "template/stacks/AGH-AGHSync.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
@@ -61,7 +61,7 @@
       "title": "ArchiSteamFarm",
       "type": 3,
       "repository": {
-        "stackfile": "template-stack/stacks/ArchiSteamFarm.yml",
+        "stackfile": "template/stacks/ArchiSteamFarm.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
@@ -114,7 +114,7 @@
       "title": "Freenom",
       "type": 3,
       "repository": {
-        "stackfile": "template-stack/stacks/Freenom.yml",
+        "stackfile": "template/stacks/Freenom.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
@@ -146,7 +146,7 @@
       "title": "Homarr",
       "type": 3,
       "repository": {
-        "stackfile": "template-stack/stacks/Homarr.yml",
+        "stackfile": "template/stacks/Homarr.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
@@ -196,7 +196,7 @@
       "title": "Joal",
       "type": 3,
       "repository": {
-        "stackfile": "template-stack/stacks/Joal.yml",
+        "stackfile": "template/stacks/Joal.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
@@ -243,7 +243,7 @@
       "title": "Plex Meta Manager",
       "type": 3,
       "repository": {
-        "stackfile": "template-stack/stacks/Plex-Meta-Manager.yml",
+        "stackfile": "template/stacks/Plex-Meta-Manager.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
@@ -275,7 +275,7 @@
       "title": "PlexTraktSync",
       "type": 3,
       "repository": {
-        "stackfile": "template-stack/stacks/PlexTraktSync.yml",
+        "stackfile": "template/stacks/PlexTraktSync.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
@@ -307,7 +307,7 @@
       "title": "Prowlarr",
       "type": 3,
       "repository": {
-        "stackfile": "template-stack/stacks/Prowlarr.yml",
+        "stackfile": "template/stacks/Prowlarr.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
@@ -339,7 +339,7 @@
       "title": "Radarr",
       "type": 3,
       "repository": {
-        "stackfile": "template-stack/stacks/Radarr.yml",
+        "stackfile": "template/stacks/Radarr.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
@@ -371,7 +371,7 @@
       "title": "Snippet Box",
       "type": 3,
       "repository": {
-        "stackfile": "template-stack/stacks/Snippet-Box.yml",
+        "stackfile": "template/stacks/Snippet-Box.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
@@ -403,7 +403,7 @@
       "title": "SteamGifts Bot",
       "type": 3,
       "repository": {
-        "stackfile": "template-stack/stacks/Steamgifts-Bot.yml",
+        "stackfile": "template/stacks/Steamgifts-Bot.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
@@ -498,14 +498,14 @@
           "description": "Optionally define the cert provider. Set to zerossl for ZeroSSL certs (requires existing ZeroSSL account and the e-mail address entered in EMAIL env var). Otherwise defaults to Let's Encrypt."
         }
       ],
-      "description": "This container sets up an Nginx webserver and reverse proxy with php support and a built-in letsencrypt client that automates free SSL server certificate generation and renewal processes. It also contains fail2ban for intrusion prevention. Includes Authelia for SSO.",
+      "description": "This container sets up an Nginx webserver and reverse proxy with php support and a built-in letsencrypt client that automates free SSL server certificate generation and renewal processes. It also contains fail2ban for intrusion prevention, includes Authelia for SSO.",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/swag-logo.png",
       "name": "swag-authelia",
       "platform": "linux",
       "title": "SWAG with Authelia",
       "type": 3,
       "repository": {
-        "stackfile": "template-stack/stacks/Swag-Authelia.yml",
+        "stackfile": "template/stacks/Swag-Authelia.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
@@ -537,7 +537,7 @@
       "title": "Tautulli",
       "type": 3,
       "repository": {
-        "stackfile": "template-stack/stacks/Tautulli.yml",
+        "stackfile": "template/stacks/Tautulli.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
@@ -569,7 +569,7 @@
       "title": "Twitch Drops Bot",
       "type": 3,
       "repository": {
-        "stackfile": "template-stack/stacks/Twitch-Drops.yml",
+        "stackfile": "template/stacks/Twitch-Drops.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
@@ -611,7 +611,7 @@
       "title": "Watchtower",
       "type": 3,
       "repository": {
-        "stackfile": "template-stack/stacks/Watchtower.yml",
+        "stackfile": "template/stacks/Watchtower.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     }

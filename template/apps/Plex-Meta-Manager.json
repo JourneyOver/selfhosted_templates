@@ -41,7 +41,7 @@
   "title": "Plex Meta Manager",
   "type": 3,
   "repository": {
-    "stackfile": "template-stack/stacks/Plex-Meta-Manager.yml",
+    "stackfile": "template/stacks/Plex-Meta-Manager.yml",
     "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }
