@@ -1,6 +1,4 @@
 {
-  "categories": [
-  ],
   "env": [
     {
       "name": "PUID",
@@ -22,29 +20,13 @@
     }
   ],
   "description": "Homarr is a simple and lightweight homepage for your server, that helps you easily access all of your services in one place.",
-  "image": "ajnart/homarr:latest",
-  "registry": "ghcr.io",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/homarr-logo.png",
   "name": "homarr",
-  "hostname": "homarr",
-  "network": "bunni_network",
-  "officialDoc": "https://homarr.vercel.app/docs/introduction/installation#-installation-using-docker",
   "platform": "linux",
-  "ports": [
-    "7575:7575/tcp"
-  ],
-  "restart_policy": "unless-stopped",
   "title": "Homarr",
-  "type": 1,
-  "volumes": [
-    {
-      "bind": "/mnt/Docker/Apps/Homarr/configs",
-      "container": "/app/data/configs"
-    },
-    {
-      "bind": "/mnt/Docker/Apps/Homarr/icons",
-      "container": "/app/public/icons"
-    }
-  ],
-  "webpage": "https://github.com/ajnart/homarr"
+  "type": 3,
+  "repository": {
+    "stackfile": "template/stacks/Homarr.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
+  }
 }

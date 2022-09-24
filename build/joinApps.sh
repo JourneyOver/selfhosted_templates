@@ -17,6 +17,7 @@ for app in template/apps/*.json; do
 
   appjson=$( cat "$app" )
 
+  # Appending to json
   if [[ -n "$appjson" ]]; then
     json=$( echo "$json" | jq --argjson newApp "$appjson" '.templates += [$newApp]' )
   fi

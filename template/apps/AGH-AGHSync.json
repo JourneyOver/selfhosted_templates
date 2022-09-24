@@ -1,6 +1,4 @@
 {
-  "categories": [
-  ],
   "env": [
     {
       "name": "PUID",
@@ -21,16 +19,14 @@
       "description": "Specify a timezone to use for example America/New_York"
     }
   ],
-  "description": "Homarr is a simple and lightweight homepage for your server, that helps you easily access all of your services in one place.",
-  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/homarr-logo.png",
-  "name": "homarr",
-  "officialDoc": "https://homarr.vercel.app/docs/introduction/installation#-installation-using-docker",
+  "description": "AdGuard Home is a network-wide software for blocking ads & tracking, includes AdGuardHome Sync",
+  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/adguardhome-logo.png",
+  "name": "agh-aghsync",
   "platform": "linux",
-  "title": "Homarr",
+  "title": "AdGuardHome with AdGuardHome-Sync",
   "type": 3,
   "repository": {
-    "stackfile": "template-stack/stacks/Homarr.yml",
+    "stackfile": "template/stacks/AGH-AGHSync.yml",
     "url": "https://github.com/JourneyOver/selfhosted_templates"
-  },
-  "webpage": "https://github.com/ajnart/homarr"
+  }
 }

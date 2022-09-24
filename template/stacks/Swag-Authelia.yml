@@ -46,7 +46,8 @@ services:
       - MAXMINDDB_LICENSE_KEY=${MAXMIND_LICENSE_KEY}
       - CERTPROVIDER=${CERTPROVIDER}
     volumes:
-      - /mnt/Docker/Apps/Swag:/config
+      - /mnt/Docker/Apps/Swag/config:/config
+      - /mnt/Docker/Apps/Swag/custom-cont-init.d:/custom-cont-init.d
       - /mnt/Docker/Apps/Authelia/authelia.log:/authelia/authelia.log:ro
     ports:
       - 80:80

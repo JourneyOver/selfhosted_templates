@@ -37,6 +37,11 @@ services:
       - 53:53/tcp
       - 53:53/udp
       - 20012:3000/tcp
+    healthcheck:
+      test: "/bin/netstat -pant | /bin/grep 53"
+      interval: 45s
+      timeout: 30s
+      retries: 3
 
 networks:
   bunni_network:

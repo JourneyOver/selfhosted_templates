@@ -1,6 +1,4 @@
 {
-  "categories": [
-  ],
   "env": [
     {
       "name": "PUID",
@@ -22,22 +20,13 @@
     }
   ],
   "description": "A bot for steamgifts.com",
-  "image": "mcinj/docker-steamgifts-bot:latest",
-  "registry": "docker.io",
   "logo": "",
   "name": "steamgifts-bot",
-  "hostname": "steamgifts-bot",
-  "network": "bunni_network",
-  "officialDoc": "https://github.com/mcinj/steamgifts-bot#docker",
   "platform": "linux",
-  "restart_policy": "unless-stopped",
   "title": "SteamGifts Bot",
-  "type": 1,
-  "volumes": [
-    {
-      "bind": "/mnt/Docker/Apps/SteamGiftsBot",
-      "container": "/config"
-    }
-  ],
-  "webpage": "https://github.com/mcinj/steamgifts-bot"
+  "type": 3,
+  "repository": {
+    "stackfile": "template/stacks/Steamgifts-Bot.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
+  }
 }

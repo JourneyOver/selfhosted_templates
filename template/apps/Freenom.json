@@ -1,6 +1,4 @@
 {
-  "categories": [
-  ],
   "env": [
     {
       "name": "PUID",
@@ -31,7 +29,7 @@
       "name": "CUSTOM_LANGUAGE",
       "select": [
         {
-          "default": "en",
+          "default": true,
           "text": "English",
           "value": "en"
         },
@@ -43,26 +41,13 @@
     }
   ],
   "description": "Automatically renew your freenom domain.",
-  "image": "luolongfei/freenom:latest",
-  "registry": "docker.io",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/freenom-logo.png",
   "name": "freenom",
-  "hostname": "freenom",
-  "network": "bunni_network",
-  "officialDoc": "https://hub.docker.com/r/luolongfei/freenom",
   "platform": "linux",
-  "restart_policy": "unless-stopped",
   "title": "Freenom",
-  "type": 1,
-  "volumes": [
-    {
-      "bind": "/mnt/Docker/Apps/Freenom/config",
-      "container": "/conf"
-    },
-    {
-      "bind": "/mnt/Docker/Apps/Freenom/log",
-      "container": "/app/logs"
-    }
-  ],
-  "webpage": "https://github.com/luolongfei/freenom"
+  "type": 3,
+  "repository": {
+    "stackfile": "template/stacks/Freenom.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
+  }
 }
