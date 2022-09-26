@@ -4,7 +4,7 @@ version: "3.8"
 services:
 
   steamgifts-bot:
-    image: docker.io/mcinj/docker-steamgifts-bot:latest
+    image: docker.io/journeyover/steamgifts-bot:latest
     container_name: steamgifts-bot
     hostname: steamgifts-bot
     restart: unless-stopped
