@@ -219,6 +219,38 @@
           "label": "TZ",
           "default": "America/Chicago",
           "description": "Specify a timezone to use for example America/New_York"
+        }
+      ],
+      "description": "Overseerr is a request management and media discovery tool built to work with your existing Plex ecosystem.",
+      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/overseerr-logo.png",
+      "name": "overseerr",
+      "platform": "linux",
+      "title": "Overseerr",
+      "type": 3,
+      "repository": {
+        "stackfile": "template/stacks/Overseerr.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
+      }
+    },
+    {
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
         },
         {
           "name": "PMM_NO_COUNTDOWN",
