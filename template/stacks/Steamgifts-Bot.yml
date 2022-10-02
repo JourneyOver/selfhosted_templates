@@ -15,7 +15,8 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - /mnt/Docker/Apps/SteamGiftsBot:/config
+      - /mnt/Docker/Apps/SteamGiftsBot/config:/config
+      - /mnt/Docker/Apps/SteamGiftsBot/logs:/logs
 
 networks:
   bunni_network:
