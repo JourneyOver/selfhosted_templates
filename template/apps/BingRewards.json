@@ -1,0 +1,32 @@
+{
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "1000",
+      "description": "for UserID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "1000",
+      "description": "for GroupID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago",
+      "description": "Specify a timezone to use for example America/New_York"
+    }
+  ],
+  "description": "An automated solution for earning daily Microsoft Rewards points using Python and Selenium",
+  "logo": "",
+  "name": "bing-rewards",
+  "platform": "linux",
+  "title": "Bing Rewards",
+  "type": 3,
+  "repository": {
+    "stackfile": "template/stacks/BingRewards.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
+  }
+}
