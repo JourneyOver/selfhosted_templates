@@ -17,7 +17,7 @@ services:
       - UMASK=022
     volumes:
       - /mnt/Docker/Apps/BingRewards/config:/config
-      - /mnt/Docker/Apps/BingRewards/logs:/bing
+      - /mnt/Docker/Apps/BingRewards/logs:/bing-rewards/BingRewards/logs
     stdin_open: true
     tty: true
 
