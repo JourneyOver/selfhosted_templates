@@ -4,10 +4,11 @@ version: "3.8"
 services:
 
   firefox:
-    image: docker.io/journeyover/bing-rewards:latest
+    image: docker.io/jlesage/firefox:latest
     container_name: firefox
     hostname: firefox
     restart: unless-stopped
+    shm_size: "2g"
     networks:
       - bunni_network
     environment:
