@@ -17,6 +17,8 @@ services:
     volumes:
       - /mnt/Docker/Apps/BingRewards/config:/config
       - /mnt/Docker/Apps/BingRewards/logs:/logs
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     stdin_open: true
     tty: true
 
