@@ -4,7 +4,7 @@ version: "3.8"
 services:
 
   bing-rewards:
-    image: docker.io/killerherts/bing-rewards:latest
+    image: docker.io/journeyover/bing-rewards:latest
     container_name: bing-rewards
     hostname: bing-rewards
     restart: unless-stopped
@@ -14,10 +14,9 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - UMASK=022
     volumes:
       - /mnt/Docker/Apps/BingRewards/config:/config
-      - /mnt/Docker/Apps/BingRewards/logs:/bing-rewards/BingRewards/logs
+      - /mnt/Docker/Apps/BingRewards/logs:/logs
     stdin_open: true
     tty: true
 
