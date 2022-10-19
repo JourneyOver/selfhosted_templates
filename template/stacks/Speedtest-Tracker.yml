@@ -1,0 +1,27 @@
+---
+version: "3.8"
+
+services:
+
+  speedtest-tracker:
+    image: ghcr.io/alexjustesen/speedtest-tracker:latest
+    container_name: speedtest-tracker
+    hostname: speedtest-tracker
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - PHP_POOL_NAME=${PHP_POOL_NAME}
+      - DB_CONNECTION=${DB_CONNECTION}
+      - DB_DATABASE=${DB_DATABASE}
+    volumes:
+      - /mnt/Docker/Apps/SpeedtestTracker/config:/app
+    ports:
+      - 20040:80/tcp
+
+networks:
+  bunni_network:
+    external: true
