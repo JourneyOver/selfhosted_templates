@@ -17,6 +17,8 @@ services:
     volumes:
       - /mnt/Docker/Apps/SteamGiftsBot/config:/config
       - /mnt/Docker/Apps/SteamGiftsBot/logs:/logs
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
 
 networks:
   bunni_network:

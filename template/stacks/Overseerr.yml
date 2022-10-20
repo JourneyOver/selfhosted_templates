@@ -16,6 +16,8 @@ services:
       - TZ=${TZ}
     volumes:
       - /mnt/Docker/Apps/Overseerr:/app/config
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - 22042:5055/tcp
 

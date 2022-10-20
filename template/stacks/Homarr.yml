@@ -17,6 +17,8 @@ services:
     volumes:
       - /mnt/Docker/Apps/Homarr/configs:/app/data/configs
       - /mnt/Docker/Apps/Homarr/icons:/app/public/icons
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - 20036:7575/tcp
 

@@ -21,6 +21,8 @@ services:
       - joal.ui.secret-token=${JOAL_SECRET_TOKEN}
     volumes:
       - /mnt/Docker/Apps/Joal:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - ${JOAL_SERVER_PORT}:${JOAL_SERVER_PORT}/tcp
 

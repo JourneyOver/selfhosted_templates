@@ -19,6 +19,8 @@ services:
       - /mnt/Docker/Apps/PlexMetaManager/config:/config
       - /mnt/Docker/Apps/PlexMetaManager/metadata:/metadata:ro
       - /mnt/Docker/Apps/PlexMetaManager/assets:/assets:ro
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
 
 networks:
   bunni_network:

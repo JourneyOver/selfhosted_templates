@@ -17,6 +17,8 @@ services:
       - UMASK_SET=002
     volumes:
       - /mnt/Docker/Apps/Prowlarr:/config
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - 20049:9696/tcp
 

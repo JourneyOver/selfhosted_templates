@@ -18,6 +18,8 @@ services:
       - /mnt/Docker/Apps/ArchiSteamFarm/config:/app/config
       - /mnt/Docker/Apps/ArchiSteamFarm/plugins:/app/plugins
       - /mnt/Docker/Apps/ArchiSteamFarm/logs:/app/logs
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - 20022:1242/tcp
 

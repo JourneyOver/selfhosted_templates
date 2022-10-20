@@ -18,6 +18,8 @@ services:
       - TZ=${TZ}
     volumes:
       - /mnt/Docker/Apps/Authelia:/config
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
 
   swag:
     image: lscr.io/linuxserver/swag:latest
@@ -49,6 +51,8 @@ services:
       - /mnt/Docker/Apps/Swag/config:/config
       - /mnt/Docker/Apps/Swag/custom-cont-init.d:/custom-cont-init.d
       - /mnt/Docker/Apps/Authelia/authelia.log:/authelia/authelia.log:ro
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - 80:80
       - 81:81

@@ -16,6 +16,8 @@ services:
       - TZ=${TZ}
     volumes:
       - /mnt/Docker/Apps/TwitchDropsBot:/app/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
 
 networks:
   bunni_network:

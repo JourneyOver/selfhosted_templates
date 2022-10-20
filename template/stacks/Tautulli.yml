@@ -17,6 +17,8 @@ services:
       - UMASK_SET=002
     volumes:
       - /mnt/Docker/Apps/Tautulli:/config
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - 20042:8181/tcp
 

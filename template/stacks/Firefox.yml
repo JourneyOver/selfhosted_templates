@@ -19,6 +19,8 @@ services:
       - DARK_MODE=${DARK_MODE}
     volumes:
       - /mnt/Docker/Apps/Firefox:/config
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - 20033:5800/tcp
 

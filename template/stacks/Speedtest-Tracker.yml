@@ -20,6 +20,8 @@ services:
     volumes:
       - /mnt/Docker/Apps/SpeedtestTracker/config:/app
       - /mnt/Docker/Apps/SpeedtestTracker/db:/var/www/html/db/
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - 20040:80/tcp
 

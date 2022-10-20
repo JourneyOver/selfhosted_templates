@@ -16,6 +16,8 @@ services:
       - TZ=${TZ}
     volumes:
       - /mnt/Docker/Apps/PlexTraktSync:/app/config
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     command: ["watch"]
 
 networks:

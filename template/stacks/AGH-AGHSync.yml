@@ -18,6 +18,8 @@ services:
       - TZ=${TZ}
     volumes:
       - /mnt/Docker/Apps/AdGuardHomeSync:/config
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
 
   adguardhome:
     image: docker.io/adguard/adguardhome:beta
@@ -33,6 +35,8 @@ services:
     volumes:
       - /mnt/Docker/Apps/AdGuardHome/config:/opt/adguardhome/conf
       - /mnt/Docker/Apps/AdGuardHome/work:/opt/adguardhome/work
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - 53:53/tcp
       - 53:53/udp

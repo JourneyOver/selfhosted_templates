@@ -18,6 +18,8 @@ services:
     volumes:
       - /mnt/Docker/Apps/Radarr:/config
       - /media/bunni/Zeta:/movies
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - 20023:7878/tcp
 

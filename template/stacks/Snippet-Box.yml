@@ -16,6 +16,8 @@ services:
       - TZ=${TZ}
     volumes:
       - /mnt/Docker/Apps/Snippetbox:/app/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - 21042:5000/tcp
 
