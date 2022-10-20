@@ -19,6 +19,7 @@ services:
       - DB_DATABASE=${DB_DATABASE}
     volumes:
       - /mnt/Docker/Apps/SpeedtestTracker/config:/app
+      - /mnt/Docker/Apps/SpeedtestTracker/db:/var/www/html/db/
     ports:
       - 20040:80/tcp
 

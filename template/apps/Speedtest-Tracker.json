@@ -35,13 +35,14 @@
     {
       "name": "DB_DATABASE",
       "label": "DB_DATABASE",
-      "default": "/app/database.sqlite",
+      "default": "/var/www/html/db/database.sqlite",
       "description": "Database Name"
     }
   ],
   "description": "Run a Speedtest every hour and graph the results.",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/speedtest-tracker-logo.png",
   "name": "speedtest-tracker",
+  "note": "Default Username and password is: `admin@example.com;password`. You currently need to edit the `database.sqlite` to change the login information, this will be fixed in a future release. Password is in crypt hash, you can use https://www.onlinewebtoolkit.com/hash-generator to generate a new password.",
   "platform": "linux",
   "title": "Speedtest Tracker",
   "type": 3,
