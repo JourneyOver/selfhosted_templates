@@ -19,24 +19,6 @@
       "label": "TZ",
       "default": "America/Chicago",
       "description": "Specify a timezone to use for example America/New_York"
-    },
-    {
-      "name": "PHP_POOL_NAME",
-      "label": "PHP_POOL_NAME",
-      "default": "speedtest-tracker_php",
-      "description": "PHP Pool Name"
-    },
-    {
-      "name": "DB_CONNECTION",
-      "label": "DB_CONNECTION",
-      "default": "sqlite",
-      "description": "Database Connection"
-    },
-    {
-      "name": "DB_DATABASE",
-      "label": "DB_DATABASE",
-      "default": "/var/www/html/db/database.sqlite",
-      "description": "Database Name"
     }
   ],
   "description": "Run a Speedtest every hour and graph the results.",

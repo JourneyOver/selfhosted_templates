@@ -14,16 +14,12 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - PHP_POOL_NAME=${PHP_POOL_NAME}
-      - DB_CONNECTION=${DB_CONNECTION}
-      - DB_DATABASE=${DB_DATABASE}
     volumes:
-      - /mnt/Docker/Apps/SpeedtestTracker/config:/app
-      - /mnt/Docker/Apps/SpeedtestTracker/db:/var/www/html/db/
+      - /mnt/Docker/Apps/SpeedtestTracker/config:/config
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
-      - 20040:80/tcp
+      - 20040:443/tcp
 
 networks:
   bunni_network:
