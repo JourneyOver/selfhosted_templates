@@ -24,7 +24,7 @@ services:
       - LOG_FAILED_MATCHES=${LOG_FAILED_MATCHES}
       - INTERVAL=${INTERVAL}
     volumes:
-      - /mnt/Docker/Apps/Trackma:/config
+      - /mnt/Docker/Apps/Plexanisync/custom_mappings.yaml:/plexanisync/custom_mappings.yaml
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
 
