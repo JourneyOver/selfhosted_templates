@@ -62,6 +62,7 @@ services:
       - UMASK_SET=002
     volumes:
       - /mnt/Docker/Apps/Tautulli:/config
+      - /mnt/Docker/Apps/Tautulli/Scripts/req/install.sh:/etc/cont-init.d/99-install-reqs
       - plexanisync:/plexanisync:ro
       - /mnt/Docker/Apps/PlexAniSync/custom_mappings.yaml:/plexanisync/custom_mappings.yaml:ro
       - /etc/timezone:/etc/timezone:ro
