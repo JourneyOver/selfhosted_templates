@@ -1,0 +1,27 @@
+---
+version: "3.8"
+
+services:
+
+  trackma:
+    image: docker.io/frosty5689/trackma:latest
+    container_name: trackma
+    hostname: trackma
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - ACCOUNT_USERNAME=${ACCOUNT_USERNAME}
+      - ACCOUNT_PASSWORD=${ACCOUNT_PASSWORD}
+      - ACCOUNT_API=${ACCOUNT_API}
+    volumes:
+      - /mnt/Docker/Apps/Trackma:/config
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
+networks:
+  bunni_network:
+    external: true
