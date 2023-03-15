@@ -3,10 +3,10 @@ version: "3.8"
 
 services:
 
-  trackma:
-    image: docker.io/frosty5689/trackma:latest
-    container_name: trackma
-    hostname: trackma
+  plexanisync:
+    image: ghcr.io/rickdb/plexanisync:latest
+    container_name: plexanisync
+    hostname: plexanisync
     restart: unless-stopped
     networks:
       - bunni_network
