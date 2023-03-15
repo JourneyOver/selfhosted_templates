@@ -72,3 +72,6 @@ services:
 networks:
   bunni_network:
     external: true
+
+volumes:
+  plexanisync:
