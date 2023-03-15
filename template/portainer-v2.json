@@ -826,6 +826,92 @@
           "label": "TZ",
           "default": "America/Chicago",
           "description": "Specify a timezone to use for example America/New_York"
+        },
+        {
+          "name": "PLEX_SECTION",
+          "label": "PLEX_SECTION",
+          "default": "Anime|Anime Movies",
+          "description": "The library where your anime resides. Separate multiple libraries with a |"
+        },
+        {
+          "name": "PLEX_URL",
+          "label": "PLEX_URL",
+          "default": "http://127.0.0.1:32400",
+          "description": "The address to your Plex Media Server, for example: http://127.0.0.1:32400"
+        },
+        {
+          "name": "PLEX_TOKEN",
+          "label": "PLEX_TOKEN",
+          "default": "",
+          "description": "Follow [this guide](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/)"
+        },
+        {
+          "name": "ANI_USERNAME",
+          "label": "ANI_USERNAME",
+          "default": "",
+          "description": "Your AniList.co username"
+        },
+        {
+          "name": "ANI_TOKEN",
+          "label": "ANI_TOKEN",
+          "default": "",
+          "description": "Get it [here](https://anilist.co/api/v2/oauth/authorize?client_id=1549&response_type=token)"
+        },
+        {
+          "name": "PLEX_EPISODE_COUNT_PRIORITY",
+          "label": "PLEX_EPISODE_COUNT_PRIORITY",
+          "default": "false",
+          "description": "If set to True, Plex episode watched count will take priority over AniList (default = False)"
+        },
+        {
+          "name": "SKIP_LIST_UPDATE",
+          "label": "SKIP_LIST_UPDATE",
+          "default": "false",
+          "description": "If set to True, it will NOT update your AniList which is useful if you want to do a test run to check if everything lines up properly. (default = False)"
+        },
+        {
+          "name": "LOG_FAILED_MATCHES",
+          "label": "LOG_FAILED_MATCHES",
+          "default": "false",
+          "description": "If set to True, failed matches will be written to /plexanisync/failed_matches.txt (default = False)"
+        },
+        {
+          "name": "INTERVAL",
+          "label": "INTERVAL",
+          "default": "3600",
+          "description": "The time in between syncs in seconds"
+        }
+      ],
+      "description": "All In One Tautulli, PlexTraktSync and PlexAniSync container.",
+      "logo": "",
+      "name": "tautulli-plexsync",
+      "platform": "linux",
+      "title": "Tautulli-PlexSync",
+      "type": 3,
+      "repository": {
+        "stackfile": "template/stacks/Tautulli-PlexSync.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
+      }
+    },
+    {
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
         }
       ],
       "description": "A Node.js bot that uses Puppeteer to automatically watch Twitch streams and claim drop rewards.",
