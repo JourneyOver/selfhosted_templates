@@ -14,9 +14,15 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - ACCOUNT_USERNAME=${ACCOUNT_USERNAME}
-      - ACCOUNT_PASSWORD=${ACCOUNT_PASSWORD}
-      - ACCOUNT_API=${ACCOUNT_API}
+      - PLEX_SECTION=${PLEX_SECTION}
+      - PLEX_URL=${PLEX_URL}
+      - PLEX_TOKEN=${PLEX_TOKEN}
+      - ANI_USERNAME=${ANI_USERNAME}
+      - ANI_TOKEN=${ANI_TOKEN}
+      - PLEX_EPISODE_COUNT_PRIORITY=${PLEX_EPISODE_COUNT_PRIORITY}
+      - SKIP_LIST_UPDATE=${SKIP_LIST_UPDATE}
+      - LOG_FAILED_MATCHES=${LOG_FAILED_MATCHES}
+      - INTERVAL=${INTERVAL}
     volumes:
       - /mnt/Docker/Apps/Trackma:/config
       - /etc/timezone:/etc/timezone:ro
