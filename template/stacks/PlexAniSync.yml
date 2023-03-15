@@ -24,7 +24,9 @@ services:
       - LOG_FAILED_MATCHES=${LOG_FAILED_MATCHES}
       - INTERVAL=${INTERVAL}
     volumes:
-      - /mnt/Docker/Apps/Plexanisync/custom_mappings.yaml:/plexanisync/custom_mappings.yaml
+      - /mnt/Docker/Apps/PlexAniSync/custom_mappings.yaml:/plexanisync/custom_mappings.yaml
+      - /mnt/Docker/Apps/PlexAniSync/plexanisync.log:/plexanisync/PlexAniSync.log
+      - /mnt/Docker/Apps/PlexAniSync/failed_matches.txt:/plexanisync/failed_matches.txt
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
 
