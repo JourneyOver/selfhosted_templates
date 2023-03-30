@@ -1,0 +1,27 @@
+---
+version: "3.9"
+
+services:
+
+  shiori:
+    image: ghcr.io/go-shiori/shiori:latest
+    container_name: shiori
+    hostname: shiori
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - SHIORI_DIR=${SHIORI_DIR}
+    volumes:
+      - /mnt/Docker/Apps/Shiori:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 21036:8080/tcp
+
+networks:
+  bunni_network:
+    external: true

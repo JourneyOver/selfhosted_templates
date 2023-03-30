@@ -1,0 +1,38 @@
+{
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "1000",
+      "description": "for UserID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "1000",
+      "description": "for GroupID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago",
+      "description": "Specify a timezone to use for example America/New_York"
+    },
+    {
+      "name": "SHIORI_DIR",
+      "label": "SHIORI_DIR",
+      "default": "/data",
+      "description": "Specify a path to the shiori data directory"
+    }
+  ],
+  "description": "Shiori is a simple bookmarks manager written in Go language. Intended as a simple clone of Pocket. You can use it as command line application or as web application.",
+  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/shiori-logo.png",
+  "name": "shiori",
+  "platform": "linux",
+  "title": "Shiori",
+  "type": 3,
+  "repository": {
+    "stackfile": "template/stacks/Shiori.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
+  }
+}
