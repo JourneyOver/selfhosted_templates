@@ -368,12 +368,6 @@
           "label": "TZ",
           "default": "America/Chicago",
           "description": "Specify a timezone to use for example America/New_York"
-        },
-        {
-          "name": "SHIORI_DIR",
-          "label": "SHIORI_DIR",
-          "default": "/data",
-          "description": "Specify a path to the shiori data directory"
         }
       ],
       "description": "Shiori is a simple bookmarks manager written in Go language. Intended as a simple clone of Pocket. You can use it as command line application or as web application.",

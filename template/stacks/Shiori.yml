@@ -14,9 +14,8 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - SHIORI_DIR=${SHIORI_DIR}
     volumes:
-      - /mnt/Docker/Apps/Shiori:/data
+      - /mnt/Docker/Apps/Shiori:/shiori
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
