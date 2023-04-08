@@ -14,6 +14,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - ASF_CRYPTKEY=${ASF_CRYPTKEY}
     volumes:
       - /mnt/Docker/Apps/ArchiSteamFarm/config:/app/config
       - /mnt/Docker/Apps/ArchiSteamFarm/plugins:/app/plugins
