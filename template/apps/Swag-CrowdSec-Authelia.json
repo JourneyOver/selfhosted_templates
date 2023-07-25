@@ -93,16 +93,28 @@
       "label": "PROPAGATION",
       "default": "60",
       "description": "Optionally define the propagation time for DNS validation. Defaults to 60 seconds."
+    },
+    {
+      "name": "CROWDSEC_API_KEY",
+      "label": "CROWDSEC_API_KEY",
+      "default": "",
+      "description": "CrowdSec API Key"
+    },
+    {
+      "name": "COLLECTIONS",
+      "label": "COLLECTIONS",
+      "default": "crowdsecurity/nginx crowdsecurity/http-cve crowdsecurity/whitelist-good-actors LePresidente/authelia",
+      "description": "CrowdSec Collections. Defaults to crowdsecurity/nginx crowdsecurity/http-cve crowdsecurity/whitelist-good-actors LePresidente/authelia"
     }
   ],
-  "description": "This container sets up an Nginx webserver and reverse proxy with php support and a built-in letsencrypt client that automates free SSL server certificate generation and renewal processes. It also contains fail2ban for intrusion prevention, includes Authelia for SSO.",
+  "description": "This container sets up an Nginx webserver and reverse proxy with php support and a built-in letsencrypt client that automates free SSL server certificate generation and renewal processes. It also contains crowdsec for intrusion prevention, includes Authelia for SSO.",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/swag-logo.png",
-  "name": "swag-authelia",
+  "name": "swag-crowdsec-authelia",
   "platform": "linux",
-  "title": "SWAG with Authelia",
+  "title": "SWAG with Authelia and CrowdSec",
   "type": 3,
   "repository": {
-    "stackfile": "template/stacks/Swag-Authelia.yml",
+    "stackfile": "template/stacks/Swag-CrowdSec-Authelia.yml",
     "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

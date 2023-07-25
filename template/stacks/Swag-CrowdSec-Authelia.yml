@@ -21,6 +21,28 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
 
+  crowdsec:
+    image: docker.io/crowdsecurity/crowdsec:latest
+    container_name: crowdsec
+    hostname: crowdsec
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - COLLECTIONS=${COLLECTIONS}
+      - CUSTOM_HOSTNAME=crowdsec
+    volumes:
+      - /mnt/Docker/Apps/Crowdsec/config:/etc/crowdsec:rw
+      - /mnt/Docker/Apps/Crowdsec/data:/var/lib/crowdsec/data:rw
+      - /mnt/Docker/Apps/Swag/config/log/nginx:/var/log/swag:ro
+      - /mnt/Docker/Apps/Authelia/authelia.log:/var/log/Authelia.log:ro
+      - /var/log:/var/log/host:ro
+    security_opt:
+      - no-new-privileges=true
+
   swag:
     image: lscr.io/linuxserver/swag:latest
     container_name: swag
@@ -48,6 +70,9 @@ services:
       - MAXMINDDB_LICENSE_KEY=${MAXMIND_LICENSE_KEY}
       - CERTPROVIDER=${CERTPROVIDER}
       - PROPAGATION=${PROPAGATION}
+      - CROWDSEC_API_KEY=${CROWDSEC_API_KEY}
+      - CROWDSEC_LAPI_URL=http://crowdsec:8080
+      - CROWDSEC_F2B_DISABLE=true
     volumes:
       - /mnt/Docker/Apps/Swag/config:/config
       - /mnt/Docker/Apps/Swag/custom-cont-init.d:/custom-cont-init.d
