@@ -1,0 +1,49 @@
+---
+version: "3.9"
+
+services:
+
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    hostname: postgres
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PW}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - /mnt/Docker/Apps/PostgreSQL:/var/lib/postgresql/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 20050:5432
+
+  pgadmin:
+    image: docker.io/dpage/pgadmin4:latest
+    container_name: pgadmin4
+    hostname: pgadmin4
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_MAIL}
+      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PW}
+    volumes:
+      - /mnt/Docker/Apps/Pgadmin:/var/lib/pgadmin
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 20024:80
+
+networks:
+  bunni_network:
+    external: true

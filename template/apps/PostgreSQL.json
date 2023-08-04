@@ -1,0 +1,62 @@
+{
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "1000",
+      "description": "for UserID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "1000",
+      "description": "for GroupID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago",
+      "description": "Specify a timezone to use for example America/New_York"
+    },
+    {
+      "name": "POSTGRES_USER",
+      "label": "POSTGRES_USER",
+      "default": "",
+      "description": "Specify a username for the default user"
+    },
+    {
+      "name": "POSTGRES_PASSWORD",
+      "label": "POSTGRES_PASSWORD",
+      "default": "",
+      "description": "Specify a password for the default user"
+    },
+    {
+      "name": "POSTGRES_DB",
+      "label": "POSTGRES_DB",
+      "default": "",
+      "description": "Specify a database name for the default user"
+    },
+    {
+      "name": "PGADMIN_MAIL",
+      "label": "PGADMIN_MAIL",
+      "default": "",
+      "description": "Specify a mail for the pgadmin user"
+    },
+    {
+      "name": "PGADMIN_PASSWORD",
+      "label": "PGADMIN_PASSWORD",
+      "default": "",
+      "description": "Specify a password for the pgadmin user"
+    }
+  ],
+  "description": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance.",
+  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/postgresql-logo.png",
+  "name": "postgresql",
+  "platform": "linux",
+  "title": "PostgreSQL",
+  "type": 3,
+  "repository": {
+    "stackfile": "template/stacks/PostgreSQL.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
+  }
+}
