@@ -17,6 +17,36 @@
       "label": "TZ",
       "default": "America/Chicago",
       "description": "Specify a timezone to use for example America/New_York"
+    },
+    {
+      "name": "SHIORI_PG_USER",
+      "label": "SHIORI_PG_USER",
+      "default": "",
+      "description": "Name of PostgreSQL user"
+    },
+    {
+      "name": "SHIORI_PG_PASS",
+      "label": "SHIORI_PG_PASS",
+      "default": "",
+      "description": "Password of PostgreSQL user"
+    },
+    {
+      "name": "SHIORI_PG_NAME",
+      "label": "SHIORI_PG_NAME",
+      "default": "",
+      "description": "Name of database to use"
+    },
+    {
+      "name": "SHIORI_PG_HOST",
+      "label": "SHIORI_PG_HOST",
+      "default": "",
+      "description": "Address of PostgreSQL server"
+    },
+    {
+      "name": "SHIORI_PG_PORT",
+      "label": "SHIORI_PG_PORT",
+      "default": "",
+      "description": "Port of PostgreSQL server"
     }
   ],
   "description": "Shiori is a simple bookmarks manager written in Go language. Intended as a simple clone of Pocket. You can use it as command line application or as web application.",

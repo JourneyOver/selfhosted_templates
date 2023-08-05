@@ -340,9 +340,16 @@
           "label": "PGADMIN_PASSWORD",
           "default": "",
           "description": "Specify a password for the pgadmin user"
+        },
+        {
+          "name": "DB_NAME",
+          "label": "DB_NAME",
+          "default": "",
+          "description": "Comma or space separated list of postgres databases to backup."
         }
       ],
-      "description": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance.",
+      "note": "must create pgadmin folder manually and run `sudo chown 5050:5050 pgadmin` otherwise it will not work",
+      "description": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance. Includes pgAdmin4 for web management and PGBackups for scheduled backups.",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/postgresql-logo.png",
       "name": "postgresql",
       "platform": "linux",
@@ -436,6 +443,36 @@
           "label": "TZ",
           "default": "America/Chicago",
           "description": "Specify a timezone to use for example America/New_York"
+        },
+        {
+          "name": "SHIORI_PG_USER",
+          "label": "SHIORI_PG_USER",
+          "default": "",
+          "description": "Name of PostgreSQL user"
+        },
+        {
+          "name": "SHIORI_PG_PASS",
+          "label": "SHIORI_PG_PASS",
+          "default": "",
+          "description": "Password of PostgreSQL user"
+        },
+        {
+          "name": "SHIORI_PG_NAME",
+          "label": "SHIORI_PG_NAME",
+          "default": "",
+          "description": "Name of database to use"
+        },
+        {
+          "name": "SHIORI_PG_HOST",
+          "label": "SHIORI_PG_HOST",
+          "default": "",
+          "description": "Address of PostgreSQL server"
+        },
+        {
+          "name": "SHIORI_PG_PORT",
+          "label": "SHIORI_PG_PORT",
+          "default": "",
+          "description": "Port of PostgreSQL server"
         }
       ],
       "description": "Shiori is a simple bookmarks manager written in Go language. Intended as a simple clone of Pocket. You can use it as command line application or as web application.",
@@ -478,6 +515,70 @@
       "type": 3,
       "repository": {
         "stackfile": "template/stacks/Snippet-Box.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
+      }
+    },
+    {
+      "categories": [],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
+        },
+        {
+          "name": "DB_HOST",
+          "label": "DB_HOST",
+          "default": "",
+          "description": "Address of PostgreSQL server"
+        },
+        {
+          "name": "DB_PORT",
+          "label": "DB_PORT",
+          "default": "",
+          "description": "Port of PostgreSQL server"
+        },
+        {
+          "name": "DB_DATABASE",
+          "label": "DB_DATABASE",
+          "default": "",
+          "description": "Name of database to use"
+        },
+        {
+          "name": "DB_USERNAME",
+          "label": "DB_USERNAME",
+          "default": "",
+          "description": "Name of PostgreSQL user"
+        },
+        {
+          "name": "DB_PASSWORD",
+          "label": "DB_PASSWORD",
+          "default": "",
+          "description": "Password of PostgreSQL user"
+        }
+      ],
+      "description": "Run a Speedtest every hour and graph the results.",
+      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/speedtest-tracker-logo.png",
+      "name": "speedtest-tracker",
+      "note": "Default Username and password is: `admin@example.com;password`.",
+      "platform": "linux",
+      "title": "Speedtest Tracker",
+      "type": 3,
+      "repository": {
+        "stackfile": "template/stacks/Speedtest-Tracker.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },

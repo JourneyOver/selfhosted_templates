@@ -14,6 +14,12 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - SHIORI_DBMS=postgresql
+      - SHIORI_PG_USER=${SHIORI_PG_USER}
+      - SHIORI_PG_PASS=${SHIORI_PG_PASS}
+      - SHIORI_PG_NAME=${SHIORI_PG_NAME}
+      - SHIORI_PG_HOST=${SHIORI_PG_HOST}
+      - SHIORI_PG_PORT=${SHIORI_PG_PORT}
     volumes:
       - /mnt/Docker/Apps/Shiori:/shiori
       - /etc/timezone:/etc/timezone:ro

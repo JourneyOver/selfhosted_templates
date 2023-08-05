@@ -1,0 +1,33 @@
+---
+version: "3.9"
+
+services:
+
+  speedtest-tracker:
+    image: ghcr.io/alexjustesen/speedtest-tracker:latest
+    container_name: speedtest-tracker
+    hostname: speedtest-tracker
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - DB_CONNECTION=pgsql
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+    volumes:
+      - /mnt/Docker/Apps/SpeedtestTracker/config:/config
+      - /mnt/Docker/Apps/SpeedtestTracker/web:/etc/ssl/web
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 20040:443/tcp
+
+networks:
+  bunni_network:
+    external: true
