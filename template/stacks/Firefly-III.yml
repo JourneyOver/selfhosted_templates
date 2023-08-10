@@ -4,7 +4,7 @@ version: "3.9"
 services:
 
   firefly:
-    image: docker.io/fireflyiii/core:latest:latest
+    image: docker.io/fireflyiii/core:latest
     container_name: firefly
     hostname: firefly
     restart: unless-stopped
