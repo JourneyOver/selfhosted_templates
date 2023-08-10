@@ -1,0 +1,35 @@
+---
+version: "3.9"
+
+services:
+
+  firefly:
+    image: docker.io/fireflyiii/core:latest:latest
+    container_name: firefly
+    hostname: firefly
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - APP_KEY=${APP_KEY}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_CONNECTION=${DB_CONNECTION}
+      - DB_DATABASE=${DB_DATABASE}
+      - DB_USERNAME=${DB_USERNAME}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - TRUSTED_PROXIES=${TRUSTED_PROXIES}
+      - APP_URL=${APP_URL}
+    volumes:
+      - /mnt/Docker/Apps/Firefly:/var/www/html/storage/upload
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 20033:8080/tcp
+
+networks:
+  bunni_network:
+    external: true
