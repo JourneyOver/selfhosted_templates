@@ -6,25 +6,22 @@ json='{"version":"2","templates":[]}'
 # Main Template
 template='template/portainer-v2.json'
 
-# Run script from base directory
-scriptDir="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+# Get the script's directory
+scriptDir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 cd "$scriptDir/.." || exit
 
-# Parsing all json files in apps folder
+# Loop through and process JSON files in apps folder
 for app in template/apps/*.json; do
-  # Output app name to easy debug
-  echo "adding $app to template..."
+  # Output app name for debugging
+  echo "Adding $app to template..."
 
-  appjson=$( cat "$app" )
+  appjson=$(<"$app")
 
-  # Appending to json
+  # Append to JSON if content is non-empty
   if [[ -n "$appjson" ]]; then
-    json=$( echo "$json" | jq --argjson newApp "$appjson" '.templates += [$newApp]' )
+    json=$(jq --argjson newApp "$appjson" '.templates += [$newApp]' <<< "$json")
   fi
-
-  # clean variables before next loop
-  unset appjson
 done
 
-# Create Templates
+# Sort templates by title and save the final JSON to the template file
 echo "$json" | jq --indent 2 '.templates |= sort_by(.title | ascii_upcase)' > "$template"

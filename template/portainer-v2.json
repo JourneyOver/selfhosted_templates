@@ -432,6 +432,12 @@
           "label": "DB_NAME",
           "default": "",
           "description": "Comma or space separated list of postgres databases to backup."
+        },
+        {
+          "name": "SCHEDULE",
+          "label": "SCHEDULE",
+          "default": "@daily",
+          "description": "Cron-schedule specifying the interval between postgres backups. Defaults to @daily."
         }
       ],
       "note": "must create pgadmin folder manually and run `sudo chown 5050:5050 pgadmin` otherwise it will not work",
