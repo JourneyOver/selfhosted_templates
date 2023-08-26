@@ -90,6 +90,38 @@
           "label": "TZ",
           "default": "America/Chicago",
           "description": "Specify a timezone to use for example America/New_York"
+        }
+      ],
+      "description": "Self-hosted audiobook and podcast server.",
+      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/audiobookshelf-logo.png",
+      "name": "audiobookshelf",
+      "platform": "linux",
+      "title": "Audiobookshelf",
+      "type": 3,
+      "repository": {
+        "stackfile": "template/stacks/Audiobookshelf.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
+      }
+    },
+    {
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
         },
         {
           "name": "RUN_AT",
