@@ -1,0 +1,26 @@
+---
+version: "3.9"
+
+services:
+
+  opengist:
+    image: ghcr.io/thomiceli/opengist:latest
+    container_name: opengist
+    hostname: opengist
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/OpenGist:/opengist
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 22036:6157
+
+networks:
+  bunni_network:
+    external: true
