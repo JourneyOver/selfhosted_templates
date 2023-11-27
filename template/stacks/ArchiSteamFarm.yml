@@ -24,6 +24,24 @@ services:
     ports:
       - 20022:1242/tcp
 
+  asfclaim:
+    image: ghcr.io/c4illin/asfclaim:master
+    container_name: asfclaim
+    hostname: asfclaim
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    depends_on:
+      archisteamfarm:
+        condition: service_healthy
+    environment:
+      - ASF_PORT=1242
+      - ASF_HOST=archisteamfarm
+      - ASF_PASSWORD=${ASF_PASSWORD}
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
 networks:
   bunni_network:
     external: true

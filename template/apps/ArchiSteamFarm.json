@@ -23,6 +23,12 @@
       "label": "ASF_CRYPTKEY",
       "default": "",
       "description": "will start ASF with custom cryptographic key of <ASF_CRYPTKEY> value. This option affects security and will cause ASF to use your custom provided <ASF_CRYPTKEY> key instead of default one hardcoded into the executable. Since this property affects default encryption key (for encrypting purposes) as well as salt (for hashing purposes), keep in mind that everything encrypted/hashed with this key will require it to be passed on each ASF run. To Read more about this option, please visit https://github.com/JustArchiNET/ArchiSteamFarm/wiki"
+    },
+    {
+      "name": "ASF_PASSWORD",
+      "label": "ASF_PASSWORD",
+      "default": "",
+      "description": "IPC password, needed for asfclaim"
     }
   ],
   "description": "C# application with primary purpose of farming Steam cards from multiple accounts simultaneously.",
