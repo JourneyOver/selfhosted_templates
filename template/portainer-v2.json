@@ -341,9 +341,9 @@
       ],
       "description": "A highly customizable homepage (or startpage / application dashboard) with Docker and service API integrations.",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/homepage-logo.png",
-      "name": "hompage",
+      "name": "homepage",
       "platform": "linux",
-      "title": "Hompage",
+      "title": "Homepage",
       "type": 3,
       "repository": {
         "stackfile": "template/stacks/Homepage.yml",
