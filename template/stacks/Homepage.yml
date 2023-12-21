@@ -15,7 +15,7 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - /mnt/Docker/Apps/Homeapge/configs:/app/config
+      - /mnt/Docker/Apps/Homepage/configs:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
