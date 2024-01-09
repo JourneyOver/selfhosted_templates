@@ -4,7 +4,7 @@ version: "3.9"
 services:
 
   prowlarr:
-    image: cr.hotio.dev/hotio/prowlarr:nightly
+    image: ghcr.io/hotio/prowlarr:nightly
     container_name: prowlarr
     hostname: prowlarr
     restart: unless-stopped

@@ -49,7 +49,7 @@ services:
     command: ["watch"]
 
   tautulli:
-    image: cr.hotio.dev/hotio/tautulli:latest
+    image: ghcr.io/hotio/tautulli:latest
     container_name: tautulli
     hostname: tautulli
     restart: unless-stopped
