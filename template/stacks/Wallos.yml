@@ -1,0 +1,27 @@
+---
+version: "3.9"
+
+services:
+
+  wallos:
+    image: docker.io/bellamy/wallos:latest
+    container_name: wallos
+    hostname: wallos
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/Wallos/db:/var/www/html/db
+      - /mnt/Docker/Apps/Wallos/logos:/var/www/html/images/uploads/logos
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 24036:80/tcp
+
+networks:
+  bunni_network:
+    external: true
