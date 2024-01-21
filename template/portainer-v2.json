@@ -401,6 +401,81 @@
       }
     },
     {
+      "categories": [],
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
+        },
+        {
+          "name": "DB_HOST",
+          "label": "DB_HOST",
+          "default": "",
+          "description": "Address of PostgreSQL server"
+        },
+        {
+          "name": "DB_PORT",
+          "label": "DB_PORT",
+          "default": "",
+          "description": "Port of PostgreSQL server"
+        },
+        {
+          "name": "DB_DATABASE",
+          "label": "DB_DATABASE",
+          "default": "",
+          "description": "Name of database to use"
+        },
+        {
+          "name": "DB_USERNAME",
+          "label": "DB_USERNAME",
+          "default": "",
+          "description": "Name of PostgreSQL user"
+        },
+        {
+          "name": "DB_PASSWORD",
+          "label": "DB_PASSWORD",
+          "default": "",
+          "description": "Password of PostgreSQL user"
+        },
+        {
+          "name": "NEXTAUTH_SECRET",
+          "label": "NEXTAUTH_SECRET",
+          "default": "",
+          "description": "Secret for NextAuth"
+        },
+        {
+          "name": "NEXT_PUBLIC_DISABLE_REGISTRATION",
+          "label": "NEXT_PUBLIC_DISABLE_REGISTRATION",
+          "default": "",
+          "description": "Disable registration"
+        }
+      ],
+      "description": "Self-hosted collaborative bookmark manager to collect, organize, and preserve webpages and articles.",
+      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/linkwarden-logo.png",
+      "name": "linkwarden",
+      "platform": "linux",
+      "title": "Linkwarden",
+      "type": 3,
+      "repository": {
+        "stackfile": "template/stacks/Linkwarden.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
+      }
+    },
+    {
       "env": [
         {
           "name": "PUID",
