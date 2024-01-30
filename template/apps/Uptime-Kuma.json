@@ -1,0 +1,32 @@
+{
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "1000",
+      "description": "for UserID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "1000",
+      "description": "for GroupID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago",
+      "description": "Specify a timezone to use for example America/New_York"
+    }
+  ],
+  "description": "A fancy self-hosted monitoring tool.",
+  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/uptime-kuma-logo.png",
+  "name": "uptime-kuma",
+  "platform": "linux",
+  "title": "Uptime Kuma",
+  "type": 3,
+  "repository": {
+    "stackfile": "template/stacks/Uptime-Kuma.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
+  }
+}
