@@ -1200,18 +1200,6 @@
     {
       "env": [
         {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1000",
-          "description": "for UserID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "1000",
-          "description": "for GroupID"
-        },
-        {
           "name": "TZ",
           "label": "TZ",
           "default": "America/Chicago",
