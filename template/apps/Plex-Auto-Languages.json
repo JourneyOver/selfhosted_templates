@@ -1,0 +1,32 @@
+{
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "1000",
+      "description": "for UserID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "1000",
+      "description": "for GroupID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago",
+      "description": "Specify a timezone to use for example America/New_York"
+    }
+  ],
+  "description": "Automated language selection for Plex TV Shows!",
+  "logo": "",
+  "name": "plex-auto-languages",
+  "platform": "linux",
+  "title": "Plex Auto Languages",
+  "type": 3,
+  "repository": {
+    "stackfile": "template/stacks/Plex-Auto-Languages.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
+  }
+}
