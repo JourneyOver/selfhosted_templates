@@ -1,0 +1,44 @@
+{
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "1000",
+      "description": "User ID for file permissions"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "1000",
+      "description": "Group ID for file permissions"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago",
+      "description": "Specify a timezone, e.g., America/New_York"
+    },
+    {
+      "name": "ASF_CRYPTKEY",
+      "label": "ASF_CRYPTKEY",
+      "default": "",
+      "description": "Custom cryptographic key for ASF. This key affects security and will cause ASF to use your provided key instead of the default one hardcoded into the executable. Note that everything encrypted/hashed with this key will require it to be passed on each ASF run. For more information, visit: https://github.com/JustArchiNET/ArchiSteamFarm/wiki"
+    },
+    {
+      "name": "ASF_PASSWORD",
+      "label": "ASF_PASSWORD",
+      "default": "",
+      "description": "IPC password needed for ASFClaim"
+    }
+  ],
+  "description": "ArchiSteamFarm (ASF) is a C# application designed to farm Steam cards from multiple accounts simultaneously. It offers enhanced control over Steam accounts and includes ASFClaim, a feature that allows you to claim free Steam games. ASF can be configured with a custom cryptographic key for security purposes.",
+  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/archisteamfarm-logo.png",
+  "name": "asf-asfclaim",
+  "platform": "linux",
+  "title": "ArchiSteamFarm and ASFClaim",
+  "type": 3,
+  "repository": {
+    "stackfile": "template/combination_stacks/ASF-ASFClaim.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
+  }
+}

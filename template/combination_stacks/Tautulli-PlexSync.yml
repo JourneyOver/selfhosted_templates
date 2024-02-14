@@ -4,9 +4,9 @@ version: "3.9"
 services:
 
   plexanisync:
-    image: ghcr.io/rickdb/plexanisync:latest
-    container_name: plexanisync
-    hostname: plexanisync
+    image: ghcr.io/rickdb/tautulli-plexanisync:latest
+    container_name: tautulli-plexanisync
+    hostname: tautulli-plexanisync
     restart: unless-stopped
     networks:
       - bunni_network
@@ -25,11 +25,12 @@ services:
       - INTERVAL=${INTERVAL}
     volumes:
       - /mnt/Docker/Apps/PlexAniSync/custom_mappings.yaml:/plexanisync/custom_mappings.yaml
-      - /mnt/Docker/Apps/PlexAniSync/plexanisync.log:/plexanisync/PlexAniSync.log
       - /mnt/Docker/Apps/PlexAniSync/failed_matches.txt:/plexanisync/failed_matches.txt
-      - plexanisync:/plexanisync
+      - /mnt/Docker/Apps/Tautulli:/config
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 20042:8181/tcp
 
   plextraktsync:
     image: ghcr.io/taxel/plextraktsync:latest
@@ -48,31 +49,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
     command: ["watch"]
 
-  tautulli:
-    image: ghcr.io/hotio/tautulli:latest
-    container_name: tautulli
-    hostname: tautulli
-    restart: unless-stopped
-    networks:
-      - bunni_network
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-      - UMASK_SET=002
-    volumes:
-      - /mnt/Docker/Apps/Tautulli:/config
-      - /mnt/Docker/Apps/Tautulli/Scripts/req/install.sh:/etc/cont-init.d/99-install-reqs
-      - plexanisync:/plexanisync:ro
-      - /mnt/Docker/Apps/PlexAniSync/custom_mappings.yaml:/plexanisync/custom_mappings.yaml:ro
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-    ports:
-      - 20042:8181/tcp
-
 networks:
   bunni_network:
     external: true
-
-volumes:
-  plexanisync:

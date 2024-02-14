@@ -4,25 +4,25 @@
       "name": "PUID",
       "label": "PUID",
       "default": "1000",
-      "description": "for UserID"
+      "description": "User ID for file permissions"
     },
     {
       "name": "PGID",
       "label": "PGID",
       "default": "1000",
-      "description": "for GroupID"
+      "description": "Group ID for file permissions"
     },
     {
       "name": "TZ",
       "label": "TZ",
       "default": "America/Chicago",
-      "description": "Specify a timezone to use for example America/New_York"
+      "description": "Specify a timezone, e.g., America/New_York"
     },
     {
       "name": "URL",
       "label": "URL",
       "default": "yourdomain.url",
-      "description": "Top url you have control over (customdomain.com if you own it, or customsubdomain.ddnsprovider.com if dynamic dns)."
+      "description": "Top-level URL you have control over (e.g., customdomain.com if you own it, or customsubdomain.ddnsprovider.com if using dynamic DNS)"
     },
     {
       "name": "VALIDATION",
@@ -38,31 +38,31 @@
           "value": "dns"
         }
       ],
-      "description": "Certbot validation method to use, options are http or dns (dns method also requires DNSPLUGIN variable set)."
+      "description": "Certbot validation method to use. Options are http or dns (dns method also requires DNSPLUGIN variable set)"
     },
     {
       "name": "SUBDOMAINS",
       "label": "SUBDOMAINS",
       "default": "www,",
-      "description": "Subdomains you'd like the cert to cover (comma separated, no spaces) ie. www,ftp,cloud. For a wildcard cert, set this exactly to wildcard (wildcard cert is available via dns validation only)"
+      "description": "Subdomains to cover in the certificate (comma-separated, no spaces). For a wildcard cert, set this to 'wildcard' (available via dns validation only)"
     },
     {
       "name": "EXTRA_DOMAINS",
       "label": "EXTRA_DOMAINS",
       "default": "",
-      "description": "Additional fully qualified domain names (comma separated, no spaces) ie. extradomain.com,subdomain.anotherdomain.org,*.anotherdomain.org"
+      "description": "Additional fully qualified domain names (comma-separated, no spaces)"
     },
     {
       "name": "DNSPLUGIN",
       "label": "DNSPLUGIN",
       "default": "",
-      "description": "DNS plugin to use for dns validation (only required if using dns validation method)"
+      "description": "DNS plugin to use for dns validation (required if using dns validation method)"
     },
     {
       "name": "EMAIL",
       "label": "EMAIL",
       "default": "",
-      "description": "Optional e-mail address used for cert expiration notifications (Required for ZeroSSL)."
+      "description": "Optional email address used for cert expiration notifications (required for ZeroSSL)"
     },
     {
       "name": "DOCKER_MODS",
@@ -86,23 +86,23 @@
       "name": "CERTPROVIDER",
       "label": "CERTPROVIDER",
       "default": "",
-      "description": "Optionally define the cert provider. Set to zerossl for ZeroSSL certs (requires existing ZeroSSL account and the e-mail address entered in EMAIL env var). Otherwise defaults to Let's Encrypt."
+      "description": "Optionally define the cert provider. Set to zerossl for ZeroSSL certs (requires existing ZeroSSL account and the email address entered in EMAIL env var). Defaults to Let's Encrypt"
     },
     {
       "name": "PROPAGATION",
       "label": "PROPAGATION",
       "default": "60",
-      "description": "Optionally define the propagation time for DNS validation. Defaults to 60 seconds."
+      "description": "Optionally define the propagation time for DNS validation. Defaults to 60 seconds"
     }
   ],
-  "description": "This container sets up an Nginx webserver and reverse proxy with php support and a built-in letsencrypt client that automates free SSL server certificate generation and renewal processes. It also contains fail2ban for intrusion prevention, includes Authelia for SSO.",
+  "description": "SWAG (Secure Web Application Gateway), formerly known as letsencrypt, sets up an Nginx web server and reverse proxy with PHP support. It includes a built-in certbot client that automates free SSL server certificate generation and renewal processes (Let's Encrypt and ZeroSSL). This stack also includes Authelia for Single Sign-On (SSO).",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/swag-logo.png",
   "name": "swag-authelia",
   "platform": "linux",
   "title": "SWAG with Authelia",
   "type": 3,
   "repository": {
-    "stackfile": "template/stacks/Swag-Authelia.yml",
+    "stackfile": "template/combination_stacks/Swag-Authelia.yml",
     "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

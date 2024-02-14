@@ -14,6 +14,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - RUN_EVERY=${RUN_EVERY}
     volumes:
       - /mnt/Docker/Apps/SteamGiftsBot/config:/config
       - /mnt/Docker/Apps/SteamGiftsBot/logs:/logs

@@ -4,19 +4,19 @@
       "name": "PUID",
       "label": "PUID",
       "default": "1000",
-      "description": "for UserID"
+      "description": "User ID for file permissions"
     },
     {
       "name": "PGID",
       "label": "PGID",
       "default": "1000",
-      "description": "for GroupID"
+      "description": "Group ID for file permissions"
     },
     {
       "name": "TZ",
       "label": "TZ",
       "default": "America/Chicago",
-      "description": "Specify a timezone to use for example America/New_York"
+      "description": "Specify a timezone, e.g., America/New_York"
     },
     {
       "name": "PLEX_SECTION",
@@ -34,7 +34,7 @@
       "name": "PLEX_TOKEN",
       "label": "PLEX_TOKEN",
       "default": "",
-      "description": "Follow [this guide](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/)"
+      "description": "Follow the guide to find your Plex authentication token"
     },
     {
       "name": "ANI_USERNAME",
@@ -46,7 +46,7 @@
       "name": "ANI_TOKEN",
       "label": "ANI_TOKEN",
       "default": "",
-      "description": "Get it [here](https://anilist.co/api/v2/oauth/authorize?client_id=1549&response_type=token)"
+      "description": "Get your AniList API token from the provided link"
     },
     {
       "name": "PLEX_EPISODE_COUNT_PRIORITY",
@@ -58,7 +58,7 @@
       "name": "SKIP_LIST_UPDATE",
       "label": "SKIP_LIST_UPDATE",
       "default": "false",
-      "description": "If set to True, it will NOT update your AniList which is useful if you want to do a test run to check if everything lines up properly. (default = False)"
+      "description": "If set to True, it will NOT update your AniList which is useful for testing purposes (default = False)"
     },
     {
       "name": "LOG_FAILED_MATCHES",
@@ -73,14 +73,14 @@
       "description": "The time in between syncs in seconds"
     }
   ],
-  "description": "All In One Tautulli, PlexTraktSync and PlexAniSync container.",
+  "description": "Combines Tautulli, PlexTraktSync, and PlexAniSync into a single stack for comprehensive Plex server monitoring, Trakt.tv synchronization, and synchronization with AniList.co.",
   "logo": "",
   "name": "tautulli-plexsync",
   "platform": "linux",
-  "title": "Tautulli-PlexSync",
+  "title": "Tautulli, PlexTraktSync, and PlexAniSync",
   "type": 3,
   "repository": {
-    "stackfile": "template/stacks/Tautulli-PlexSync.yml",
+    "stackfile": "template/combination_stacks/Tautulli-PlexSync.yml",
     "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

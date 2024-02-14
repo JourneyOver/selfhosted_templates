@@ -4,29 +4,29 @@
       "name": "PUID",
       "label": "PUID",
       "default": "1000",
-      "description": "for UserID"
+      "description": "User ID for file permissions"
     },
     {
       "name": "PGID",
       "label": "PGID",
       "default": "1000",
-      "description": "for GroupID"
+      "description": "Group ID for file permissions"
     },
     {
       "name": "TZ",
       "label": "TZ",
       "default": "America/Chicago",
-      "description": "Specify a timezone to use for example America/New_York"
+      "description": "Specify a timezone, e.g., America/New_York"
     }
   ],
-  "description": "AdGuard Home is a network-wide software for blocking ads & tracking, includes AdGuardHome Sync",
+  "description": "AdGuard Home is a powerful network-wide software for blocking ads and tracking. It provides enhanced privacy and security by filtering out unwanted content and protecting your devices from online threats. This stack includes AdGuardHome Sync, which allows you to synchronize settings and blocklists across multiple instances of AdGuard Home.",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/adguardhome-logo.png",
   "name": "agh-aghsync",
   "platform": "linux",
-  "title": "AdGuardHome with AdGuardHome-Sync",
+  "title": "AdGuardHome and AdGuardHome-Sync",
   "type": 3,
   "repository": {
-    "stackfile": "template/stacks/AGH-AGHSync.yml",
+    "stackfile": "template/combination_stacks/AGH-AGHSync.yml",
     "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }
