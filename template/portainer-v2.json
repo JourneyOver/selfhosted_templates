@@ -252,59 +252,6 @@
           "label": "TZ",
           "default": "America/Chicago",
           "description": "Specify a timezone to use for example America/New_York"
-        },
-        {
-          "name": "RUN_AT",
-          "label": "RUN_AT",
-          "default": "0 9 * * 0",
-          "description": "CRON command"
-        },
-        {
-          "label": "CUSTOM_LANGUAGE",
-          "name": "CUSTOM_LANGUAGE",
-          "select": [
-            {
-              "default": true,
-              "text": "English",
-              "value": "en"
-            },
-            {
-              "text": "Chinese",
-              "value": "zh"
-            }
-          ]
-        }
-      ],
-      "description": "Automatically renew your freenom domain.",
-      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/freenom-logo.png",
-      "name": "freenom",
-      "platform": "linux",
-      "title": "Freenom",
-      "type": 3,
-      "repository": {
-        "stackfile": "template/stacks/Freenom.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates"
-      }
-    },
-    {
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1000",
-          "description": "for UserID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "1000",
-          "description": "for GroupID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "America/Chicago",
-          "description": "Specify a timezone to use for example America/New_York"
         }
       ],
       "description": "Homarr is a simple and lightweight homepage for your server, that helps you easily access all of your services in one place.",
@@ -450,6 +397,12 @@
           "label": "DB_PASSWORD",
           "default": "",
           "description": "Password of PostgreSQL user"
+        },
+        {
+          "name": "NEXTAUTH_URL",
+          "label": "NEXTAUTH_URL",
+          "default": "",
+          "description": "URL for NextAuth"
         },
         {
           "name": "NEXTAUTH_SECRET",
@@ -902,6 +855,12 @@
           "label": "TZ",
           "default": "America/Chicago",
           "description": "Specify a timezone to use for example America/New_York"
+        },
+        {
+          "name": "RUN_EVERY",
+          "label": "RUN_EVERY",
+          "default": "180",
+          "description": "Timer for how long between each run of the bot in minutes (default 180 minutes/3 hours)"
         }
       ],
       "description": "A bot for steamgifts.com",
@@ -1124,6 +1083,22 @@
           "label": "CROWDSEC_API_KEY",
           "default": "",
           "description": "CrowdSec API Key"
+        },
+        {
+          "name": "CROWDSEC_MODE",
+          "label": "CROWDSEC_MODE",
+          "select": [
+            {
+              "text": "Use stream mode",
+              "value": "stream"
+            },
+            {
+              "default": true,
+              "text": "Use live mode",
+              "value": "live"
+            }
+          ],
+          "description": "CrowdSec mode to use, options are stream or live. Defaults to live."
         },
         {
           "name": "COLLECTIONS",

@@ -101,6 +101,22 @@
       "description": "CrowdSec API Key"
     },
     {
+      "name": "CROWDSEC_MODE",
+      "label": "CROWDSEC_MODE",
+      "select": [
+        {
+          "text": "Use stream mode",
+          "value": "stream"
+        },
+        {
+          "default": true,
+          "text": "Use live mode",
+          "value": "live"
+        }
+      ],
+      "description": "CrowdSec mode to use, options are stream or live. Defaults to live."
+    },
+    {
       "name": "COLLECTIONS",
       "label": "COLLECTIONS",
       "default": "crowdsecurity/nginx crowdsecurity/http-cve crowdsecurity/whitelist-good-actors LePresidente/authelia",

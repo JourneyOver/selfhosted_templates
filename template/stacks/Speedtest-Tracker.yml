@@ -4,7 +4,7 @@ version: "3.9"
 services:
 
   speedtest-tracker:
-    image: ghcr.io/alexjustesen/speedtest-tracker:latest
+    image: lscr.io/linuxserver/speedtest-tracker:latest
     container_name: speedtest-tracker
     hostname: speedtest-tracker
     restart: unless-stopped
@@ -22,11 +22,10 @@ services:
       - DB_PASSWORD=${DB_PASSWORD}
     volumes:
       - /mnt/Docker/Apps/SpeedtestTracker/config:/config
-      - /mnt/Docker/Apps/SpeedtestTracker/web:/etc/ssl/web
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
-      - 20040:443/tcp
+      - 20040:80
 
 networks:
   bunni_network:
