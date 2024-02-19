@@ -1,0 +1,27 @@
+---
+version: "3.9"
+
+services:
+
+  twitchdropsminer:
+    image: ghcr.io/valentin-metz/twitchdropsminer:master
+    container_name: twitchdropsminer
+    hostname: twitchdropsminer
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/TwitchDropsMiner/cookies.jar:/TwitchDropsMiner/cookies.jar
+      - /mnt/Docker/Apps/TwitchDropsMiner/settings.json:/TwitchDropsMiner/settings.json
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    stdin_open: true
+    tty: true
+
+networks:
+  bunni_network:
+    external: true
