@@ -1,0 +1,44 @@
+---
+version: "3.9"
+
+services:
+
+  chapter-sync:
+    image: docker.io/dancardin/chapter-sync:latest
+    container_name: chapter-sync
+    hostname: chapter-sync
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/ChapterSync/chapter_sync.sqlite:/chapter-sync/chapter_sync.sqlite
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    command: ["watch"]
+
+  chapter-sync-web:
+    image: docker.io/dancardin/chapter-sync:latest
+    container_name: chapter-sync-web
+    hostname: chapter-sync-web
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/ChapterSync/chapter_sync.sqlite:/chapter-sync/chapter_sync.sqlite
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 21012:8000
+    command: ["web --host 0.0.0.0"]
+
+networks:
+  bunni_network:
+    external: true

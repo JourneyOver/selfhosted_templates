@@ -1,0 +1,32 @@
+{
+  "env": [
+    {
+      "name": "PUID",
+      "label": "PUID",
+      "default": "1000",
+      "description": "for UserID"
+    },
+    {
+      "name": "PGID",
+      "label": "PGID",
+      "default": "1000",
+      "description": "for GroupID"
+    },
+    {
+      "name": "TZ",
+      "label": "TZ",
+      "default": "America/Chicago",
+      "description": "Specify a timezone to use for example America/New_York"
+    }
+  ],
+  "description": "A tool for recording serialized web content, in partial web-serial type novels, or other serialized content for which you want to be sent updates as they're published.",
+  "logo": "",
+  "name": "chapter-sync",
+  "platform": "linux",
+  "title": "Chapter Sync",
+  "type": 3,
+  "repository": {
+    "stackfile": "template/stacks/Chapter-Sync.yml",
+    "url": "https://github.com/JourneyOver/selfhosted_templates"
+  }
+}
