@@ -166,38 +166,6 @@
           "label": "TZ",
           "default": "America/Chicago",
           "description": "Specify a timezone to use for example America/New_York"
-        }
-      ],
-      "description": "A tool for recording serialized web content, in partial web-serial type novels, or other serialized content for which you want to be sent updates as they're published.",
-      "logo": "",
-      "name": "chapter-sync",
-      "platform": "linux",
-      "title": "Chapter Sync",
-      "type": 3,
-      "repository": {
-        "stackfile": "template/stacks/Chapter-Sync.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates"
-      }
-    },
-    {
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1000",
-          "description": "for UserID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "1000",
-          "description": "for GroupID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "America/Chicago",
-          "description": "Specify a timezone to use for example America/New_York"
         },
         {
           "name": "APP_KEY",
@@ -376,6 +344,38 @@
       "type": 3,
       "repository": {
         "stackfile": "template/stacks/Joal.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
+      }
+    },
+    {
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
+        }
+      ],
+      "description": "Kavita is a fast, feature rich, cross platform reading server. Built with a focus for being a full solution for all your reading needs. Setup your own server and share your reading collection with your friends and family!",
+      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/kavita-logo.png",
+      "name": "kavita",
+      "platform": "linux",
+      "title": "Kavita",
+      "type": 3,
+      "repository": {
+        "stackfile": "template/stacks/Kavita.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
