@@ -1,10 +1,7 @@
----
-version: "3.9"
-
 services:
 
   plex-meta-manager:
-    image: docker.io/meisnate12/plex-meta-manager:nightly
+    image: docker.io/journeyover/plex-meta-manager:nightly
     container_name: plex-meta-manager
     hostname: plex-meta-manager
     restart: unless-stopped
