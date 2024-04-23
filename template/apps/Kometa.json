@@ -19,8 +19,8 @@
       "description": "Specify a timezone to use for example America/New_York"
     },
     {
-      "name": "PMM_NO_COUNTDOWN",
-      "label": "PMM_NO_COUNTDOWN",
+      "name": "KOMETA_NO_COUNTDOWN",
+      "label": "KOMETA_NO_COUNTDOWN",
       "select": [
         {
           "default": true,
@@ -35,13 +35,13 @@
     }
   ],
   "description": "Python script to update metadata information for items in plex as well as automatically build collections and playlists.",
-  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/pmm-logo.png",
-  "name": "plex-meta-manager",
+  "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/kometa-logo.png",
+  "name": "kometa",
   "platform": "linux",
-  "title": "Plex Meta Manager",
+  "title": "Kometa",
   "type": 3,
   "repository": {
-    "stackfile": "template/stacks/Plex-Meta-Manager.yml",
+    "stackfile": "template/stacks/Kometa.yml",
     "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }

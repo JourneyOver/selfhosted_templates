@@ -1,0 +1,24 @@
+services:
+
+  kometa:
+    image: docker.io/kometateam/kometa:lxml-nightly
+    container_name: kometa
+    hostname: kometa
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - KOMETA_NO_COUNTDOWN=${KOMETA_NO_COUNTDOWN}
+    volumes:
+      - /mnt/Docker/Apps/Kometa/config:/config
+      - /mnt/Docker/Apps/Kometa/metadata:/metadata:ro
+      - /mnt/Docker/Apps/Kometa/assets:/assets:ro
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
+networks:
+  bunni_network:
+    external: true
