@@ -854,6 +854,24 @@
           "label": "DB_PASSWORD",
           "default": "",
           "description": "Password of PostgreSQL user"
+        },
+        {
+          "name": "APP_KEY",
+          "label": "APP_KEY",
+          "default": "(REQUIRED)",
+          "description": "Key used to encrypt and decrypt data. You can generate a key at https://speedtest-tracker.dev"
+        },
+        {
+          "name": "SPEEDTEST_SCHEDULE",
+          "label": "SPEEDTEST_SCHEDULE",
+          "default": "0 * * * *",
+          "description": "Cron expression used to run speedtests on a scheduled basis. Default is every hour. For more information on cron schedules, see https://crontab.guru/"
+        },
+        {
+          "name": "PRUNE_RESULTS_OLDER_THAN",
+          "label": "PRUNE_RESULTS_OLDER_THAN",
+          "default": "",
+          "description": "Set the value to greated than zero to prune stored results. This value should be represented in days."
         }
       ],
       "description": "Run a Speedtest every hour and graph the results.",
