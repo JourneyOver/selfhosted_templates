@@ -19,6 +19,26 @@ services:
     stdin_open: true
     tty: true
 
+  autoheal:
+    image: docker.io/willfarrell/autoheal:latest
+    container_name: autoheal
+    hostname: autoheal
+    restart: always
+    network_mode: none
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - AUTOHEAL_CONTAINER_LABEL=all
+      - AUTOHEAL_INTERVAL=60
+      - AUTOHEAL_ONLY_MONITOR_RUNNING=true
+    deploy:
+      replicas: 1
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+
 networks:
   bunni_network:
     external: true

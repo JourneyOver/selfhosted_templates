@@ -74,6 +74,7 @@ services:
     volumes:
       - /mnt/Docker/Apps/Swag/config:/config
       - /mnt/Docker/Apps/Swag/custom-cont-init.d:/custom-cont-init.d
+      - /mnt/Docker/Apps/Swag/cont-init.d:/etc/cont-init.d
       - /mnt/Docker/Apps/Authelia/authelia.log:/authelia/authelia.log:ro
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro

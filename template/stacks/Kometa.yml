@@ -1,7 +1,7 @@
 services:
 
   kometa:
-    image: docker.io/kometateam/kometa:lxml-nightly
+    image: docker.io/kometateam/kometa:nightly
     container_name: kometa
     hostname: kometa
     restart: unless-stopped

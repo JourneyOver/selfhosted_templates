@@ -1,7 +1,7 @@
 services:
 
   plexanisync:
-    image: ghcr.io/rickdb/tautulli-plexanisync:latest
+    image: ghcr.io/rickdb/tautulli-plexanisync:master
     container_name: tautulli-plexanisync
     hostname: tautulli-plexanisync
     restart: unless-stopped

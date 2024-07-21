@@ -166,6 +166,38 @@
           "label": "TZ",
           "default": "America/Chicago",
           "description": "Specify a timezone to use for example America/New_York"
+        }
+      ],
+      "description": "Realtime log viewer for docker containers.",
+      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/dozzle-logo.png",
+      "name": "dozzle",
+      "platform": "linux",
+      "title": "Dozzle",
+      "type": 3,
+      "repository": {
+        "stackfile": "template/stacks/Dozzle.yml",
+        "url": "https://github.com/JourneyOver/selfhosted_templates"
+      }
+    },
+    {
+      "env": [
+        {
+          "name": "PUID",
+          "label": "PUID",
+          "default": "1000",
+          "description": "for UserID"
+        },
+        {
+          "name": "PGID",
+          "label": "PGID",
+          "default": "1000",
+          "description": "for GroupID"
+        },
+        {
+          "name": "TZ",
+          "label": "TZ",
+          "default": "America/Chicago",
+          "description": "Specify a timezone to use for example America/New_York"
         },
         {
           "name": "APP_KEY",
