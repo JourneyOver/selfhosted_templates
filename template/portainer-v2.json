@@ -1035,6 +1035,12 @@
           "description": "To be used with linuxserver/mods:swag-auto-reload"
         },
         {
+          "name": "MAXMIND_USER_ID",
+          "label": "MAXMIND_USER_ID",
+          "default": "",
+          "description": "MaxMind User ID"
+        },
+        {
           "name": "MAXMIND_LICENSE_KEY",
           "label": "MAXMIND_LICENSE_KEY",
           "default": "",
