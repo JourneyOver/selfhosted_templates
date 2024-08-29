@@ -50,7 +50,10 @@ services:
     cap_add:
       - NET_ADMIN
     depends_on:
-      - authelia
+      authelia:
+        condition: service_healthy
+      crowdsec:
+        condition: service_started
     environment:
       - PUID=${PUID}
       - PGID=${PGID}

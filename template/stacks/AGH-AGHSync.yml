@@ -8,7 +8,8 @@ services:
     networks:
       - bunni_network
     depends_on:
-      - adguardhome
+      adguardhome:
+        condition: service_healthy
     environment:
       - PUID=${PUID}
       - PGID=${PGID}

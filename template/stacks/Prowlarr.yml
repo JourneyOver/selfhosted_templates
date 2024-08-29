@@ -19,6 +19,23 @@ services:
     ports:
       - 20049:9696/tcp
 
+  flaresolverr:
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    container_name: flaresolverr
+    hostname: flaresolverr
+    restart: unless-stopped
+    depends_on:
+      prowlarr:
+        condition: service_started
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    ports:
+      - 8191:8191
+
 networks:
   bunni_network:
     external: true
