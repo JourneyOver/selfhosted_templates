@@ -21,7 +21,7 @@ services:
     ports:
       - 21026:80/tcp
     healthcheck:
-      test: ["CMD-SHELL", "curl -fSs http://localhost:80/ping || exit 1"]
+      test: ["CMD-SHELL", "curl -fSs http://localhost:80/ping | grep '\"success\":true' || exit 1"]
       interval: 1m
       retries: 3
       start_period: 30s
