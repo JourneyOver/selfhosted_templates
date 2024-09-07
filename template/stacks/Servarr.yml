@@ -1,0 +1,73 @@
+services:
+
+  flaresolverr:
+    image: ghcr.io/flaresolverr/flaresolverr:latest
+    container_name: flaresolverr
+    hostname: flaresolverr
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    ports:
+      - 20019:8191
+
+  prowlarr:
+    image: ghcr.io/hotio/prowlarr:nightly
+    container_name: prowlarr
+    hostname: prowlarr
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    depends_on:
+      flaresolverr:
+        condition: service_started
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK_SET=002
+    volumes:
+      - /mnt/Docker/Apps/Prowlarr:/config
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 20049:9696/tcp
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fSs http://localhost:9696/ping | jq -r .status || exit 1"]
+      interval: 10s
+      retries: 3
+      start_period: 30s
+      timeout: 10s
+
+  radarr:
+    image: ghcr.io/hotio/radarr:nightly
+    container_name: radarr
+    hostname: radarr
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK_SET=002
+    volumes:
+      - /mnt/Docker/Apps/Radarr:/config
+      - /media/bunni/Zeta:/movies
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 20023:7878/tcp
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fSs http://localhost:7878/ping | jq -r .status || exit 1"]
+      interval: 10s
+      retries: 3
+      start_period: 30s
+      timeout: 10s
+
+networks:
+  bunni_network:
+    external: true

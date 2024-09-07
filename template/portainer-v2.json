@@ -699,46 +699,14 @@
           "description": "Specify a timezone to use for example America/New_York"
         }
       ],
-      "description": "Prowlarr is a indexer manager/proxy built on the popular arr .net/reactjs base stack to integrate with your various PVR apps. Prowlarr supports both Torrent Trackers and Usenet Indexers. It integrates seamlessly with Sonarr, Radarr, Lidarr, and Readarr offering complete management of your indexers with no per app Indexer setup required (we do it all).",
+      "description": "Servarr is a collection of services for managing your media collection. Currently includes Prowlarr, Radarr, Flaresolverr. (Future plans for Sonarr, etc. as I switch them over to my server.)",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/prowlarr-logo.png",
-      "name": "prowlarr",
+      "name": "servarr",
       "platform": "linux",
-      "title": "Prowlarr",
+      "title": "Servarr",
       "type": 3,
       "repository": {
-        "stackfile": "template/stacks/Prowlarr.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates"
-      }
-    },
-    {
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1000",
-          "description": "for UserID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "1000",
-          "description": "for GroupID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "America/Chicago",
-          "description": "Specify a timezone to use for example America/New_York"
-        }
-      ],
-      "description": "Radarr - A fork of Sonarr to work with movies à la Couchpotato.",
-      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/radarr-logo.png",
-      "name": "radarr",
-      "platform": "linux",
-      "title": "Radarr",
-      "type": 3,
-      "repository": {
-        "stackfile": "template/stacks/Radarr.yml",
+        "stackfile": "template/stacks/Servarr.yml",
         "url": "https://github.com/JourneyOver/selfhosted_templates"
       }
     },
@@ -805,38 +773,6 @@
       }
     },
     {
-      "env": [
-        {
-          "name": "PUID",
-          "label": "PUID",
-          "default": "1000",
-          "description": "for UserID"
-        },
-        {
-          "name": "PGID",
-          "label": "PGID",
-          "default": "1000",
-          "description": "for GroupID"
-        },
-        {
-          "name": "TZ",
-          "label": "TZ",
-          "default": "America/Chicago",
-          "description": "Specify a timezone to use for example America/New_York"
-        }
-      ],
-      "description": "Snippet Box is a simple self-hosted app for organizing your code snippets.",
-      "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/snibox-logo.png",
-      "name": "snippet-box",
-      "platform": "linux",
-      "title": "Snippet Box",
-      "type": 3,
-      "repository": {
-        "stackfile": "template/stacks/Snippet-Box.yml",
-        "url": "https://github.com/JourneyOver/selfhosted_templates"
-      }
-    },
-    {
       "categories": [],
       "env": [
         {
@@ -898,6 +834,18 @@
           "label": "SPEEDTEST_SCHEDULE",
           "default": "0 * * * *",
           "description": "Cron expression used to run speedtests on a scheduled basis. Default is every hour. For more information on cron schedules, see https://crontab.guru/"
+        },
+        {
+          "name": "SPEEDTEST_PING_URL",
+          "label": "SPEEDTEST_PING_URL",
+          "default": "google.com",
+          "description": "IP address or URL used to check for an internet connection prior to running a test."
+        },
+        {
+          "name": "SPEEDTEST_SERVERS",
+          "label": "SPEEDTEST_SERVERS",
+          "default": "",
+          "description": "Comma separated list of server IDs to randomly use for speedtests, use this page to find the best servers for your ISP/location https://c.speedtest.net/speedtest-servers-static.php."
         },
         {
           "name": "PRUNE_RESULTS_OLDER_THAN",
@@ -1203,6 +1151,30 @@
           "label": "TZ",
           "default": "America/Chicago",
           "description": "Specify a timezone to use for example America/New_York"
+        },
+        {
+          "name": "AUTOHEAL_CONNECTION_TYPE",
+          "label": "AUTOHEAL_CONNECTION_TYPE",
+          "default": "socket",
+          "description": "Determines how docker-autoheal connects to Docker"
+        },
+        {
+          "name": "AUTOHEAL_MONITOR_ALL",
+          "label": "AUTOHEAL_MONITOR_ALL",
+          "default": "true",
+          "description": "Monitor all containers"
+        },
+        {
+          "name": "AUTOHEAL_LOG_ALL",
+          "label": "AUTOHEAL_LOG_ALL",
+          "default": "true",
+          "description": "Log all events"
+        },
+        {
+          "name": "AUTOHEAL_LOG_PERSIST",
+          "label": "AUTOHEAL_LOG_PERSIST",
+          "default": "true",
+          "description": "Persist logs"
         }
       ],
       "description": "An app that allows you to AFK mine timed Twitch drops, with automatic drop claiming and channel switching.",

@@ -20,7 +20,7 @@ services:
     tty: true
 
   autoheal:
-    image: docker.io/willfarrell/autoheal:latest
+    image: ghcr.io/tmknight/docker-autoheal:latest
     container_name: autoheal
     hostname: autoheal
     restart: always
@@ -29,14 +29,18 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - AUTOHEAL_CONTAINER_LABEL=all
-      - AUTOHEAL_INTERVAL=60
-      - AUTOHEAL_ONLY_MONITOR_RUNNING=true
+      - AUTOHEAL_CONNECTION_TYPE=${AUTOHEAL_CONNECTION_TYPE}
+      - AUTOHEAL_MONITOR_ALL=${AUTOHEAL_MONITOR_ALL}
+      - AUTOHEAL_LOG_ALL=${AUTOHEAL_LOG_ALL}
+      - AUTOHEAL_LOG_PERSIST=${AUTOHEAL_LOG_PERSIST}
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false"
     deploy:
       replicas: 1
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+      - /mnt/Docker/Apps/AutoHeal/log.json:/opt/docker-autoheal/log.json
       - /var/run/docker.sock:/var/run/docker.sock
 
 networks:

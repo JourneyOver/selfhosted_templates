@@ -17,6 +17,30 @@
       "label": "TZ",
       "default": "America/Chicago",
       "description": "Specify a timezone to use for example America/New_York"
+    },
+    {
+      "name": "AUTOHEAL_CONNECTION_TYPE",
+      "label": "AUTOHEAL_CONNECTION_TYPE",
+      "default": "socket",
+      "description": "Determines how docker-autoheal connects to Docker"
+    },
+    {
+      "name": "AUTOHEAL_MONITOR_ALL",
+      "label": "AUTOHEAL_MONITOR_ALL",
+      "default": "true",
+      "description": "Monitor all containers"
+    },
+    {
+      "name": "AUTOHEAL_LOG_ALL",
+      "label": "AUTOHEAL_LOG_ALL",
+      "default": "true",
+      "description": "Log all events"
+    },
+    {
+      "name": "AUTOHEAL_LOG_PERSIST",
+      "label": "AUTOHEAL_LOG_PERSIST",
+      "default": "true",
+      "description": "Persist logs"
     }
   ],
   "description": "An app that allows you to AFK mine timed Twitch drops, with automatic drop claiming and channel switching.",

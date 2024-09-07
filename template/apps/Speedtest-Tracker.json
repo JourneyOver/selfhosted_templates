@@ -63,6 +63,18 @@
       "description": "Cron expression used to run speedtests on a scheduled basis. Default is every hour. For more information on cron schedules, see https://crontab.guru/"
     },
     {
+      "name": "SPEEDTEST_PING_URL",
+      "label": "SPEEDTEST_PING_URL",
+      "default": "google.com",
+      "description": "IP address or URL used to check for an internet connection prior to running a test."
+    },
+    {
+      "name": "SPEEDTEST_SERVERS",
+      "label": "SPEEDTEST_SERVERS",
+      "default": "",
+      "description": "Comma separated list of server IDs to randomly use for speedtests, use this page to find the best servers for your ISP/location https://c.speedtest.net/speedtest-servers-static.php."
+    },
+    {
       "name": "PRUNE_RESULTS_OLDER_THAN",
       "label": "PRUNE_RESULTS_OLDER_THAN",
       "default": "",

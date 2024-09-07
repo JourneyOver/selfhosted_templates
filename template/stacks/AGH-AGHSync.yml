@@ -1,24 +1,5 @@
 services:
 
-  adguardhome-sync:
-    image: lscr.io/linuxserver/adguardhome-sync:latest
-    container_name: adguardhome-sync
-    hostname: adguardhome-sync
-    restart: unless-stopped
-    networks:
-      - bunni_network
-    depends_on:
-      adguardhome:
-        condition: service_healthy
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-    volumes:
-      - /mnt/Docker/Apps/AdGuardHomeSync:/config
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-
   adguardhome:
     image: docker.io/adguard/adguardhome:beta
     container_name: adguardhome
@@ -44,6 +25,25 @@ services:
       interval: 45s
       timeout: 30s
       retries: 3
+
+  adguardhome-sync:
+    image: lscr.io/linuxserver/adguardhome-sync:latest
+    container_name: adguardhome-sync
+    hostname: adguardhome-sync
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    depends_on:
+      adguardhome:
+        condition: service_healthy
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/AdGuardHomeSync:/config
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
 
 networks:
   bunni_network:

@@ -39,6 +39,12 @@ services:
       - /var/log:/var/log/host:ro
     security_opt:
       - no-new-privileges=true
+    healthcheck:
+      test: ["CMD-SHELL", "cscli lapi status"]
+      start_period: 120s
+      interval: 10s
+      timeout: 5s
+      retries: 3
 
   swag:
     image: lscr.io/linuxserver/swag:latest
@@ -53,7 +59,7 @@ services:
       authelia:
         condition: service_healthy
       crowdsec:
-        condition: service_started
+        condition: service_healthy
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
