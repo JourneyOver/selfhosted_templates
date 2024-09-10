@@ -29,6 +29,48 @@
       "label": "ASF_PASSWORD",
       "default": "",
       "description": "IPC password, needed for asfclaim"
+    },
+    {
+      "name": "USERAGENT",
+      "label": "USERAGENT",
+      "default": "",
+      "description": "Custom user agent to use for ASFScan bot"
+    },
+    {
+      "name": "CLIENTID",
+      "label": "CLIENTID",
+      "default": "",
+      "description": "Custom client ID to use for ASFScan bot"
+    },
+    {
+      "name": "CLIENTSECRET",
+      "label": "CLIENTSECRET",
+      "default": "",
+      "description": "Custom client secret to use for ASFScan bot"
+    },
+    {
+      "name": "REDDITUSERNAME",
+      "label": "REDDITUSERNAME",
+      "default": "",
+      "description": "Reddit username to use for ASFScan bot"
+    },
+    {
+      "name": "REDDITPASSWORD",
+      "label": "REDDITPASSWORD",
+      "default": "",
+      "description": "Reddit password to use for ASFScan bot"
+    },
+    {
+      "name": "GISTID",
+      "label": "GISTID",
+      "default": "",
+      "description": "Gist ID to use for ASFScan bot"
+    },
+    {
+      "name": "GHTOKEN",
+      "label": "GHTOKEN",
+      "default": "",
+      "description": "GitHub token to use for ASFScan bot"
     }
   ],
   "description": "C# application with primary purpose of farming Steam cards from multiple accounts simultaneously.",

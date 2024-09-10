@@ -45,6 +45,25 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - data:/app/storage/
 
+  asfscan:
+    image: ghcr.io/journeydocker/asfscan:latest
+    container_name: asfscan
+    hostname: asfscan
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - userAgent=${USERAGENT}
+      - clientId=${CLIENTID}
+      - clientSecret=${CLIENTSECRET}
+      - RedditUsername=${REDDITUSERNAME}
+      - RedditPassword=${REDDITPASSWORD}
+      - gistId=${GISTID}
+      - ghToken=${GHTOKEN}
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
 networks:
   bunni_network:
     external: true
