@@ -58,8 +58,10 @@ services:
     depends_on:
       authelia:
         condition: service_healthy
+        required: true
       crowdsec:
         condition: service_healthy
+        required: true
     environment:
       - PUID=${PUID}
       - PGID=${PGID}

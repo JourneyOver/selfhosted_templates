@@ -24,6 +24,7 @@ services:
     depends_on:
       flaresolverr:
         condition: service_started
+        required: true
     environment:
       - PUID=${PUID}
       - PGID=${PGID}

@@ -34,6 +34,7 @@ services:
     depends_on:
       archisteamfarm:
         condition: service_healthy
+        required: true
     environment:
       - ASF_HOST=archisteamfarm
       - ASF_PASS=${ASF_PASSWORD}
@@ -53,6 +54,7 @@ services:
     networks:
       - bunni_network
     environment:
+      - TZ=${TZ}
       - userAgent=${USERAGENT}
       - clientId=${CLIENTID}
       - clientSecret=${CLIENTSECRET}
@@ -63,6 +65,8 @@ services:
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 21022:3000
 
 networks:
   bunni_network:
