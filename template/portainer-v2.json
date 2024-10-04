@@ -1157,6 +1157,18 @@
           "description": "Specify a timezone to use for example America/New_York"
         },
         {
+          "name": "UNLINKED_CAMPAIGNS",
+          "label": "UNLINKED_CAMPAIGNS",
+          "default": "",
+          "description": "Allow mining drops from campaigns that are not linked to your account (1 = true, 0 = false)"
+        },
+        {
+          "name": "PRIORITY_MODE",
+          "label": "PRIORITY_MODE",
+          "default": "",
+          "description": "Priority mode for miner prioritizes campaigns (0 = Use the priority list directly, 1 = Prioritize based on time-to-end, 2 = Optimize by time ratio)"
+        },
+        {
           "name": "AUTOHEAL_CONNECTION_TYPE",
           "label": "AUTOHEAL_CONNECTION_TYPE",
           "default": "socket",

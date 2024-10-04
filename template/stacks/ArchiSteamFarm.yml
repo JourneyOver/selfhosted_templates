@@ -23,6 +23,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
     ports:
       - 20022:1242/tcp
+    labels:
+      - "com.centurylinklabs.watchtower.depends-on=asfclaim"
 
   asfclaim:
     image: ghcr.io/journeydocker/asfclaim:latest

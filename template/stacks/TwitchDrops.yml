@@ -11,6 +11,8 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - UNLINKED_CAMPAIGNS=${UNLINKED_CAMPAIGNS}
+      - PRIORITY_MODE=${PRIORITY_MODE}
     volumes:
       - /mnt/Docker/Apps/TwitchDropsMiner/cookies.jar:/TwitchDropsMiner/cookies.jar
       - /mnt/Docker/Apps/TwitchDropsMiner/settings.json:/TwitchDropsMiner/settings.json
