@@ -57,13 +57,39 @@ services:
       - UMASK_SET=002
     volumes:
       - /mnt/Docker/Apps/Radarr:/config
-      - /media/bunni/Zeta:/movies
+      - /media/bunni/Zeta:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
       - 20023:7878/tcp
     healthcheck:
       test: ["CMD-SHELL", "curl -fSs http://localhost:7878/ping | jq -r .status || exit 1"]
+      interval: 10s
+      retries: 3
+      start_period: 1m
+      timeout: 10s
+
+  sonarr:
+    image: ghcr.io/hotio/sonarr:nightly
+    container_name: sonarr
+    hostname: sonarr
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK_SET=002
+    volumes:
+      - /mnt/Docker/Apps/Sonarr:/config
+      - /media/bunni/Zeta:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 20048:8989/tcp
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fSs http://localhost:8989/ping | jq -r .status || exit 1"]
       interval: 10s
       retries: 3
       start_period: 1m
