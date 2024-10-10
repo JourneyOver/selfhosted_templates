@@ -95,6 +95,29 @@ services:
       start_period: 1m
       timeout: 10s
 
+  qbt:
+    image: ghcr.io/journeydocker/qbit-fb:latest
+    container_name: qbt
+    hostname: qbt
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - WEBUI_PORT=${WEBUI_PORT}
+    volumes:
+      - /mnt/Docker/Apps/QBT:/config
+      - /mnt/Docker/Apps/QBT/filebot/data:/filebot/data
+      - /mnt/Docker/Apps/Joal/torrents:/jtorrents
+      - /media/bunni/Zeta/Media:/media
+      - /media/bunni/Zeta/downloads:/downloads
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - ${WEBUI_PORT}:${WEBUI_PORT}
+
 networks:
   bunni_network:
     external: true
