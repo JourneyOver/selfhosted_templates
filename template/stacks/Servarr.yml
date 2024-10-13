@@ -42,6 +42,8 @@ services:
       retries: 3
       start_period: 1m
       timeout: 10s
+    labels:
+      - "com.centurylinklabs.watchtower.depends-on=postgres"
 
   radarr:
     image: ghcr.io/hotio/radarr:nightly
@@ -68,6 +70,8 @@ services:
       retries: 3
       start_period: 1m
       timeout: 10s
+    labels:
+      - "com.centurylinklabs.watchtower.depends-on=postgres"
 
   sonarr:
     image: ghcr.io/hotio/sonarr:nightly
@@ -94,6 +98,8 @@ services:
       retries: 3
       start_period: 1m
       timeout: 10s
+    labels:
+      - "com.centurylinklabs.watchtower.depends-on=postgres"
 
 networks:
   bunni_network:

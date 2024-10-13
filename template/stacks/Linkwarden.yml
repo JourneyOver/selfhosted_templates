@@ -28,6 +28,8 @@ services:
       retries: 3
       start_period: 1m
       timeout: 10s
+    labels:
+      - "com.centurylinklabs.watchtower.depends-on=postgres"
 
 networks:
   bunni_network:

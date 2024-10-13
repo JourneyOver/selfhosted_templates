@@ -23,6 +23,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
     ports:
       - 21036:8080/tcp
+    labels:
+      - "com.centurylinklabs.watchtower.depends-on=postgres"
 
 networks:
   bunni_network:

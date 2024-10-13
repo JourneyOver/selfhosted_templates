@@ -18,7 +18,7 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     labels:
-      - "com.centurylinklabs.watchtower.depends-on=swag"
+      - "com.centurylinklabs.watchtower.depends-on=postgres"
 
   crowdsec:
     image: docker.io/crowdsecurity/crowdsec:latest
@@ -47,8 +47,6 @@ services:
       interval: 10s
       timeout: 5s
       retries: 3
-    labels:
-      - "com.centurylinklabs.watchtower.depends-on=swag"
 
   swag:
     image: lscr.io/linuxserver/swag:latest
@@ -98,6 +96,8 @@ services:
       - 80:80
       - 81:81
       - 443:443
+    labels:
+      - "com.centurylinklabs.watchtower.depends-on=authelia,crowdsec"
 
 networks:
   bunni_network:
