@@ -59,7 +59,7 @@ services:
       - UMASK_SET=002
     volumes:
       - /mnt/Docker/Apps/Radarr:/config
-      - /media/bunni/Zeta:/data
+      - /mnt/Abyss:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
@@ -87,7 +87,7 @@ services:
       - UMASK_SET=002
     volumes:
       - /mnt/Docker/Apps/Sonarr:/config
-      - /media/bunni/Zeta:/data
+      - /mnt/Abyss:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:

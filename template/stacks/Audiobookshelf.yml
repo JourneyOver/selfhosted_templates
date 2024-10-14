@@ -12,8 +12,8 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - /media/bunni/Zeta/Media/Audiobooks:/audiobooks
-      - /media/bunni/Zeta/Media/Podcasts:/podcasts
+      - /mnt/Abyss/Media/Audiobooks:/audiobooks
+      - /mnt/Abyss/Media/Podcasts:/podcasts
       - /mnt/Docker/Apps/Audiobookshelf/metadata:/metadata
       - /mnt/Docker/Apps/Audiobookshelf/config:/config
       - /etc/timezone:/etc/timezone:ro
