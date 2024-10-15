@@ -101,6 +101,26 @@ services:
     labels:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
 
+  recyclarr:
+    image: ghcr.io/recyclarr/recyclarr:latest
+    container_name: recyclarr
+    hostname: recyclarr
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    depends_on:
+      - sonarr
+      - radarr
+      - prowlarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/Recyclarr:/config
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
 networks:
   bunni_network:
     external: true
