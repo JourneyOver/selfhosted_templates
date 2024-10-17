@@ -26,36 +26,6 @@ services:
       timeout: 5s
       retries: 3
 
-  pgadmin:
-    image: docker.io/dpage/pgadmin4:latest
-    container_name: pgadmin4
-    hostname: pgadmin4
-    restart: unless-stopped
-    networks:
-      - bunni_network
-    depends_on:
-      postgres:
-        condition: service_healthy
-        required: true
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-      - PGADMIN_DEFAULT_EMAIL=${PGADMIN_MAIL}
-      - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_PASSWORD}
-    volumes:
-      - /mnt/Docker/Apps/Pgadmin:/var/lib/pgadmin
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-    ports:
-      - 5050:80
-    healthcheck:
-      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:80/misc/ping || exit 1"]
-      interval: 10s
-      retries: 3
-      start_period: 1m
-      timeout: 10s
-
   pgbackups:
     image: docker.io/prodrigestivill/postgres-backup-local:alpine
     container_name: pgbackups

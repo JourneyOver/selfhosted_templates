@@ -646,18 +646,6 @@
           "description": "Specify a database name for the default user"
         },
         {
-          "name": "PGADMIN_MAIL",
-          "label": "PGADMIN_MAIL",
-          "default": "",
-          "description": "Specify a mail for the pgadmin user"
-        },
-        {
-          "name": "PGADMIN_PASSWORD",
-          "label": "PGADMIN_PASSWORD",
-          "default": "",
-          "description": "Specify a password for the pgadmin user"
-        },
-        {
           "name": "DB_NAME",
           "label": "DB_NAME",
           "default": "",
@@ -670,8 +658,7 @@
           "description": "Cron-schedule specifying the interval between postgres backups. Defaults to @daily."
         }
       ],
-      "note": "must create pgadmin folder manually and run `sudo chown 5050:5050 pgadmin` otherwise it will not work",
-      "description": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance. Includes pgAdmin4 for web management and PGBackups for scheduled backups.",
+      "description": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance. Includes PGBackups for scheduled backups.",
       "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/postgresql-logo.png",
       "name": "postgresql",
       "platform": "linux",

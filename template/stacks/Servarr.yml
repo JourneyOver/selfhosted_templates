@@ -120,6 +120,8 @@ services:
       - /mnt/Docker/Apps/Recyclarr:/config
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+    labels:
+      - "com.centurylinklabs.watchtower.depends-on=sonarr,radarr,prowlarr"
 
 networks:
   bunni_network:
