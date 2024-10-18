@@ -26,10 +26,10 @@ services:
       timeout: 5s
       retries: 3
 
-  pgbackups:
-    image: docker.io/prodrigestivill/postgres-backup-local:alpine
-    container_name: pgbackups
-    hostname: pgbackups
+  pgbackweb:
+    image: docker.io/eduardolat/pgbackweb:latest
+    container_name: pgbackweb
+    hostname: pgbackweb
     restart: unless-stopped
     networks:
       - bunni_network
@@ -41,19 +41,14 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - POSTGRES_HOST=postgres
-      - POSTGRES_DB=${DB_NAME}
-      - POSTGRES_USER=${POSTGRES_USER}
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_EXTRA_OPTS=-Z9 --schema=public --blobs
-      - SCHEDULE=${SCHEDULE}
-      - BACKUP_KEEP_DAYS=7
-      - BACKUP_KEEP_WEEKS=4
-      - BACKUP_KEEP_MONTHS=6
+      - PBW_ENCRYPTION_KEY=${PBW_ENCRYPTION_KEY}
+      - PBW_POSTGRES_CONN_STRING=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/pgbackweb?sslmode=disable
     volumes:
-      - /mnt/Docker/Apps/Pgbackups:/backups
+      - /mnt/Docker/Apps/Pgbackweb:/backups
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 20025:8085
 
 networks:
   bunni_network:

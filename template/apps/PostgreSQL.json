@@ -37,20 +37,13 @@
       "description": "Specify a database name for the default user"
     },
     {
-      "name": "DB_NAME",
-      "label": "DB_NAME",
+      "name": "PBW_ENCRYPTION_KEY",
+      "label": "PBW_ENCRYPTION_KEY",
       "default": "",
-      "description": "Comma or space separated list of postgres databases to backup."
-    },
-    {
-      "name": "SCHEDULE",
-      "label": "SCHEDULE",
-      "default": "@daily",
-      "description": "Cron-schedule specifying the interval between postgres backups. Defaults to @daily."
-
+      "description": "Your encryption key. Generate a strong one and store it in a safe place, as PG Back Web uses it to encrypt sensitive data"
     }
   ],
-  "description": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance. Includes PGBackups for scheduled backups.",
+  "description": "PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance. Includes PGBackWeb for easy backups and restores.",
   "logo": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/images/postgresql-logo.png",
   "name": "postgresql",
   "platform": "linux",
