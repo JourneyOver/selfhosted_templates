@@ -1,7 +1,7 @@
 services:
 
   plexautolanguages:
-    image: ghcr.io/journeydocker/plex-auto-languages:latest
+    image: ghcr.io/journeydocker/plex-auto-languages:main
     container_name: plexautolanguages
     hostname: plexautolanguages
     restart: always

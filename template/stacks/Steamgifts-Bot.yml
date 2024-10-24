@@ -1,7 +1,7 @@
 services:
 
   steamgifts-bot:
-    image: docker.io/journeyover/steamgifts-bot:latest
+    image: ghcr.io/journeydocker/steamgifts-bot:main
     container_name: steamgifts-bot
     hostname: steamgifts-bot
     restart: unless-stopped

@@ -25,7 +25,7 @@ services:
       - 20022:1242/tcp
 
   asfclaim:
-    image: ghcr.io/journeydocker/asfclaim:latest
+    image: ghcr.io/journeydocker/asfclaim:main
     container_name: asfclaim
     hostname: asfclaim
     restart: unless-stopped
@@ -49,7 +49,7 @@ services:
       - "com.centurylinklabs.watchtower.depends-on=archisteamfarm"
 
   asfscan:
-    image: ghcr.io/journeydocker/asfscan:latest
+    image: ghcr.io/journeydocker/asfscan:main
     container_name: asfscan
     hostname: asfscan
     restart: unless-stopped

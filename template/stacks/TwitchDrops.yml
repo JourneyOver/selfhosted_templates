@@ -1,7 +1,7 @@
 services:
 
   twitchdropsminer:
-    image: ghcr.io/journeydocker/twitchdropsminer:latest
+    image: ghcr.io/journeydocker/twitchdropsminer:main
     container_name: twitchdropsminer
     hostname: twitchdropsminer
     restart: always
