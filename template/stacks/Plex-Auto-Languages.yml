@@ -4,7 +4,7 @@ services:
     image: ghcr.io/journeydocker/plex-auto-languages:main
     container_name: plexautolanguages
     hostname: plexautolanguages
-    restart: always
+    restart: unless-stopped
     networks:
       - bunni_network
     environment:

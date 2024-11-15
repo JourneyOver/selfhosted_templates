@@ -4,7 +4,7 @@ services:
     image: ghcr.io/journeydocker/twitchdropsminer:main
     container_name: twitchdropsminer
     hostname: twitchdropsminer
-    restart: always
+    restart: unless-stopped
     networks:
       - bunni_network
     environment:
@@ -25,7 +25,7 @@ services:
     image: ghcr.io/journeydocker/docker-autoheal:latest
     container_name: autoheal
     hostname: autoheal
-    restart: always
+    restart: unless-stopped
     network_mode: none
     environment:
       - PUID=${PUID}
