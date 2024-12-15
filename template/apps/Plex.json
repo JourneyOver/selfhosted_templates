@@ -73,14 +73,14 @@
       "description": "The time in between syncs in seconds"
     }
   ],
-  "description": "All In One Tautulli, PlexTraktSync and PlexAniSync container.",
+  "description": "A robust Plex Media Server stack. Includes Tautulli, AniList syncing, Plex Auto Languages, Trakt syncing, and Zurg for media debrid management.",
   "logo": "",
-  "name": "tautulli-plexsync",
+  "name": "plex",
   "platform": "linux",
-  "title": "Tautulli-PlexSync",
+  "title": "Plex",
   "type": 3,
   "repository": {
-    "stackfile": "template/stacks/Tautulli-PlexSync.yml",
+    "stackfile": "template/stacks/Plex.yml",
     "url": "https://github.com/JourneyOver/selfhosted_templates"
   }
 }
