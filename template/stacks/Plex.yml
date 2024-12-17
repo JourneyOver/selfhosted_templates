@@ -1,3 +1,7 @@
+volumes:
+  plexanisync:
+  plextraktsync:
+
 services:
 
   plex:
@@ -7,20 +11,64 @@ services:
     restart: unless-stopped
     network_mode: host
     depends_on:
-      - zurg
-      - rclone
+      rclone:
+        condition: service_started
+        required: true
+      zurg:
+        condition: service_healthy
+        required: true
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
       - VERSION=latest
+      - DOCKER_MODS=${DOCKER_MODS}
     devices:
       - /dev/dri:/dev/dri
     volumes:
       - /mnt/Docker/Apps/Plex/config:/config
       - /mnt/Abyss/Media:/media
+      - /mnt/Zurg:/zurg
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: ["CMD-SHELL", "curl --connect-timeout 15 --silent --show-error --fail http://localhost:32400/identity || exit 1"]
+      interval: 60s
+      retries: 3
+      start_period: 60s
+      timeout: 15s
     labels:
       - "com.centurylinklabs.watchtower.enable=false"
+
+  tautulli:
+    image: lscr.io/linuxserver/tautulli:latest
+    container_name: tautulli
+    hostname: tautulli
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    depends_on:
+      plex:
+        condition: service_healthy
+        required: true
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/Tautulli:/config
+      - plexanisync:/plexanisync:ro
+      - /mnt/Docker/Apps/PlexAniSync/custom_mappings.yaml:/plexanisync/custom_mappings.yaml:ro
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 20042:8181/tcp
+    healthcheck:
+      test: ["CMD-SHELL", "curl -ILfks https://localhost:8181/status > /dev/null || curl -ILfs http://localhost:8181/status > /dev/null || exit 1"]
+      interval: 10s
+      retries: 3
+      start_period: 90s
+      timeout: 10s
 
   plexautolanguages:
     image: ghcr.io/journeydocker/plex-auto-languages:main
@@ -30,7 +78,9 @@ services:
     networks:
       - bunni_network
     depends_on:
-      - plex
+      plex:
+        condition: service_healthy
+        required: true
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -41,14 +91,16 @@ services:
       - /etc/localtime:/etc/localtime:ro
 
   plexanisync:
-    image: ghcr.io/rickdb/tautulli-plexanisync:master
-    container_name: tautulli-plexanisync
-    hostname: tautulli-plexanisync
+    image: ghcr.io/rickdb/plexanisync:master
+    container_name: plexanisync
+    hostname: plexanisync
     restart: unless-stopped
     networks:
       - bunni_network
     depends_on:
-      - plex
+      plex:
+        condition: service_healthy
+        required: true
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -64,12 +116,11 @@ services:
       - INTERVAL=${INTERVAL}
     volumes:
       - /mnt/Docker/Apps/PlexAniSync/custom_mappings.yaml:/plexanisync/custom_mappings.yaml
+      - /mnt/Docker/Apps/PlexAniSync/plexanisync.log:/plexanisync/PlexAniSync.log
       - /mnt/Docker/Apps/PlexAniSync/failed_matches.txt:/plexanisync/failed_matches.txt
-      - /mnt/Docker/Apps/Tautulli:/config
+      - plexanisync:/plexanisync
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-    ports:
-      - 20042:8181/tcp
 
   plextraktsync:
     image: ghcr.io/taxel/plextraktsync:latest
@@ -79,13 +130,16 @@ services:
     networks:
       - bunni_network
     depends_on:
-      - plex
+      plex:
+        condition: service_healthy
+        required: true
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
       - /mnt/Docker/Apps/PlexTraktSync:/app/config
+      - plextraktsync:/app/xdg
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     command: ["watch"]
@@ -130,7 +184,9 @@ services:
     cap_add:
       - SYS_ADMIN
     depends_on:
-      - zurg
+      zurg:
+        condition: service_healthy
+        required: true
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -144,7 +200,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
     security_opt:
       - apparmor:unconfined
-    command: "mount zurg: /data --allow-other --allow-non-empty --attr-timeout 10y --buffer-size 128M --dir-cache-time 10s --poll-interval 60s --vfs-cache-max-age 2M --vfs-cache-max-size 50G --vfs-cache-min-free-space 2G --vfs-cache-mode full --vfs-cache-poll-interval 30s --vfs-disk-space-total-size 100G --vfs-fast-fingerprint --vfs-read-ahead 64M --vfs-read-chunk-size 1M --vfs-read-chunk-size-limit 32M --vfs-read-wait 40ms --vfs-refresh --transfers 32 --checkers 32 --multi-thread-streams 8 --fast-list --no-console"
+    command: "mount zurg: /data --allow-other --allow-non-empty --attr-timeout 10y --buffer-size 128M --dir-cache-time 10s --poll-interval 60s --vfs-cache-max-age 2M --vfs-cache-max-size 30G --vfs-cache-min-free-space 2G --vfs-cache-mode full --vfs-cache-poll-interval 30s --vfs-disk-space-total-size 32G --vfs-fast-fingerprint --vfs-read-ahead 64M --vfs-read-chunk-size 1M --vfs-read-chunk-size-limit 32M --vfs-read-wait 40ms --vfs-refresh --transfers 32 --checkers 32 --multi-thread-streams 8"
     labels:
       - "com.centurylinklabs.watchtower.enable=false"
 

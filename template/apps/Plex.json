@@ -71,6 +71,12 @@
       "label": "INTERVAL",
       "default": "3600",
       "description": "The time in between syncs in seconds"
+    },
+    {
+      "name": "DOCKER_MODS",
+      "label": "DOCKER_MODS",
+      "default": "",
+      "description": "linuxserver Docker Mods"
     }
   ],
   "description": "A robust Plex Media Server stack. Includes Tautulli, AniList syncing, Plex Auto Languages, Trakt syncing, and Zurg for media debrid management.",
