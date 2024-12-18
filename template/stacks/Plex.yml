@@ -204,6 +204,27 @@ services:
     labels:
       - "com.centurylinklabs.watchtower.enable=false"
 
+  cinesync:
+    image: docker.io/sureshfizzy/cinesync:latest
+    container_name: cinesync
+    hostname: cinesync
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    depends_on:
+      rclone:
+        condition: service_started
+        required: true
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Abyss/Media:/media
+      - /zurg:/zurg
+      - /mnt/Docker/Apps/CineSync/db:/app/db
+      - /mnt/Docker/Apps/CineSync/.env:/app/.env
+
 networks:
   bunni_network:
     external: true
