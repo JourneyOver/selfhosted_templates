@@ -26,9 +26,9 @@ services:
     devices:
       - /dev/dri:/dev/dri
     volumes:
-      - /mnt/Docker/Apps/Plex/config:/config
+      - /mnt/Docker/Apps/Plex:/config
       - /mnt/Abyss/Media:/media
-      - /mnt/Zurg:/zurg
+      - /zurg:/zurg
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     healthcheck:
@@ -194,7 +194,7 @@ services:
     devices:
       - /dev/fuse:/dev/fuse:rwm
     volumes:
-      - /mnt/Zurg:/data:rshared
+      - /zurg:/data:rshared
       - /mnt/Docker/Apps/Zurg/rclone.conf:/config/rclone/rclone.conf
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
