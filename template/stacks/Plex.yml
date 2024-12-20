@@ -57,6 +57,7 @@ services:
       - TZ=${TZ}
     volumes:
       - /mnt/Docker/Apps/Tautulli:/config
+      - /mnt/Docker/Apps/Tautulli/custom-cont-init.d:/custom-cont-init.d:ro
       - plexanisync:/plexanisync:ro
       - /mnt/Docker/Apps/PlexAniSync/custom_mappings.yaml:/plexanisync/custom_mappings.yaml:ro
       - /etc/timezone:/etc/timezone:ro
