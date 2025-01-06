@@ -19,6 +19,23 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
 
+  imagemaid:
+    image: docker.io/kometateam/imagemaid:develop
+    container_name: imagemaid
+    hostname: imagemaid
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/Imagemaid:/config
+      - "/mnt/Docker/Apps/Plex/Library/Application Support/Plex Media Server:/plex"
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
 networks:
   bunni_network:
     external: true
