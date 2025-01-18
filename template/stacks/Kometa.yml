@@ -14,7 +14,7 @@ services:
       - KOMETA_NO_COUNTDOWN=${KOMETA_NO_COUNTDOWN}
     volumes:
       - /mnt/Docker/Apps/Kometa/config:/config
-      - /mnt/Docker/Apps/Kometa/metadata:/metadata:ro
+      - /mnt/Docker/Apps/Kometa/data:/data:ro
       - /mnt/Docker/Apps/Kometa/assets:/assets:ro
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
