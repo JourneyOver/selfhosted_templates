@@ -1,5 +1,8 @@
-# Personal Portainer Templates for Selfhosted Projects
+# Personal Portainer Templates
 
-This template will only be useful for myself, feel free to take ideas from this repository if you come across it and want one of the apps in it, but do not make request or make issues as they will be ignored.
+This repository contains a collection of **Portainer templates** tailored for my personal use. While the templates are primarily designed for my own setup, you're welcome to explore and adapt any of the configurations for your own.
 
-Most ideas came from: [pi-hosted](https://github.com/pi-hosted/pi-hosted)
+## Note for Visitors
+
+- **Feel free to use or adapt** any of the templates for your own needs.
+- **No requests or issues** will be addressed, as this repository is maintained solely for personal use.

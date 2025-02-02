@@ -15,42 +15,60 @@ cd "$scriptDir/.." || { echo "Failed to change directory."; exit 1; }
 # Initialize the ID counter for v3
 id_counter=1
 
+# Function to log messages
+log() {
+  echo "$(date '+%Y-%m-%d %H:%M:%S') - $1"
+}
+
+# Function to validate JSON
+validate_json() {
+  jq -e '.' < "$1" > /dev/null 2>&1
+  return $?
+}
+
+# Function to add app JSON to templates
+add_app_to_templates() {
+  local appjson="$1"
+  local appjson_v3=$(jq --argjson id "$id_counter" '. + {id: $id}' <<< "$appjson")
+  ((id_counter++))
+
+  json_v2=$(jq --argjson newApp "$appjson" '.templates += [$newApp]' <<< "$json_v2")
+  json_v3=$(jq --argjson newApp "$appjson_v3" '.templates += [$newApp]' <<< "$json_v3")
+}
+
+# Function to save JSON to file
+save_json() {
+  local json="$1"
+  local output_file="$2"
+  local version="$3"
+
+  if echo "$json" | jq --indent 2 '.templates |= sort_by(.title | ascii_upcase)' > "$output_file"; then
+    log "$version Template generation complete. Output saved to $output_file"
+  else
+    log "Failed to write the $version JSON to $output_file"
+    exit 1
+  fi
+}
+
 # Process each JSON file in the apps folder
 for app in template/apps/*.json; do
   # Check if the app file exists and is not empty
   if [[ -s "$app" ]]; then
-    echo "Processing $app..."
+    log "Processing $app..."
 
     # Read and validate JSON content
-    appjson=$(jq -e '.' < "$app" 2>/dev/null)
-    if [[ $? -ne 0 ]]; then
-      echo "Invalid JSON in $app. Skipping..."
+    if validate_json "$app"; then
+      appjson=$(jq -e '.' < "$app")
+      add_app_to_templates "$appjson"
+    else
+      log "Invalid JSON in $app. Skipping..."
       continue
     fi
-
-    # Add the sequential "id" for v3
-    appjson_v3=$(jq --argjson id "$id_counter" '. + {id: $id}' <<< "$appjson")
-    ((id_counter++))
-
-    # Add the app JSON to v2 and v3 templates
-    json_v2=$(jq --argjson newApp "$appjson" '.templates += [$newApp]' <<< "$json_v2")
-    json_v3=$(jq --argjson newApp "$appjson_v3" '.templates += [$newApp]' <<< "$json_v3")
   else
-    echo "Skipping empty or non-existent file: $app"
+    log "Skipping empty or non-existent file: $app"
   fi
 done
 
-# Sort templates by title (case-insensitive) and save to the respective files
-if echo "$json_v2" | jq --indent 2 '.templates |= sort_by(.title | ascii_upcase)' > "$template_v2"; then
-  echo "v2 Template generation complete. Output saved to $template_v2"
-else
-  echo "Failed to write the v2 JSON to $template_v2"
-  exit 1
-fi
-
-if echo "$json_v3" | jq --indent 2 '.templates |= sort_by(.title | ascii_upcase)' > "$template_v3"; then
-  echo "v3 Template generation complete. Output saved to $template_v3"
-else
-  echo "Failed to write the v3 JSON to $template_v3"
-  exit 1
-fi
+# Save the final JSON structures to their respective files
+save_json "$json_v2" "$template_v2" "v2"
+save_json "$json_v3" "$template_v3" "v3"
