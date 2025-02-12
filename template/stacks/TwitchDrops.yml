@@ -22,7 +22,7 @@ services:
     tty: true
 
   autoheal:
-    image: ghcr.io/journeydocker/docker-autoheal:latest
+    image: ghcr.io/journeydocker/docker-autoheal:main
     container_name: autoheal
     hostname: autoheal
     restart: unless-stopped
@@ -31,16 +31,18 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - AUTOHEAL_CONNECTION_TYPE=${AUTOHEAL_CONNECTION_TYPE}
-      - AUTOHEAL_MONITOR_ALL=${AUTOHEAL_MONITOR_ALL}
-      - AUTOHEAL_LOG_ALL=${AUTOHEAL_LOG_ALL}
-      - AUTOHEAL_LOG_PERSIST=${AUTOHEAL_LOG_PERSIST}
+      - AUTOHEAL_CONTAINER_LABEL=${AUTOHEAL_CONTAINER_LABEL}
+      - AUTOHEAL_INTERVAL=${AUTOHEAL_INTERVAL}
+      - AUTOHEAL_START_PERIOD=${AUTOHEAL_START_PERIOD}
+      - AUTOHEAL_RESTART_THRESHOLD=${AUTOHEAL_RESTART_THRESHOLD}
+      - AUTOHEAL_RESTART_WINDOW=${AUTOHEAL_RESTART_WINDOW}
+      - AUTOHEAL_ONLY_MONITOR_RUNNING=${AUTOHEAL_ONLY_MONITOR_RUNNING}
+      - WEBHOOK_URL=${WEBHOOK_URL}
     deploy:
       replicas: 1
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-      - /mnt/Docker/Apps/AutoHeal/log.json:/opt/docker-autoheal/log.json
       - /var/run/docker.sock:/var/run/docker.sock
 
 networks:

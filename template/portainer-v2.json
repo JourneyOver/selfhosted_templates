@@ -1124,28 +1124,46 @@
           "description": "Priority mode for miner prioritizes campaigns (0 = Use the priority list directly, 1 = Prioritize based on time-to-end, 2 = Optimize by time ratio)"
         },
         {
-          "name": "AUTOHEAL_CONNECTION_TYPE",
-          "label": "AUTOHEAL_CONNECTION_TYPE",
-          "default": "socket",
-          "description": "Determines how docker-autoheal connects to Docker"
+          "name": "AUTOHEAL_CONTAINER_LABEL",
+          "label": "AUTOHEAL_CONTAINER_LABEL",
+          "default": "all",
+          "description": "Label to filter containers to monitor for autoheal"
         },
         {
-          "name": "AUTOHEAL_MONITOR_ALL",
-          "label": "AUTOHEAL_MONITOR_ALL",
-          "default": "true",
-          "description": "Monitor all containers"
+          "name": "AUTOHEAL_INTERVAL",
+          "label": "AUTOHEAL_INTERVAL",
+          "default": "5",
+          "description": "The interval in seconds to check containers health"
         },
         {
-          "name": "AUTOHEAL_LOG_ALL",
-          "label": "AUTOHEAL_LOG_ALL",
-          "default": "true",
-          "description": "Log all events"
+          "name": "AUTOHEAL_START_PERIOD",
+          "label": "AUTOHEAL_START_PERIOD",
+          "default": "0",
+          "description": "The period in seconds to wait before starting monitoring containers health"
         },
         {
-          "name": "AUTOHEAL_LOG_PERSIST",
-          "label": "AUTOHEAL_LOG_PERSIST",
-          "default": "true",
-          "description": "Persist logs"
+          "name": "AUTOHEAL_RESTART_THRESHOLD",
+          "label": "AUTOHEAL_RESTART_THRESHOLD",
+          "default": "5",
+          "description": "The maximum number of times a container can be restarted within the AUTOHEAL_RESTART_WINDOW before it is stopped."
+        },
+        {
+          "name": "AUTOHEAL_RESTART_WINDOW",
+          "label": "AUTOHEAL_RESTART_WINDOW",
+          "default": "600",
+          "description": "The time window (in seconds) within which the restart count is tracked. If the container is restarted more than AUTOHEAL_RESTART_THRESHOLD times within this window, it will be stopped."
+        },
+        {
+          "name": "AUTOHEAL_ONLY_MONITOR_RUNNING",
+          "label": "AUTOHEAL_ONLY_MONITOR_RUNNING",
+          "default": "false",
+          "description": "Only monitor running containers"
+        },
+        {
+          "name": "WEBHOOK_URL",
+          "label": "WEBHOOK_URL",
+          "default": "",
+          "description": "Sends a webhook notification if a container is restarted or fails to restart."
         }
       ],
       "description": "An app that allows you to AFK mine timed Twitch drops, with automatic drop claiming and channel switching.",
