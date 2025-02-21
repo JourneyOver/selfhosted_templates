@@ -1,7 +1,7 @@
 services:
 
   flaresolverr:
-    image: ghcr.io/flaresolverr/flaresolverr:latest
+    image: docker.io/21hsmw/flaresolverr:nodriver
     container_name: flaresolverr
     hostname: flaresolverr
     restart: unless-stopped
@@ -11,6 +11,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - DRIVER=nodriver
     ports:
       - 20019:8191
 
