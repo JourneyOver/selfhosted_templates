@@ -1,5 +1,4 @@
 volumes:
-  plexanisync:
   plextraktsync:
 
 services:
@@ -57,9 +56,6 @@ services:
       - TZ=${TZ}
     volumes:
       - /mnt/Docker/Apps/Tautulli:/config
-      - /mnt/Docker/Apps/Tautulli/custom-cont-init.d:/custom-cont-init.d:ro
-      - plexanisync:/plexanisync:ro
-      - /mnt/Docker/Apps/PlexAniSync/custom_mappings.yaml:/plexanisync/custom_mappings.yaml:ro
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
@@ -91,10 +87,10 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
 
-  plexanisync:
-    image: ghcr.io/rickdb/plexanisync:master
-    container_name: plexanisync
-    hostname: plexanisync
+  plexanibridge:
+    image: ghcr.io/eliasbenb/plexanibridge:main
+    container_name: plexanibridge
+    hostname: plexanibridge
     restart: unless-stopped
     networks:
       - bunni_network
@@ -106,20 +102,18 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - PLEX_SECTION=${PLEX_SECTION}
-      - PLEX_URL=${PLEX_URL}
+      - ANILIST_TOKEN=${ANI_TOKEN}
       - PLEX_TOKEN=${PLEX_TOKEN}
-      - ANI_USERNAME=${ANI_USERNAME}
-      - ANI_TOKEN=${ANI_TOKEN}
-      - PLEX_EPISODE_COUNT_PRIORITY=${PLEX_EPISODE_COUNT_PRIORITY}
-      - SKIP_LIST_UPDATE=${SKIP_LIST_UPDATE}
-      - LOG_FAILED_MATCHES=${LOG_FAILED_MATCHES}
-      - INTERVAL=${INTERVAL}
+      - PLEX_USER=${PLEX_USER}
+      - PLEX_URL=${PLEX_URL}
+      - PLEX_SECTIONS=${PLEX_SECTION}
+      - SYNC_INTERVAL=${INTERVAL}
+      - POLLING_SCAN=${POLLING_SCAN}
+      - EXCLUDED_SYNC_FIELDS=${EXCLUDED_SYNC_FIELDS}
+      - DRY_RUN=${DRY_RUN}
+      - LOG_LEVEL=${LOG_LEVEL}
     volumes:
-      - /mnt/Docker/Apps/PlexAniSync/custom_mappings.yaml:/plexanisync/custom_mappings.yaml
-      - /mnt/Docker/Apps/PlexAniSync/plexanisync.log:/plexanisync/PlexAniSync.log
-      - /mnt/Docker/Apps/PlexAniSync/failed_matches.txt:/plexanisync/failed_matches.txt
-      - plexanisync:/plexanisync
+      - /mnt/Docker/Apps/PlexAniBridge/data:/app/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
 

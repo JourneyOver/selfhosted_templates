@@ -61,8 +61,8 @@ run_portainer() {
 # Main script logic
 
 # Define the Docker image for Portainer (Business Edition or Community Edition)
-PORTTAINER_IMAGE="docker.io/portainer/portainer-ee:alpine-sts"  # Business Edition
-# PORTTAINER_IMAGE="docker.io/portainer/portainer-ce:alpine-sts"  # Community Edition
+PORTAINER_IMAGE="docker.io/portainer/portainer-ee:alpine-sts"  # Business Edition
+# PORTAINER_IMAGE="docker.io/portainer/portainer-ce:alpine-sts"  # Community Edition
 
 # Get the Portainer container ID and image name
 portainer_info=$(get_portainer_info)
@@ -75,6 +75,6 @@ if [[ -n "$portainer_info" ]]; then
 fi
 
 # Run the Portainer container with the specified image
-run_portainer "$PORTTAINER_IMAGE"
+run_portainer "$PORTAINER_IMAGE"
 
 log "Portainer update completed successfully!"
