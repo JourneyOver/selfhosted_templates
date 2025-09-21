@@ -11,6 +11,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - HOMEPAGE_ALLOWED_HOSTS=${HOMEPAGE_ALLOWED_HOSTS}
     volumes:
       - /mnt/Docker/Apps/Homepage/configs:/app/config
       - /var/run/docker.sock:/var/run/docker.sock:ro
