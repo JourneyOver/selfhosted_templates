@@ -1,7 +1,7 @@
 services:
 
   wallos:
-    image: docker.io/bellamy/wallos:latest
+    image: ghcr.io/ellite/wallos:latest
     container_name: wallos
     hostname: wallos
     restart: unless-stopped

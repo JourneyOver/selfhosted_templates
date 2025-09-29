@@ -67,7 +67,7 @@ services:
       timeout: 10s
 
   plexanibridge:
-    image: ghcr.io/eliasbenb/plexanibridge:experimental
+    image: ghcr.io/eliasbenb/plexanibridge:main
     container_name: plexanibridge
     hostname: plexanibridge
     restart: unless-stopped
@@ -119,6 +119,13 @@ services:
       - plextraktsync:/app/xdg
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: ["CMD-SHELL", "config/healthcheck.sh"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+      start_interval: 10s
     command: ["watch"]
 
   zurg:
@@ -152,7 +159,7 @@ services:
       - "com.centurylinklabs.watchtower.enable=false"
 
   rclone:
-    image: docker.io/rclone/rclone:latest
+    image: ghcr.io/rclone/rclone:latest
     container_name: rclone
     hostname: rclone
     restart: unless-stopped

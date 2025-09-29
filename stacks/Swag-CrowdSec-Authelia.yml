@@ -21,7 +21,7 @@ services:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
 
   crowdsec:
-    image: docker.io/crowdsecurity/crowdsec:latest
+    image: ghcr.io/crowdsecurity/crowdsec:latest
     container_name: crowdsec
     hostname: crowdsec
     restart: unless-stopped
@@ -73,13 +73,12 @@ services:
       - SUBDOMAINS=${SUBDOMAINS}
       - EMAIL=${EMAIL}
       - DOCKER_MODS=${DOCKER_MODS}
-      - WATCHLIST=${WATCHLIST}
+      - SWAG_AUTORELOAD=${SWAG_AUTORELOAD}
       - ONLY_SUBDOMAINS=false
       - EXTRA_DOMAINS=${EXTRA_DOMAINS}
       - DNSPLUGIN=${DNSPLUGIN}
       - MAXMINDDB_USER_ID=${MAXMIND_USER_ID}
       - MAXMINDDB_LICENSE_KEY=${MAXMIND_LICENSE_KEY}
-      - CERTPROVIDER=${CERTPROVIDER}
       - PROPAGATION=${PROPAGATION}
       - CROWDSEC_API_KEY=${CROWDSEC_API_KEY}
       - CROWDSEC_LAPI_URL=http://crowdsec:8080

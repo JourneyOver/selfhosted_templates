@@ -1,6 +1,3 @@
-volumes:
-    data:
-
 services:
 
   archisteamfarm:
@@ -39,12 +36,14 @@ services:
       - ASF_HOST=archisteamfarm
       - ASF_PASS=${ASF_PASSWORD}
       - ASF_CLAIM_INTERVAL=${ASF_CLAIM_INTERVAL}
+      - GIST_ID=${GISTID}
+      - GITHUB_TOKEN=${GHTOKEN}
       - WEBHOOK_URL=${WEBHOOK_URL}
       - WEBHOOK_SHOWACCOUNTSTATUS=${WEBHOOK_SHOWACCOUNTSTATUS}
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-      - data:/app/storage/
+      - /mnt/Docker/Apps/ASFClaim:/app/storage/
     labels:
       - "com.centurylinklabs.watchtower.depends-on=archisteamfarm"
 
@@ -57,7 +56,6 @@ services:
       - bunni_network
     environment:
       - TZ=${TZ}
-      - userAgent=${USERAGENT}
       - clientId=${CLIENTID}
       - clientSecret=${CLIENTSECRET}
       - RedditUsername=${REDDITUSERNAME}
@@ -67,8 +65,6 @@ services:
     volumes:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
-    ports:
-      - 21022:3000
 
 networks:
   bunni_network:

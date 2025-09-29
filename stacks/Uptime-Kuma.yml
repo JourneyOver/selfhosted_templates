@@ -1,7 +1,7 @@
 services:
 
   uptime-kuma:
-    image: docker.io/louislam/uptime-kuma:latest
+    image: ghcr.io/louislam/uptime-kuma:beta-slim
     container_name: uptime-kuma
     hostname: uptime-kuma
     restart: unless-stopped

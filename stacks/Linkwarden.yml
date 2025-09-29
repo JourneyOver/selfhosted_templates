@@ -11,7 +11,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DATABASE}
+      - DATABASE_URL=postgresql://${DB_USERNAME}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_DATABASE}
       - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
       - NEXTAUTH_URL=${NEXTAUTH_URL}
       - NEXTAUTH_URL_INTERNAL=http://localhost:3000
@@ -22,12 +22,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
     ports:
       - 20035:3000
-    healthcheck:
-      test: ["CMD-SHELL", "curl -fSs http://localhost:3000/api/v1/logins || exit 1"]
-      interval: 10s
-      retries: 3
-      start_period: 1m
-      timeout: 10s
     labels:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
 
