@@ -188,6 +188,28 @@ services:
     labels:
       - "com.centurylinklabs.watchtower.enable=false"
 
+  tunarr:
+    image: ghcr.io/chrisbenincasa/tunarr:latest
+    container_name: tunarr
+    hostname: tunarr
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    devices:
+      - /dev/dri:/dev/dri
+    volumes:
+      - /mnt/Docker/Apps/Tunarr/config:/config/tunarr
+      - /mnt/Docker/Apps/Tunarr/cache:/home/tunarr/.cache
+      - /mnt/Abyss/Media:/media
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 20055:8000
+
 networks:
   bunni_network:
     external: true
