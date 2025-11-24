@@ -1,3 +1,6 @@
+volumes:
+  flaresolverr:
+
 services:
 
   flaresolverr:
@@ -11,6 +14,8 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+    volumes:
+      - flaresolverr:/config
     ports:
       - 20019:8191
 
