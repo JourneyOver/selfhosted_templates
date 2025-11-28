@@ -1,0 +1,7 @@
+{
+  "name": "Speedtest Tracker",
+  "description": "Internet speedtest tracker using Ookla's Speedtest service.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["speedtest", "monitoring", "network", "tracking"]
+}

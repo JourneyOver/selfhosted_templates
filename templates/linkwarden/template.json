@@ -1,0 +1,7 @@
+{
+  "name": "Linkwarden",
+  "description": "Bookmark manager with archiving and tagging features.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["bookmarks", "links", "archiving", "tagging"]
+}

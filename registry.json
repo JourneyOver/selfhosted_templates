@@ -1,0 +1,230 @@
+{
+  "$schema": "https://raw.githubusercontent.com/getarcaneapp/templates/main/schema.json",
+  "name": "JourneyOver's Templates",
+  "description": "Personal templates for selfhosted services",
+  "author": "JourneyOver",
+  "url": "https://github.com/JourneyOver/selfhosted_templates",
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "adguardhome",
+      "name": "AdGuard Home",
+      "description": "Network-wide ad blocker with adguardhome-sync for configuration synchronization.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/adguardhome/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/adguardhome/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/adguardhome",
+      "tags": ["adblock","dns","network","security"]
+    },
+    {
+      "id": "archisteamfarm",
+      "name": "ArchiSteamFarm",
+      "description": "ArchiSteamFarm - A Steam farming tool with ASFClaim for free game claiming and ASFScan Reddit bot for scanning.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/archisteamfarm/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/archisteamfarm/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/archisteamfarm",
+      "tags": ["steam","farming","automation","games"]
+    },
+    {
+      "id": "audiobookshelf",
+      "name": "Audiobookshelf",
+      "description": "Audiobook server with mobile app support.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/audiobookshelf/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/audiobookshelf/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/audiobookshelf",
+      "tags": ["audiobooks","server","media"]
+    },
+    {
+      "id": "autoheal",
+      "name": "Autoheal",
+      "description": "Monitors and automatically restarts unhealthy Docker containers.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/autoheal/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/autoheal/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/autoheal",
+      "tags": ["docker","monitoring","healthcheck"]
+    },
+    {
+      "id": "dozzle",
+      "name": "Dozzle",
+      "description": "A real-time log viewer for Docker containers.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/dozzle/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/dozzle/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/dozzle",
+      "tags": ["logs","docker","viewer","monitoring"]
+    },
+    {
+      "id": "homepage",
+      "name": "Homepage",
+      "description": "Homepage and dashboard for your services.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/homepage/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/homepage/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/homepage",
+      "tags": ["dashboard","homepage","services"]
+    },
+    {
+      "id": "joal",
+      "name": "JOAL",
+      "description": "An open source command line RatioMaster with an optional WebUI.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/joal/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/joal/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/joal",
+      "tags": ["torrent","qbittorrent","seeding","automation"]
+    },
+    {
+      "id": "kometa",
+      "name": "Kometa",
+      "description": "Metadata management tool for Plex with ImageMaid for old image cleanup.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/kometa/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/kometa/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/kometa",
+      "tags": ["plex","metadata","management","images","kometa"]
+    },
+    {
+      "id": "linkwarden",
+      "name": "Linkwarden",
+      "description": "Bookmark manager with archiving and tagging features.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/linkwarden/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/linkwarden/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/linkwarden",
+      "tags": ["bookmarks","links","archiving","tagging"]
+    },
+    {
+      "id": "opengist",
+      "name": "OpenGist",
+      "description": "GitHub Gist alternative with a clean interface.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/opengist/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/opengist/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/opengist",
+      "tags": ["gist","git","code","sharing"]
+    },
+    {
+      "id": "plex",
+      "name": "Plex",
+      "description": "Plex media server with Tautulli monitoring, PlexAutoLanguages, PlexAniBridge, PlexTraktSync, Zurg, Rclone, and Tunarr.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/plex/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/plex/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/plex",
+      "tags": ["media","plex","server","streaming","tautulli","automation"]
+    },
+    {
+      "id": "postgresql",
+      "name": "PostgreSQL",
+      "description": "PostgreSQL database with pgbackweb for backup management.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/postgresql/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/postgresql/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/postgresql",
+      "tags": ["database","postgresql","sql","relational"]
+    },
+    {
+      "id": "servarr",
+      "name": "Servarr",
+      "description": "Servarr stack: Prowlarr, Radarr, Sonarr, Recyclarr, Flaresolverr",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/servarr/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/servarr/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/servarr",
+      "tags": ["media","sonarr","radarr","prowlarr","recyclarr","flaresolverr","management"]
+    },
+    {
+      "id": "speedtest-tracker",
+      "name": "Speedtest Tracker",
+      "description": "Internet speedtest tracker using Ookla's Speedtest service.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/speedtest-tracker/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/speedtest-tracker/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/speedtest-tracker",
+      "tags": ["speedtest","monitoring","network","tracking"]
+    },
+    {
+      "id": "steamgifts-bot",
+      "name": "SteamGifts Bot",
+      "description": "A bot for automating SteamGifts giveaways and entries.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/steamgifts-bot/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/steamgifts-bot/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/steamgifts-bot",
+      "tags": ["steam","bot","automation","gaming"]
+    },
+    {
+      "id": "swag",
+      "name": "Swag + CrowdSec + Authelia",
+      "description": "Reverse proxy with security and authentication using Swag (Nginx), CrowdSec, and Authelia.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/swag/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/swag/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/swag",
+      "tags": ["proxy","nginx","ssl","security","reverse-proxy","crowdsec","authelia"]
+    },
+    {
+      "id": "twitchdropsminer",
+      "name": "TwitchDropsMiner",
+      "description": "Automatically mines Twitch drops by watching streams and claiming rewards.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/twitchdropsminer/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/twitchdropsminer/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/twitchdropsminer",
+      "tags": ["twitch","gaming","automation"]
+    },
+    {
+      "id": "uptime-kuma",
+      "name": "Uptime Kuma",
+      "description": "Uptime monitoring tool with notifications and status pages.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/uptime-kuma/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/uptime-kuma/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/uptime-kuma",
+      "tags": ["monitoring","uptime","alerts"]
+    },
+    {
+      "id": "wallos",
+      "name": "Wallos",
+      "description": "Subscription tracker to monitor and manage your recurring payments.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/wallos/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/wallos/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/wallos",
+      "tags": ["subscription","tracker","finance"]
+    },
+    {
+      "id": "watchtower",
+      "name": "Watchtower",
+      "description": "Automatically updates Docker containers to their latest versions.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/watchtower/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/watchtower/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/watchtower",
+      "tags": ["docker","update","automation"]
+    }
+  ]
+}

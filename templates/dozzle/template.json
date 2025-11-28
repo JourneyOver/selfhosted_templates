@@ -1,0 +1,7 @@
+{
+  "name": "Dozzle",
+  "description": "A real-time log viewer for Docker containers.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["logs", "docker", "viewer", "monitoring"]
+}

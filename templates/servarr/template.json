@@ -1,0 +1,7 @@
+{
+  "name": "Servarr",
+  "description": "Servarr stack: Prowlarr, Radarr, Sonarr, Recyclarr, Flaresolverr",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["media", "sonarr", "radarr", "prowlarr", "recyclarr", "flaresolverr", "management"]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "PostgreSQL",
+  "description": "PostgreSQL database with pgbackweb for backup management.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["database", "postgresql", "sql", "relational"]
+}

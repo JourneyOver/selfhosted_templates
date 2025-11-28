@@ -1,0 +1,7 @@
+{
+  "name": "Autoheal",
+  "description": "Monitors and automatically restarts unhealthy Docker containers.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["docker", "monitoring", "healthcheck"]
+}

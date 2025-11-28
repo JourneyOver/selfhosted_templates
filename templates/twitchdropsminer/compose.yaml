@@ -1,0 +1,26 @@
+services:
+
+  twitchdropsminer:
+    image: ghcr.io/journeydocker/twitchdropsminer:main
+    container_name: twitchdropsminer
+    hostname: twitchdropsminer
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UNLINKED_CAMPAIGNS=${UNLINKED_CAMPAIGNS}
+      - PRIORITY_MODE=${PRIORITY_MODE}
+    volumes:
+      - /mnt/Docker/Apps/TwitchDropsMiner/cookies.jar:/TwitchDropsMiner/cookies.jar
+      - /mnt/Docker/Apps/TwitchDropsMiner/settings.json:/TwitchDropsMiner/settings.json
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    stdin_open: true
+    tty: true
+
+networks:
+  bunni_network:
+    external: true

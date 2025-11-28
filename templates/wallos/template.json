@@ -1,0 +1,7 @@
+{
+  "name": "Wallos",
+  "description": "Subscription tracker to monitor and manage your recurring payments.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["subscription", "tracker", "finance"]
+}

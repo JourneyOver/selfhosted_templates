@@ -1,0 +1,7 @@
+{
+  "name": "Kometa",
+  "description": "Metadata management tool for Plex with ImageMaid for old image cleanup.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["plex", "metadata", "management", "images", "kometa"]
+}

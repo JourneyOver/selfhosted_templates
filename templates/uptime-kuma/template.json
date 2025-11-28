@@ -1,0 +1,7 @@
+{
+  "name": "Uptime Kuma",
+  "description": "Uptime monitoring tool with notifications and status pages.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["monitoring", "uptime", "alerts"]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "ArchiSteamFarm",
+  "description": "ArchiSteamFarm - A Steam farming tool with ASFClaim for free game claiming and ASFScan Reddit bot for scanning.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["steam", "farming", "automation", "games"]
+}

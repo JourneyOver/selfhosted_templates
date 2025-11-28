@@ -1,0 +1,7 @@
+{
+  "name": "Watchtower",
+  "description": "Automatically updates Docker containers to their latest versions.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["docker", "update", "automation"]
+}

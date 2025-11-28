@@ -1,0 +1,7 @@
+{
+  "name": "Audiobookshelf",
+  "description": "Audiobook server with mobile app support.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["audiobooks", "server", "media"]
+}

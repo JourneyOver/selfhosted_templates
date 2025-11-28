@@ -1,0 +1,7 @@
+{
+  "name": "OpenGist",
+  "description": "GitHub Gist alternative with a clean interface.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["gist", "git", "code", "sharing"]
+}

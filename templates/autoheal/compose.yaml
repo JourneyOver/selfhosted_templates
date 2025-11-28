@@ -1,0 +1,28 @@
+services:
+
+  autoheal:
+    image: ghcr.io/journeydocker/docker-autoheal:main
+    container_name: autoheal
+    hostname: autoheal
+    restart: unless-stopped
+    network_mode: none
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - AUTOHEAL_CONTAINER_LABEL=${AUTOHEAL_CONTAINER_LABEL}
+      - AUTOHEAL_INTERVAL=${AUTOHEAL_INTERVAL}
+      - AUTOHEAL_START_PERIOD=${AUTOHEAL_START_PERIOD}
+      - AUTOHEAL_RESTART_THRESHOLD=${AUTOHEAL_RESTART_THRESHOLD}
+      - AUTOHEAL_RESTART_WINDOW=${AUTOHEAL_RESTART_WINDOW}
+      - AUTOHEAL_ONLY_MONITOR_RUNNING=${AUTOHEAL_ONLY_MONITOR_RUNNING}
+    deploy:
+      replicas: 1
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+
+networks:
+  bunni_network:
+    external: true

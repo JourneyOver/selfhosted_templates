@@ -1,0 +1,7 @@
+{
+  "name": "selfhosted-templates",
+  "version": "1.0.0",
+  "scripts": {
+    "generate": "bun scripts/build-registry.js"
+  }
+}

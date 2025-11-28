@@ -1,0 +1,7 @@
+{
+  "name": "Swag + CrowdSec + Authelia",
+  "description": "Reverse proxy with security and authentication using Swag (Nginx), CrowdSec, and Authelia.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["proxy", "nginx", "ssl", "security", "reverse-proxy", "crowdsec", "authelia"]
+}

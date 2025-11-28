@@ -1,0 +1,28 @@
+services:
+
+  joal:
+    image: ghcr.io/journeydocker/joal:main
+    container_name: joal
+    hostname: joal
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - joal-conf=/data
+      - spring.main.web-environment=true
+      - server.port=20026
+      - joal.ui.path.prefix=${JOAL_PATH_PREFIX}
+      - joal.ui.secret-token=${JOAL_SECRET_TOKEN}
+    volumes:
+      - /mnt/Docker/Apps/Joal:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 20026:20026
+
+networks:
+  bunni_network:
+    external: true

@@ -1,0 +1,7 @@
+{
+  "name": "AdGuard Home",
+  "description": "Network-wide ad blocker with adguardhome-sync for configuration synchronization.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["adblock", "dns", "network", "security"]
+}

@@ -1,0 +1,241 @@
+volumes:
+  plextraktsync:
+
+services:
+
+  plex:
+    image: lscr.io/linuxserver/plex:latest
+    container_name: plex
+    hostname: plex
+    restart: unless-stopped
+    network_mode: host
+    depends_on:
+      rclone:
+        condition: service_started
+        required: true
+      zurg:
+        condition: service_healthy
+        required: true
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - VERSION=latest
+    devices:
+      - /dev/dri:/dev/dri
+    volumes:
+      - /mnt/Docker/Apps/Plex:/config
+      - /mnt/Abyss/Media:/media
+      - /zurg:/zurg
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: ["CMD-SHELL", "curl --connect-timeout 15 --silent --show-error --fail http://localhost:32400/identity || exit 1"]
+      interval: 60s
+      retries: 3
+      start_period: 60s
+      timeout: 15s
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false"
+
+  tautulli:
+    image: lscr.io/linuxserver/tautulli:latest
+    container_name: tautulli
+    hostname: tautulli
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    depends_on:
+      plex:
+        condition: service_healthy
+        required: true
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/Tautulli:/config
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 20042:8181
+    healthcheck:
+      test: ["CMD-SHELL", "curl -ILfks https://localhost:8181/status > /dev/null || curl -ILfs http://localhost:8181/status > /dev/null || exit 1"]
+      interval: 10s
+      retries: 3
+      start_period: 90s
+      timeout: 10s
+
+  plexautolanguages:
+    image: ghcr.io/journeydocker/plex-auto-languages:main
+    container_name: plexautolanguages
+    hostname: plexautolanguages
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/PlexAutoLanguages:/config
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
+  plexanibridge:
+    image: ghcr.io/eliasbenb/plexanibridge:main
+    container_name: plexanibridge
+    hostname: plexanibridge
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    depends_on:
+      plex:
+        condition: service_healthy
+        required: true
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - PAB_ANILIST_TOKEN=${ANI_TOKEN}
+      - PAB_PLEX_TOKEN=${PLEX_TOKEN}
+      - PAB_PLEX_USER=${PLEX_USER}
+      - PAB_PLEX_URL=${PLEX_URL}
+      - PAB_PLEX_SECTIONS=${PLEX_SECTION}
+      - PAB_SYNC_INTERVAL=${INTERVAL}
+      - PAB_SYNC_MODES=${SYNC_MODES}
+      - PAB_EXCLUDED_SYNC_FIELDS=${EXCLUDED_SYNC_FIELDS}
+      - PAB_DRY_RUN=${DRY_RUN}
+      - PAB_LOG_LEVEL=${LOG_LEVEL}
+      - PAB_WEB_ENABLED=${WEB_ENABLED}
+    volumes:
+      - /mnt/Docker/Apps/PlexAniBridge/data:/config
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 21033:4848
+
+  plextraktsync:
+    image: ghcr.io/taxel/plextraktsync:latest
+    container_name: plextraktsync
+    hostname: plextraktsync
+    restart: on-failure:2
+    networks:
+      - bunni_network
+    depends_on:
+      plex:
+        condition: service_healthy
+        required: true
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/PlexTraktSync:/app/config
+      - plextraktsync:/app/xdg
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: ["CMD-SHELL", "config/healthcheck.sh"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+      start_interval: 10s
+    command: ["watch"]
+
+  zurg:
+    image: ghcr.io/debridmediamanager/zurg:2025.09.27.0039-nightly
+    container_name: zurg
+    hostname: zurg
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/Zurg/config.yml:/app/config.yml
+      - /mnt/Docker/Apps/Zurg/data:/app/data
+      - /mnt/Docker/Apps/Zurg/dump:/app/dump
+      - /mnt/Docker/Apps/Zurg/logs:/app/logs
+      - /mnt/Docker/Apps/Zurg/trash:/app/trash
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 9999:9999
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fSs http://localhost:9999/dav/version.txt || exit 1"]
+      interval: 30s
+      retries: 3
+      start_period: 30s
+      timeout: 10s
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false"
+
+  rclone:
+    image: ghcr.io/rclone/rclone:latest
+    container_name: rclone
+    hostname: rclone
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    cap_add:
+      - SYS_ADMIN
+    depends_on:
+      zurg:
+        condition: service_healthy
+        required: true
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    devices:
+      - /dev/fuse:/dev/fuse:rwm
+    volumes:
+      - /zurg:/data:rshared
+      - /mnt/Docker/Apps/Zurg/rclone.conf:/config/rclone/rclone.conf
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    security_opt:
+      - apparmor:unconfined
+    healthcheck:
+      test: ["CMD-SHELL", "mountpoint -q /data && test -f /data/version.txt && ls -d /data/__all__ /data/__downloads__ /data/__unplayable__ /data/anime /data/anime-movies /data/movies /data/other /data/shows >/dev/null 2>&1 || exit 1"]
+      interval: 30s
+      retries: 3
+      start_period: 60s
+      timeout: 10s
+    command: "mount zurg: /data --allow-other --allow-non-empty --attr-timeout 10y --buffer-size 128M --dir-cache-time 10s --poll-interval 60s --vfs-cache-max-age 2M --vfs-cache-max-size 30G --vfs-cache-min-free-space 2G --vfs-cache-mode full --vfs-cache-poll-interval 30s --vfs-disk-space-total-size 32G --vfs-fast-fingerprint --vfs-read-ahead 64M --vfs-read-chunk-size 1M --vfs-read-chunk-size-limit 32M --vfs-read-wait 40ms --vfs-refresh --transfers 32 --checkers 32 --multi-thread-streams 8"
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false"
+
+  tunarr:
+    image: ghcr.io/chrisbenincasa/tunarr:latest
+    container_name: tunarr
+    hostname: tunarr
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    depends_on:
+      plex:
+        condition: service_healthy
+        required: true
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    devices:
+      - /dev/dri:/dev/dri
+    volumes:
+      - /mnt/Docker/Apps/Tunarr/config:/config/tunarr
+      - /mnt/Docker/Apps/Tunarr/cache:/home/tunarr/.cache
+      - /mnt/Abyss/Media:/media
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 20055:8000
+
+networks:
+  bunni_network:
+    external: true

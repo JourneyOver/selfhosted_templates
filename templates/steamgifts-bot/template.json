@@ -1,0 +1,7 @@
+{
+  "name": "SteamGifts Bot",
+  "description": "A bot for automating SteamGifts giveaways and entries.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["steam", "bot", "automation", "gaming"]
+}
