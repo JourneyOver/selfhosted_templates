@@ -74,7 +74,7 @@
     },
     {
       "id": "joal",
-      "name": "JOAL",
+      "name": "Joal",
       "description": "An open source command line RatioMaster with an optional WebUI.",
       "version": "1.0.0",
       "author": "JourneyOver",
