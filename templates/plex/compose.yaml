@@ -206,7 +206,7 @@ services:
       retries: 3
       start_period: 60s
       timeout: 10s
-    command: "mount zurg: /data --allow-other --allow-non-empty --attr-timeout 10y --buffer-size 128M --dir-cache-time 10s --poll-interval 60s --vfs-cache-max-age 2M --vfs-cache-max-size 30G --vfs-cache-min-free-space 2G --vfs-cache-mode full --vfs-cache-poll-interval 30s --vfs-disk-space-total-size 32G --vfs-fast-fingerprint --vfs-read-ahead 64M --vfs-read-chunk-size 1M --vfs-read-chunk-size-limit 32M --vfs-read-wait 40ms --vfs-refresh --transfers 32 --checkers 32 --multi-thread-streams 8"
+    command: ${RCLONE_COMMAND}
     labels:
       - "com.centurylinklabs.watchtower.enable=false"
 
