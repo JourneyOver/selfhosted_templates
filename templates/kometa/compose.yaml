@@ -7,6 +7,10 @@ services:
     restart: unless-stopped
     networks:
       - bunni_network
+    ulimits:
+      nofile:
+        soft: "65536"
+        hard: "65536"
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
