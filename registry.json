@@ -173,14 +173,14 @@
     },
     {
       "id": "swag",
-      "name": "Swag + CrowdSec + Authelia",
-      "description": "Reverse proxy with security and authentication using Swag (Nginx), CrowdSec, and Authelia.",
-      "version": "1.0.0",
+      "name": "Swag + CrowdSec + Authelia + DDClient",
+      "description": "Reverse proxy with security and authentication using Swag (Nginx), CrowdSec, Authelia, and DDClient.",
+      "version": "1.1.0",
       "author": "JourneyOver",
       "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/swag/compose.yaml",
       "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/swag/.env.example",
       "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/swag",
-      "tags": ["proxy","nginx","ssl","security","reverse-proxy","crowdsec","authelia"]
+      "tags": ["proxy","nginx","ssl","security","reverse-proxy","crowdsec","authelia","ddclient"]
     },
     {
       "id": "twitchdropsminer",
