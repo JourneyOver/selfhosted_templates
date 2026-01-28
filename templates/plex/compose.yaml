@@ -83,7 +83,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
 
   plexanibridge:
-    image: ghcr.io/eliasbenb/plexanibridge:main
+    image: ghcr.io/eliasbenb/plexanibridge:experimental
     container_name: plexanibridge
     hostname: plexanibridge
     restart: unless-stopped
@@ -97,17 +97,6 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - PAB_ANILIST_TOKEN=${PAB_ANILIST_TOKEN}
-      - PAB_PLEX_TOKEN=${PAB_PLEX_TOKEN}
-      - PAB_PLEX_USER=${PAB_PLEX_USER}
-      - PAB_PLEX_URL=${PAB_PLEX_URL}
-      - PAB_PLEX_SECTIONS=${PAB_PLEX_SECTIONS}
-      - PAB_SYNC_INTERVAL=${PAB_SYNC_INTERVAL}
-      - PAB_SYNC_MODES=${PAB_SYNC_MODES}
-      - PAB_EXCLUDED_SYNC_FIELDS=${PAB_EXCLUDED_SYNC_FIELDS}
-      - PAB_DRY_RUN=${PAB_DRY_RUN}
-      - PAB_LOG_LEVEL=${PAB_LOG_LEVEL}
-      - PAB_WEB_ENABLED=${PAB_WEB_ENABLED}
     volumes:
       - /mnt/Docker/Apps/PlexAniBridge/data:/config
       - /etc/timezone:/etc/timezone:ro
@@ -145,7 +134,7 @@ services:
     command: ["watch"]
 
   zurg:
-    image: ghcr.io/debridmediamanager/zurg:2025.12.04.0044-nightly
+    image: ghcr.io/debridmediamanager/zurg:2026.01.13.0043-nightly
     container_name: zurg
     hostname: zurg
     restart: unless-stopped
