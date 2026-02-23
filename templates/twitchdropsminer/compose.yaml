@@ -13,6 +13,7 @@ services:
       - TZ=${TZ}
       - UNLINKED_CAMPAIGNS=${UNLINKED_CAMPAIGNS}
       - PRIORITY_MODE=${PRIORITY_MODE}
+      - APPRISE_URL=${APPRISE_URL}
     volumes:
       - /mnt/Docker/Apps/TwitchDropsMiner/cookies.jar:/TwitchDropsMiner/cookies.jar
       - /mnt/Docker/Apps/TwitchDropsMiner/settings.json:/TwitchDropsMiner/settings.json

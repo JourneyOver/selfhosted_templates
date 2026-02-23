@@ -134,7 +134,7 @@ services:
     command: ["watch"]
 
   zurg:
-    image: ghcr.io/debridmediamanager/zurg:2026.01.13.0043-nightly
+    image: ghcr.io/debridmediamanager/zurg:2026.02.23.0055-nightly
     container_name: zurg
     hostname: zurg
     restart: unless-stopped
