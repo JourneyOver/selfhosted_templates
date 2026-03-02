@@ -1,0 +1,53 @@
+volumes:
+  redis_data:
+
+services:
+
+  yamtrack:
+    image: ghcr.io/dannyvfilms/yamtrack:latest
+    container_name: yamtrack
+    hostname: yamtrack
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    depends_on:
+      redis:
+        condition: service_started
+        required: true
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - REDIS_URL=${REDIS_URL}
+      - SECRET=${SECRET}
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=yamtrack
+      - DB_USER=${POSTGRES_USER}
+      - DB_PASSWORD=${POSTGRES_PASSWORD}
+      - URLS=${URLS}
+      - TMDB_API=${TMDB_API}
+      - TMDB_LANG=${TMDB_LANG}
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "20039:8000"
+
+  redis:
+    image: redis:8-alpine
+    container_name: redis
+    hostname: redis
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - redis_data:/data
+
+networks:
+  bunni_network:
+    external: true

@@ -111,6 +111,7 @@ services:
       - TZ=${TZ}
     volumes:
       - /mnt/Docker/Apps/DDClient/config:/config
+      - /mnt/Docker/Apps/DDClient/get-my-ip.sh:/usr/local/bin/get-my-ip.sh
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
 

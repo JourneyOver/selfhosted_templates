@@ -1,0 +1,23 @@
+services:
+
+  crosswatch:
+    image: ghcr.io/cenodude/crosswatch:latest
+    container_name: crosswatch
+    hostname: crosswatch
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/Crosswatch/config:/config
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "20036:8787"
+
+networks:
+  bunni_network:
+    external: true

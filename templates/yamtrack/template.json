@@ -1,0 +1,7 @@
+{
+  "name": "Yamtrack",
+  "description": "A self hosted media tracker.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["media", "tracker", "self-hosted"]
+}

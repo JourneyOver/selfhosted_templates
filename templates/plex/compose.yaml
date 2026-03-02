@@ -83,7 +83,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
 
   plexanibridge:
-    image: ghcr.io/eliasbenb/plexanibridge:experimental
+    image: ghcr.io/anibridge/anibridge:develop
     container_name: plexanibridge
     hostname: plexanibridge
     restart: unless-stopped
@@ -103,6 +103,12 @@ services:
       - /etc/localtime:/etc/localtime:ro
     ports:
       - 21033:4848
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:4848/healthz | grep -q '\"status\":\"ok\"' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
 
   plextraktsync:
     image: ghcr.io/taxel/plextraktsync:latest
@@ -134,7 +140,7 @@ services:
     command: ["watch"]
 
   zurg:
-    image: ghcr.io/debridmediamanager/zurg:2026.02.23.0055-nightly
+    image: ghcr.io/debridmediamanager/zurg:2026.02.25.0056-nightly
     container_name: zurg
     hostname: zurg
     restart: unless-stopped
