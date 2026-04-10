@@ -1,7 +1,7 @@
 {
   "name": "SteamGifts Bot",
-  "description": "A bot for automating SteamGifts giveaways and entries.",
+  "description": "Automated bot that browses and enters SteamGifts giveaways based on configurable filters, maximizing chances of winning free Steam games.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["steam", "bot", "automation", "gaming"]
+  "tags": ["steam", "bot", "automation", "gaming", "giveaways", "steamgifts"]
 }

@@ -1,7 +1,7 @@
 {
   "name": "Linkwarden",
-  "description": "Bookmark manager with archiving and tagging features.",
+  "description": "Self-hosted collaborative bookmark manager that archives web pages, organizes links with tags and collections, and preserves content for offline access.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["bookmarks", "links", "archiving", "tagging"]
+  "tags": ["bookmarks", "links", "archiving", "tagging", "self-hosted", "collaboration"]
 }

@@ -1,7 +1,7 @@
 {
   "name": "Audiobookshelf",
-  "description": "Audiobook server with mobile app support.",
+  "description": "Self-hosted audiobook and podcast server with a companion mobile app, streaming support, and progress syncing across devices.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["audiobooks", "server", "media"]
+  "tags": ["audiobooks", "podcasts", "server", "media", "self-hosted", "streaming"]
 }

@@ -1,7 +1,7 @@
 {
   "name": "Swag + CrowdSec + Authelia + DDClient",
-  "description": "Reverse proxy with security and authentication using Swag (Nginx), CrowdSec, Authelia, and DDClient.",
+  "description": "Hardened reverse proxy stack using SWAG (Nginx + Let's Encrypt), CrowdSec (threat detection), Authelia (SSO/MFA authentication), and DDClient (dynamic DNS updates).",
   "version": "1.1.0",
   "author": "JourneyOver",
-  "tags": ["proxy", "nginx", "ssl", "security", "reverse-proxy", "crowdsec", "authelia", "ddclient"]
+  "tags": ["proxy", "nginx", "ssl", "security", "reverse-proxy", "crowdsec", "authelia", "ddclient", "letsencrypt", "sso"]
 }

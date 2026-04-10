@@ -1,7 +1,7 @@
 {
   "name": "Plex",
-  "description": "Plex media server with Tautulli monitoring, PlexAutoLanguages, PlexAniBridge, PlexTraktSync, Zurg, Rclone, and Tunarr.",
+  "description": "Full-featured Plex media server stack with Tautulli (analytics), PlexAutoLanguages (audio/subtitle automation), PlexAniBridge (Plex-to-AniList sync), PlexTraktSync (Trakt sync), Zurg and Rclone (cloud media mounting), and Tunarr (live TV channels).",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["media", "plex", "server", "streaming", "tautulli", "automation"]
+  "tags": ["media", "plex", "server", "streaming", "tautulli", "automation", "rclone", "trakt", "anilist"]
 }

@@ -55,6 +55,7 @@ services:
       - TZ=${TZ}
     volumes:
       - /mnt/Docker/Apps/Tautulli:/config
+      - "/mnt/Docker/Apps/Plex/Library/Application Support/Plex Media Server/Logs:/plex_logs"
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
@@ -104,14 +105,14 @@ services:
     ports:
       - 21033:4848
     healthcheck:
-      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:4848/healthz | grep -q '\"status\":\"ok\"' || exit 1"]
+      test: ["CMD-SHELL", "wget -qO- http://localhost:4848/readyz | grep -q '\"status\":\"ok\"' || exit 1"]
       interval: 30s
       timeout: 10s
       retries: 3
       start_period: 30s
 
   plextraktsync:
-    image: ghcr.io/taxel/plextraktsync:latest
+    image: ghcr.io/journeydocker/plextraktsync:main
     container_name: plextraktsync
     hostname: plextraktsync
     restart: on-failure:2
@@ -140,7 +141,7 @@ services:
     command: ["watch"]
 
   zurg:
-    image: ghcr.io/debridmediamanager/zurg:2026.02.25.0056-nightly
+    image: ghcr.io/debridmediamanager/zurg:2026.03.30.0101-nightly
     container_name: zurg
     hostname: zurg
     restart: unless-stopped
@@ -230,6 +231,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
     ports:
       - 20055:8000
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false"
 
 networks:
   bunni_network:

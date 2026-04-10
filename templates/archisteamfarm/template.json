@@ -1,7 +1,7 @@
 {
   "name": "ArchiSteamFarm",
-  "description": "ArchiSteamFarm - A Steam farming tool with ASFClaim for free game claiming and ASFScan Reddit bot for scanning.",
+  "description": "Steam card farming application that idles games to collect trading cards, bundled with ASFClaim for claiming free packages and ASFScan for Reddit giveaway scanning.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["steam", "farming", "automation", "games"]
+  "tags": ["steam", "farming", "automation", "games", "trading-cards", "bot"]
 }

@@ -1,7 +1,7 @@
 {
   "name": "Servarr",
-  "description": "Servarr stack: Prowlarr, Radarr, Sonarr, Recyclarr, Flaresolverr",
+  "description": "Full Servarr media automation stack including Prowlarr (indexer management), Radarr (movies), Sonarr (TV), Recyclarr (quality profiles), and Flaresolverr (Cloudflare bypass).",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["media", "sonarr", "radarr", "prowlarr", "recyclarr", "flaresolverr", "management"]
+  "tags": ["media", "sonarr", "radarr", "prowlarr", "recyclarr", "flaresolverr", "management", "automation", "arr"]
 }

@@ -1,7 +1,7 @@
 {
   "name": "PostgreSQL",
-  "description": "PostgreSQL database with pgbackweb for backup management.",
+  "description": "PostgreSQL relational database server paired with pgbackweb for scheduled backups, restore management, and backup monitoring via a web interface.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["database", "postgresql", "sql", "relational"]
+  "tags": ["database", "postgresql", "sql", "relational", "backup", "storage"]
 }

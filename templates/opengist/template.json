@@ -1,7 +1,7 @@
 {
   "name": "OpenGist",
-  "description": "GitHub Gist alternative with a clean interface.",
+  "description": "Self-hosted pastebin and code snippet sharing tool powered by Git, offering syntax highlighting, public/private gists, and an embeddable interface.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["gist", "git", "code", "sharing"]
+  "tags": ["gist", "git", "code", "sharing", "pastebin", "self-hosted", "snippets"]
 }

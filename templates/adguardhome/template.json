@@ -1,7 +1,7 @@
 {
   "name": "AdGuard Home",
-  "description": "Network-wide ad blocker with adguardhome-sync for configuration synchronization.",
+  "description": "Network-wide DNS-based ad and tracker blocker with adguardhome-sync for replicating configuration across multiple AdGuard Home instances.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["adblock", "dns", "network", "security"]
+  "tags": ["adblock", "dns", "network", "security", "privacy", "self-hosted"]
 }

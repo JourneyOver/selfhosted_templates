@@ -1,7 +1,7 @@
 {
   "name": "Crosswatch",
-  "description": "",
+  "description": "A media synchronization engine that keeps your Plex, Jellyfin, Emby, SIMKL, Trakt, AniList, TMDb, MDBList and Tautulli in sync with watchlist, ratings, and progress tracking.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": []
+  "tags": ["plex", "jellyfin", "emby", "sync", "trakt", "anilist", "watchlist", "media"]
 }

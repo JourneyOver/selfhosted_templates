@@ -1,7 +1,7 @@
 {
   "name": "Watchtower",
-  "description": "Automatically updates Docker containers to their latest versions.",
+  "description": "Automatically monitors and updates running Docker containers to the latest available image versions on a configurable schedule.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["docker", "update", "automation"]
+  "tags": ["docker", "update", "automation", "maintenance", "containers"]
 }

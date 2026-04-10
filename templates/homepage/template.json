@@ -1,7 +1,7 @@
 {
   "name": "Homepage",
-  "description": "Homepage and dashboard for your services.",
+  "description": "A highly customizable application dashboard with service integrations, widgets, and bookmarks for organizing your self-hosted services.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["dashboard", "homepage", "services"]
+  "tags": ["dashboard", "homepage", "services", "self-hosted", "widgets", "startpage"]
 }

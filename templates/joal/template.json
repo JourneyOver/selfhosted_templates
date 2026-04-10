@@ -1,7 +1,7 @@
 {
   "name": "Joal",
-  "description": "An open source command line RatioMaster with an optional WebUI.",
+  "description": "Open-source torrent ratio faker that spoofs upload stats to trackers, with an optional web UI for managing active torrents and client profiles.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["torrent", "qbittorrent", "seeding", "automation"]
+  "tags": ["torrent", "ratio", "seeding", "automation", "web-ui"]
 }

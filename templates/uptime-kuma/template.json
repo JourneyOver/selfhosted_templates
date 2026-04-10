@@ -1,7 +1,7 @@
 {
   "name": "Uptime Kuma",
-  "description": "Uptime monitoring tool with notifications and status pages.",
+  "description": "Self-hosted uptime monitoring tool that tracks service availability, sends multi-channel notifications, and generates public status pages.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["monitoring", "uptime", "alerts"]
+  "tags": ["monitoring", "uptime", "alerts", "status-page", "notifications", "self-hosted"]
 }

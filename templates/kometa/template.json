@@ -1,7 +1,7 @@
 {
   "name": "Kometa",
-  "description": "Metadata management tool for Plex with ImageMaid for old image cleanup.",
+  "description": "Automated Plex metadata manager that creates collections, playlists, and overlays from external sources, paired with ImageMaid for stale image cleanup.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["plex", "metadata", "management", "images", "kometa"]
+  "tags": ["plex", "metadata", "management", "images", "kometa", "automation", "collections"]
 }

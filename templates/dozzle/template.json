@@ -1,7 +1,7 @@
 {
   "name": "Dozzle",
-  "description": "A real-time log viewer for Docker containers.",
+  "description": "Lightweight real-time log viewer for Docker containers with a web UI, live streaming, search, and multi-host support.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["logs", "docker", "viewer", "monitoring"]
+  "tags": ["logs", "docker", "viewer", "monitoring", "debugging", "web-ui"]
 }

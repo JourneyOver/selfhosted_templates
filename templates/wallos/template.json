@@ -1,7 +1,7 @@
 {
   "name": "Wallos",
-  "description": "Subscription tracker to monitor and manage your recurring payments.",
+  "description": "Self-hosted subscription and expense tracker to monitor recurring payments, visualize spending, and manage budgets across multiple currencies.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["subscription", "tracker", "finance"]
+  "tags": ["subscription", "tracker", "finance", "self-hosted", "budget", "payments"]
 }

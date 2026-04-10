@@ -40,6 +40,26 @@ services:
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
 
+  aura:
+    image: ghcr.io/mediux-team/aura:latest
+    container_name: aura
+    hostname: aura
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/Aura:/config
+      - /mnt/Abyss/Media:/data/media
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 21040:3000
+      - 21140:8888
+
 networks:
   bunni_network:
     external: true

@@ -1,7 +1,7 @@
 {
   "name": "Speedtest Tracker",
-  "description": "Internet speedtest tracker using Ookla's Speedtest service.",
+  "description": "Self-hosted internet speed test tracker that runs scheduled tests via Ookla's Speedtest service and logs historical results with charts and statistics.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["speedtest", "monitoring", "network", "tracking"]
+  "tags": ["speedtest", "monitoring", "network", "tracking", "self-hosted", "bandwidth"]
 }

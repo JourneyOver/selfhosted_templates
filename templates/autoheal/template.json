@@ -1,7 +1,7 @@
 {
   "name": "Autoheal",
-  "description": "Monitors and automatically restarts unhealthy Docker containers.",
+  "description": "Watches Docker container health status and automatically restarts any containers that fail their healthcheck, improving service reliability.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["docker", "monitoring", "healthcheck"]
+  "tags": ["docker", "monitoring", "healthcheck", "automation", "reliability"]
 }

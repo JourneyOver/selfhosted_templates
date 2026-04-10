@@ -1,7 +1,7 @@
 {
   "name": "TwitchDropsMiner",
-  "description": "Automatically mines Twitch drops by watching streams and claiming rewards.",
+  "description": "Automated Twitch Drops miner that watches eligible streams and claims in-game rewards without manual interaction.",
   "version": "1.0.0",
   "author": "JourneyOver",
-  "tags": ["twitch", "gaming", "automation"]
+  "tags": ["twitch", "gaming", "automation", "drops", "rewards", "bot"]
 }
