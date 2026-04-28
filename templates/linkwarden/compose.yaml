@@ -22,7 +22,6 @@ services:
       - /etc/localtime:/etc/localtime:ro
     ports:
       - 20035:3000
-
     labels:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
 
