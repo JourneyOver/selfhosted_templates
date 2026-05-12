@@ -142,7 +142,7 @@ services:
     command: ["watch"]
 
   zurg:
-    image: ghcr.io/debridmediamanager/zurg:2026.04.20.0104-nightly
+    image: ghcr.io/debridmediamanager/zurg:2026.05.03.0112-nightly
     container_name: zurg
     hostname: zurg
     restart: unless-stopped
@@ -152,6 +152,7 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - LOG_LEVEL=${LOG_LEVEL}
     volumes:
       - /mnt/Docker/Apps/Zurg/config.yml:/app/config.yml
       - /mnt/Docker/Apps/Zurg/data:/app/data
@@ -191,14 +192,14 @@ services:
     devices:
       - /dev/fuse:/dev/fuse:rwm
     volumes:
-      - /zurg:/data:rshared
+      - /zurg:/zurg:rshared
       - /mnt/Docker/Apps/Zurg/rclone.conf:/config/rclone/rclone.conf
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     security_opt:
       - apparmor:unconfined
     healthcheck:
-      test: ["CMD-SHELL", "mountpoint -q /data && test -f /data/version.txt && ls -d /data/__all__ /data/__downloads__ /data/__unplayable__ /data/anime /data/anime-movies /data/movies /data/other /data/shows >/dev/null 2>&1 || exit 1"]
+      test: ["CMD-SHELL", "mountpoint -q /zurg && test -f /zurg/version.txt && ls -d /zurg/__all__ /zurg/__downloads__ /zurg/__unplayable__ /zurg/anime /zurg/anime-movies /zurg/movies /zurg/other /zurg/shows >/dev/null 2>&1 || exit 1"]
       interval: 30s
       retries: 3
       start_period: 60s
@@ -208,7 +209,7 @@ services:
       - "com.centurylinklabs.watchtower.enable=false"
 
   tunarr:
-    image: ghcr.io/chrisbenincasa/tunarr:latest
+    image: ghcr.io/chrisbenincasa/tunarr:1.2.15
     container_name: tunarr
     hostname: tunarr
     restart: unless-stopped
