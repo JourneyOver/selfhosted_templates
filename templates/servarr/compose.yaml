@@ -57,6 +57,13 @@ services:
     restart: unless-stopped
     networks:
       - bunni_network
+    depends_on:
+      prowlarr:
+        condition: service_started
+        required: true
+      altmount:
+        condition: service_started
+        required: true
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -65,12 +72,49 @@ services:
     volumes:
       - /mnt/Docker/Apps/Radarr:/config
       - /mnt/Abyss:/data
+      - /altmount:/altmount
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
       - 20023:7878
     healthcheck:
       test: ["CMD-SHELL", "curl -fSs http://localhost:7878/ping | jq -r .status || exit 1"]
+      interval: 10s
+      retries: 3
+      start_period: 1m
+      timeout: 10s
+    labels:
+      - "com.centurylinklabs.watchtower.depends-on=postgres"
+
+  radarranime:
+    image: ghcr.io/hotio/radarr:nightly
+    container_name: radarranime
+    hostname: radarranime
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    depends_on:
+      prowlarr:
+        condition: service_started
+        required: true
+      altmount:
+        condition: service_started
+        required: true
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK_SET=002
+    volumes:
+      - /mnt/Docker/Apps/RadarrAnime:/config
+      - /mnt/Abyss:/data
+      - /altmount:/altmount
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 20123:7979
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fSs http://localhost:7979/ping | jq -r .status || exit 1"]
       interval: 10s
       retries: 3
       start_period: 1m
@@ -85,6 +129,13 @@ services:
     restart: unless-stopped
     networks:
       - bunni_network
+    depends_on:
+      prowlarr:
+        condition: service_started
+        required: true
+      altmount:
+        condition: service_started
+        required: true
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -93,6 +144,7 @@ services:
     volumes:
       - /mnt/Docker/Apps/Sonarr:/config
       - /mnt/Abyss:/data
+      - /altmount:/altmount
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
@@ -105,6 +157,73 @@ services:
       timeout: 10s
     labels:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
+
+  sonarranime:
+    image: ghcr.io/hotio/sonarr:nightly
+    container_name: sonarranime
+    hostname: sonarranime
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    depends_on:
+      prowlarr:
+        condition: service_started
+        required: true
+      altmount:
+        condition: service_started
+        required: true
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK_SET=002
+    volumes:
+      - /mnt/Docker/Apps/SonarrAnime:/config
+      - /mnt/Abyss:/data
+      - /altmount:/altmount
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 20148:9191
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fSs http://localhost:9191/ping | jq -r .status || exit 1"]
+      interval: 10s
+      retries: 3
+      start_period: 1m
+      timeout: 10s
+    labels:
+      - "com.centurylinklabs.watchtower.depends-on=postgres"
+
+  altmount:
+    image: ghcr.io/javi11/altmount:dev
+    container_name: altmount
+    hostname: altmount
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    cap_add:
+      - SYS_ADMIN
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - PORT=8080
+      - JWT_SECRET=${JWT_SECRET}
+      - COOKIE_DOMAIN=${COOKIE_DOMAIN}
+    devices:
+      - /dev/fuse:/dev/fuse:rwm
+    volumes:
+      - /mnt/Docker/Apps/AltMount:/config
+      - /altmount:/altmount:rshared
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    security_opt:
+      - apparmor:unconfined
+    ports:
+      - 20033:8080
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false"
 
   recyclarr:
     image: ghcr.io/recyclarr/recyclarr:latest
@@ -125,6 +244,31 @@ services:
       - /mnt/Docker/Apps/Recyclarr:/config
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
+    labels:
+      - "com.centurylinklabs.watchtower.depends-on=sonarr,radarr,prowlarr"
+
+  profilarr:
+    image: ghcr.io/dictionarry-hub/profilarr:latest
+    container_name: profilarr
+    hostname: profilarr
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    depends_on:
+      - sonarr
+      - radarr
+      - prowlarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - UMASK=022
+    volumes:
+      - /mnt/Docker/Apps/Profilarr:/config
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 21049:6868
     labels:
       - "com.centurylinklabs.watchtower.depends-on=sonarr,radarr,prowlarr"
 

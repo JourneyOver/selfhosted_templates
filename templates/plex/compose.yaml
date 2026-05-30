@@ -20,13 +20,14 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - VERSION=latest
+      - VERSION=public
     devices:
       - /dev/dri:/dev/dri
     volumes:
       - /mnt/Docker/Apps/Plex:/config
       - /mnt/Abyss/Media:/media
       - /zurg:/zurg
+      - /altmount:/altmount
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     healthcheck:
@@ -67,25 +68,25 @@ services:
       start_period: 90s
       timeout: 10s
 
-  plexautolanguages:
-    image: ghcr.io/journeydocker/plex-auto-languages:main
-    container_name: plexautolanguages
-    hostname: plexautolanguages
-    restart: unless-stopped
-    networks:
-      - bunni_network
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-    volumes:
-      - /mnt/Docker/Apps/PlexAutoLanguages/config:/config
-      - /mnt/Docker/Apps/PlexAutoLanguages/logs:/logs
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
+#  plexautolanguages:
+#    image: ghcr.io/journeydocker/plex-auto-languages:main
+#    container_name: plexautolanguages
+#    hostname: plexautolanguages
+#    restart: unless-stopped
+#    networks:
+#      - bunni_network
+#    environment:
+#      - PUID=${PUID}
+#      - PGID=${PGID}
+#      - TZ=${TZ}
+#    volumes:
+#      - /mnt/Docker/Apps/PlexAutoLanguages/config:/config
+#      - /mnt/Docker/Apps/PlexAutoLanguages/logs:/logs
+#      - /etc/timezone:/etc/timezone:ro
+#      - /etc/localtime:/etc/localtime:ro
 
   plexanibridge:
-    image: ghcr.io/anibridge/anibridge:develop
+    image: ghcr.io/journeydocker/anibridge:experimental
     container_name: plexanibridge
     hostname: plexanibridge
     restart: unless-stopped
@@ -142,7 +143,7 @@ services:
     command: ["watch"]
 
   zurg:
-    image: ghcr.io/debridmediamanager/zurg:2026.05.03.0112-nightly
+    image: ghcr.io/debridmediamanager/zurg:2026.05.18.0117-nightly
     container_name: zurg
     hostname: zurg
     restart: unless-stopped
