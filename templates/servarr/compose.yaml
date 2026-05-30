@@ -20,7 +20,7 @@ services:
       - 20019:8191
 
   prowlarr:
-    image: ghcr.io/hotio/prowlarr:nightly
+    image: ghcr.io/realzombee/prowlarr:develop
     container_name: prowlarr
     hostname: prowlarr
     restart: unless-stopped
@@ -51,7 +51,7 @@ services:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
 
   radarr:
-    image: ghcr.io/hotio/radarr:nightly
+    image: ghcr.io/realzombee/radarr:develop
     container_name: radarr
     hostname: radarr
     restart: unless-stopped
@@ -59,9 +59,6 @@ services:
       - bunni_network
     depends_on:
       prowlarr:
-        condition: service_started
-        required: true
-      altmount:
         condition: service_started
         required: true
     environment:
@@ -87,7 +84,7 @@ services:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
 
   radarranime:
-    image: ghcr.io/hotio/radarr:nightly
+    image: ghcr.io/realzombee/radarr:develop
     container_name: radarranime
     hostname: radarranime
     restart: unless-stopped
@@ -95,9 +92,6 @@ services:
       - bunni_network
     depends_on:
       prowlarr:
-        condition: service_started
-        required: true
-      altmount:
         condition: service_started
         required: true
     environment:
@@ -123,7 +117,7 @@ services:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
 
   sonarr:
-    image: ghcr.io/hotio/sonarr:nightly
+    image: ghcr.io/realzombee/sonarr:develop
     container_name: sonarr
     hostname: sonarr
     restart: unless-stopped
@@ -131,9 +125,6 @@ services:
       - bunni_network
     depends_on:
       prowlarr:
-        condition: service_started
-        required: true
-      altmount:
         condition: service_started
         required: true
     environment:
@@ -159,7 +150,7 @@ services:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
 
   sonarranime:
-    image: ghcr.io/hotio/sonarr:nightly
+    image: ghcr.io/realzombee/sonarr:develop
     container_name: sonarranime
     hostname: sonarranime
     restart: unless-stopped
@@ -169,13 +160,11 @@ services:
       prowlarr:
         condition: service_started
         required: true
-      altmount:
-        condition: service_started
-        required: true
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - FIX_ANIME_SEASON_SEARCH=true
       - UMASK_SET=002
     volumes:
       - /mnt/Docker/Apps/SonarrAnime:/config
@@ -194,41 +183,10 @@ services:
     labels:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
 
-  altmount:
-    image: ghcr.io/javi11/altmount:dev
-    container_name: altmount
-    hostname: altmount
-    restart: unless-stopped
-    networks:
-      - bunni_network
-    cap_add:
-      - SYS_ADMIN
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-      - PORT=8080
-      - JWT_SECRET=${JWT_SECRET}
-      - COOKIE_DOMAIN=${COOKIE_DOMAIN}
-    devices:
-      - /dev/fuse:/dev/fuse:rwm
-    volumes:
-      - /mnt/Docker/Apps/AltMount:/config
-      - /altmount:/altmount:rshared
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-      - /var/run/docker.sock:/var/run/docker.sock
-    security_opt:
-      - apparmor:unconfined
-    ports:
-      - 20033:8080
-    labels:
-      - "com.centurylinklabs.watchtower.enable=false"
-
-  recyclarr:
-    image: ghcr.io/recyclarr/recyclarr:latest
-    container_name: recyclarr
-    hostname: recyclarr
+  clonarr:
+    image: ghcr.io/prophetse7en/clonarr:dev
+    container_name: clonarr
+    hostname: clonarr
     restart: unless-stopped
     networks:
       - bunni_network
@@ -241,34 +199,11 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
     volumes:
-      - /mnt/Docker/Apps/Recyclarr:/config
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-    labels:
-      - "com.centurylinklabs.watchtower.depends-on=sonarr,radarr,prowlarr"
-
-  profilarr:
-    image: ghcr.io/dictionarry-hub/profilarr:latest
-    container_name: profilarr
-    hostname: profilarr
-    restart: unless-stopped
-    networks:
-      - bunni_network
-    depends_on:
-      - sonarr
-      - radarr
-      - prowlarr
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-      - UMASK=022
-    volumes:
-      - /mnt/Docker/Apps/Profilarr:/config
+      - /mnt/Docker/Apps/Clonarr:/config
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
-      - 21049:6868
+      - 20044:6060
     labels:
       - "com.centurylinklabs.watchtower.depends-on=sonarr,radarr,prowlarr"
 

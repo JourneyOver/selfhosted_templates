@@ -1,0 +1,36 @@
+services:
+
+  altmount:
+    image: ghcr.io/javi11/altmount:dev
+    container_name: altmount
+    hostname: altmount
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    cap_add:
+      - SYS_ADMIN
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - PORT=8080
+      - JWT_SECRET=${JWT_SECRET}
+      - COOKIE_DOMAIN=${COOKIE_DOMAIN}
+    devices:
+      - /dev/fuse:/dev/fuse:rwm
+    volumes:
+      - /mnt/Docker/Apps/AltMount:/config
+      - /altmount:/altmount:rshared
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    security_opt:
+      - apparmor:unconfined
+    ports:
+      - 20033:8080
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false"
+
+networks:
+  bunni_network:
+    external: true

@@ -4,7 +4,7 @@
   "description": "Personal templates for selfhosted services",
   "author": "JourneyOver",
   "url": "https://github.com/JourneyOver/selfhosted_templates",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "templates": [
     {
       "id": "adguardhome",
@@ -16,6 +16,17 @@
       "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/adguardhome/.env.example",
       "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/adguardhome",
       "tags": ["adblock","dns","network","security","privacy","self-hosted"]
+    },
+    {
+      "id": "altmount",
+      "name": "altmount",
+      "description": "A WebDAV server backed by NZB/Usenet that provides seamless access to Usenet content through standard WebDAV protocols.",
+      "version": "1.0.0",
+      "author": "JourneyOver",
+      "compose_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/altmount/compose.yaml",
+      "env_url": "https://raw.githubusercontent.com/JourneyOver/selfhosted_templates/main/templates/altmount/.env.example",
+      "documentation_url": "https://github.com/JourneyOver/selfhosted_templates/tree/main/templates/altmount",
+      "tags": ["media","webdav","nzb","usenet","automation","management"]
     },
     {
       "id": "archisteamfarm",

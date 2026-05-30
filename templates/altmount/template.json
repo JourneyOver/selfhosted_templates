@@ -1,0 +1,7 @@
+{
+  "name": "altmount",
+  "description": "A WebDAV server backed by NZB/Usenet that provides seamless access to Usenet content through standard WebDAV protocols.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["media", "webdav", "nzb", "usenet", "automation", "management"]
+}

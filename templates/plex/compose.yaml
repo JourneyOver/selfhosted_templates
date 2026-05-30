@@ -9,13 +9,6 @@ services:
     hostname: plex
     restart: unless-stopped
     network_mode: host
-    depends_on:
-      rclone:
-        condition: service_started
-        required: true
-      zurg:
-        condition: service_healthy
-        required: true
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -68,25 +61,25 @@ services:
       start_period: 90s
       timeout: 10s
 
-#  plexautolanguages:
-#    image: ghcr.io/journeydocker/plex-auto-languages:main
-#    container_name: plexautolanguages
-#    hostname: plexautolanguages
-#    restart: unless-stopped
-#    networks:
-#      - bunni_network
-#    environment:
-#      - PUID=${PUID}
-#      - PGID=${PGID}
-#      - TZ=${TZ}
-#    volumes:
-#      - /mnt/Docker/Apps/PlexAutoLanguages/config:/config
-#      - /mnt/Docker/Apps/PlexAutoLanguages/logs:/logs
-#      - /etc/timezone:/etc/timezone:ro
-#      - /etc/localtime:/etc/localtime:ro
+  plexautolanguages:
+    image: ghcr.io/journeydocker/plex-auto-languages:main
+    container_name: plexautolanguages
+    hostname: plexautolanguages
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/PlexAutoLanguages/config:/config
+      - /mnt/Docker/Apps/PlexAutoLanguages/logs:/logs
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
 
   plexanibridge:
-    image: ghcr.io/journeydocker/anibridge:experimental
+    image: ghcr.io/anibridge/anibridge:experimental
     container_name: plexanibridge
     hostname: plexanibridge
     restart: unless-stopped
@@ -141,73 +134,6 @@ services:
       start_period: 30s
       start_interval: 10s
     command: ["watch"]
-
-  zurg:
-    image: ghcr.io/debridmediamanager/zurg:2026.05.18.0117-nightly
-    container_name: zurg
-    hostname: zurg
-    restart: unless-stopped
-    networks:
-      - bunni_network
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-      - LOG_LEVEL=${LOG_LEVEL}
-    volumes:
-      - /mnt/Docker/Apps/Zurg/config.yml:/app/config.yml
-      - /mnt/Docker/Apps/Zurg/data:/app/data
-      - /mnt/Docker/Apps/Zurg/dump:/app/dump
-      - /mnt/Docker/Apps/Zurg/logs:/app/logs
-      - /mnt/Docker/Apps/Zurg/trash:/app/trash
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-    ports:
-      - 9999:9999
-    healthcheck:
-      test: ["CMD-SHELL", "curl -fSs http://localhost:9999/dav/version.txt || exit 1"]
-      interval: 30s
-      retries: 3
-      start_period: 30s
-      timeout: 10s
-    labels:
-      - "com.centurylinklabs.watchtower.enable=false"
-
-  rclone:
-    image: ghcr.io/rclone/rclone:latest
-    container_name: rclone
-    hostname: rclone
-    restart: unless-stopped
-    networks:
-      - bunni_network
-    cap_add:
-      - SYS_ADMIN
-    depends_on:
-      zurg:
-        condition: service_healthy
-        required: true
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-    devices:
-      - /dev/fuse:/dev/fuse:rwm
-    volumes:
-      - /zurg:/zurg:rshared
-      - /mnt/Docker/Apps/Zurg/rclone.conf:/config/rclone/rclone.conf
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-    security_opt:
-      - apparmor:unconfined
-    healthcheck:
-      test: ["CMD-SHELL", "mountpoint -q /zurg && test -f /zurg/version.txt && ls -d /zurg/__all__ /zurg/__downloads__ /zurg/__unplayable__ /zurg/anime /zurg/anime-movies /zurg/movies /zurg/other /zurg/shows >/dev/null 2>&1 || exit 1"]
-      interval: 30s
-      retries: 3
-      start_period: 60s
-      timeout: 10s
-    command: ${RCLONE_COMMAND}
-    labels:
-      - "com.centurylinklabs.watchtower.enable=false"
 
   tunarr:
     image: ghcr.io/chrisbenincasa/tunarr:1.2.15
