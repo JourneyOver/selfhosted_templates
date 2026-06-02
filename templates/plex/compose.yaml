@@ -18,9 +18,8 @@ services:
       - /dev/dri:/dev/dri
     volumes:
       - /mnt/Docker/Apps/Plex:/config
-      - /mnt/Abyss/Media:/media
-      - /zurg:/zurg
-      - /altmount:/altmount
+      - /mnt/Abyss/Media:/media:rslave
+      - /altmount:/altmount:rslave
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     healthcheck:
@@ -104,7 +103,7 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 30s
+      start_period: 160s
 
   plextraktsync:
     image: ghcr.io/journeydocker/plextraktsync:main
@@ -155,7 +154,7 @@ services:
     volumes:
       - /mnt/Docker/Apps/Tunarr/config:/config/tunarr
       - /mnt/Docker/Apps/Tunarr/cache:/home/tunarr/.cache
-      - /mnt/Abyss/Media:/media
+      - /mnt/Abyss/Media:/media:rslave
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:

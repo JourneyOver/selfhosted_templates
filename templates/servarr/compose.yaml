@@ -68,8 +68,8 @@ services:
       - UMASK_SET=002
     volumes:
       - /mnt/Docker/Apps/Radarr:/config
-      - /mnt/Abyss:/data
-      - /altmount:/altmount
+      - /mnt/Abyss:/data:rslave
+      - /altmount:/altmount:rslave
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
@@ -101,8 +101,8 @@ services:
       - UMASK_SET=002
     volumes:
       - /mnt/Docker/Apps/RadarrAnime:/config
-      - /mnt/Abyss:/data
-      - /altmount:/altmount
+      - /mnt/Abyss:/data:rslave
+      - /altmount:/altmount:rslave
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
@@ -134,8 +134,8 @@ services:
       - UMASK_SET=002
     volumes:
       - /mnt/Docker/Apps/Sonarr:/config
-      - /mnt/Abyss:/data
-      - /altmount:/altmount
+      - /mnt/Abyss:/data:rslave
+      - /altmount:/altmount:rslave
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
@@ -168,8 +168,8 @@ services:
       - UMASK_SET=002
     volumes:
       - /mnt/Docker/Apps/SonarrAnime:/config
-      - /mnt/Abyss:/data
-      - /altmount:/altmount
+      - /mnt/Abyss:/data:rslave
+      - /altmount:/altmount:rslave
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
