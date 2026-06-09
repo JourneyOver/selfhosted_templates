@@ -35,6 +35,8 @@ services:
       - PGID=${PGID}
       - TZ=${TZ}
       - UMASK_SET=002
+      - CACHE_TTL_MINS=10
+      - CACHE_MAX_SIZE_MB=100
     volumes:
       - /mnt/Docker/Apps/Prowlarr:/config
       - /etc/timezone:/etc/timezone:ro

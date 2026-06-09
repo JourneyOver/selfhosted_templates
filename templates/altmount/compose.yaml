@@ -1,7 +1,10 @@
+volumes:
+  altmount_cache:
+
 services:
 
   altmount:
-    image: ghcr.io/javi11/altmount:dev
+    image: ghcr.io/drondeseries/altmount:dev
     container_name: altmount
     hostname: altmount
     restart: unless-stopped
@@ -21,6 +24,7 @@ services:
     volumes:
       - /mnt/Docker/Apps/AltMount:/config
       - /altmount:/altmount:rshared
+      - altmount_cache:/cache
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock

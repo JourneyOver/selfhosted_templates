@@ -162,6 +162,31 @@ services:
     labels:
       - "com.centurylinklabs.watchtower.enable=false"
 
+  omniscan:
+    image: ghcr.io/drondeseries/omniscan:latest
+    container_name: omniscan
+    hostname: omniscan
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    command: python -m omniscan_pkg.main --watch
+    depends_on:
+      plex:
+        condition: service_healthy
+        required: true
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/OmniScan/config:/app/config
+      - /altmount:/altmount:rslave
+      - /mnt/Abyss/Media:/media:rslave
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 21042:8000
+
 networks:
   bunni_network:
     external: true
