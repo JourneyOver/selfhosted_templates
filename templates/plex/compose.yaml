@@ -141,6 +141,10 @@ services:
     restart: unless-stopped
     networks:
       - bunni_network
+    depends_on:
+      plex:
+        condition: service_healthy
+        required: true
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
