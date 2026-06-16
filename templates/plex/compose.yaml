@@ -134,6 +134,26 @@ services:
       start_interval: 10s
     command: ["watch"]
 
+  plextrakrsync:
+    image: ghcr.io/journeydocker/plextrakrsync:dev
+    container_name: plextrakrsync
+    hostname: plextrakrsync
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - WETRAKR_TARGET_URL=${WETRAKR_TARGET_URL}
+      - PLEX_URL=${PLEX_URL}
+      - PLEX_TOKEN=${PLEX_TOKEN}
+      - ALLOWED_PLEX_USER=${ALLOWED_PLEX_USER}
+      - SCROBBLE_THRESHOLD=${SCROBBLE_THRESHOLD}
+    volumes:
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+
   tunarr:
     image: ghcr.io/chrisbenincasa/tunarr:1.2.15
     container_name: tunarr
