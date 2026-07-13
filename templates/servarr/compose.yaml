@@ -209,6 +209,29 @@ services:
     labels:
       - "com.centurylinklabs.watchtower.depends-on=sonarr,radarr,prowlarr"
 
+  houndarr:
+    image: ghcr.io/av1155/houndarr:v1.12.1
+    container_name: houndarr
+    hostname: houndarr
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    depends_on:
+      - sonarr
+      - radarr
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/Houndarr:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 21044:8877
+    labels:
+      - "com.centurylinklabs.watchtower.depends-on=sonarr,radarr"
+
 networks:
   bunni_network:
     external: true
