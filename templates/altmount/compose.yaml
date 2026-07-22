@@ -1,13 +1,11 @@
-volumes:
-  altmount_cache:
-
 services:
 
   altmount:
-    image: ghcr.io/drondeseries/altmount:dev
+    image: ghcr.io/drondeseries/altmount:dev # https://github.com/drondeseries/altmount/commit/b8bc0daefffdbc37c14c021cf36dcc879d8f817c
     container_name: altmount
     hostname: altmount
     restart: unless-stopped
+    stop_grace_period: 30s
     networks:
       - bunni_network
     cap_add:
@@ -24,7 +22,8 @@ services:
     volumes:
       - /mnt/Docker/Apps/AltMount:/config
       - /altmount:/altmount:rshared
-      - altmount_cache:/cache
+      - /mnt/Abyss/altmountcache:/cache
+      - /mnt/Abyss/altmountmetadata:/metadata
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock

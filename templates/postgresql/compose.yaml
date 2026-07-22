@@ -21,6 +21,8 @@ services:
       - /etc/localtime:/etc/localtime:ro
     ports:
       - 20050:5432
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false"
 
   pgbackweb:
     image: docker.io/eduardolat/pgbackweb:latest

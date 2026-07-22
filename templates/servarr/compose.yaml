@@ -218,7 +218,9 @@ services:
       - bunni_network
     depends_on:
       - sonarr
+      - sonarranime
       - radarr
+      - radarranime
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
@@ -230,7 +232,7 @@ services:
     ports:
       - 21044:8877
     labels:
-      - "com.centurylinklabs.watchtower.depends-on=sonarr,radarr"
+      - "com.centurylinklabs.watchtower.depends-on=sonarr,sonarranime,radarr,radarranime"
 
 networks:
   bunni_network:
