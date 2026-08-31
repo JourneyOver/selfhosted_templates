@@ -1,7 +1,0 @@
-{
-  "name": "Yamtrack",
-  "description": "Self-hosted media tracker for movies, TV shows, anime, manga, games, and books with support for multiple tracking sources.",
-  "version": "1.0.0",
-  "author": "JourneyOver",
-  "tags": ["media", "tracker", "self-hosted", "anime", "movies", "tv-shows"]
-}

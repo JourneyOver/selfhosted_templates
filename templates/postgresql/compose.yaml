@@ -21,13 +21,11 @@ services:
       - /etc/localtime:/etc/localtime:ro
     ports:
       - 20050:5432
-    labels:
-      - "com.centurylinklabs.watchtower.enable=false"
 
-  pgbackweb:
-    image: docker.io/eduardolat/pgbackweb:latest
-    container_name: pgbackweb
-    hostname: pgbackweb
+  databasus:
+    image: ghcr.io/databasus/databasus:latest
+    container_name: databasus
+    hostname: databasus
     restart: unless-stopped
     networks:
       - bunni_network
@@ -39,14 +37,20 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - PBW_ENCRYPTION_KEY=${PBW_ENCRYPTION_KEY}
-      - PBW_POSTGRES_CONN_STRING=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/pgbackweb?sslmode=disable
     volumes:
-      - /mnt/Docker/Apps/Pgbackweb:/backups
+      - /mnt/Docker/Apps/Databasus:/databasus-data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
-      - 20025:8085
+      - 20125:4005
+    healthcheck:
+      test: ["CMD", "databasus", "healthcheck"]
+      interval: 30s
+      retries: 3
+      start_period: 1m
+      timeout: 5s
+    labels:
+      - "com.centurylinklabs.watchtower.depends-on=postgres"
 
 networks:
   bunni_network:

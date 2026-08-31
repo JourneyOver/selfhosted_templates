@@ -1,7 +1,7 @@
 services:
 
   altmount:
-    image: ghcr.io/drondeseries/altmount:dev # https://github.com/drondeseries/altmount/commit/b8bc0daefffdbc37c14c021cf36dcc879d8f817c
+    image: ghcr.io/drondeseries/altmount:dev # https://github.com/drondeseries/altmount/commit/7f34dba34b1f4b927afc3d6473dd84a0ebe0e291
     container_name: altmount
     hostname: altmount
     restart: unless-stopped
@@ -23,7 +23,6 @@ services:
       - /mnt/Docker/Apps/AltMount:/config
       - /altmount:/altmount:rshared
       - /mnt/Abyss/altmountcache:/cache
-      - /mnt/Abyss/altmountmetadata:/metadata
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock
@@ -36,7 +35,7 @@ services:
       interval: 15s
       timeout: 10s
       retries: 3
-      start_period: 60s
+      start_period: 160s
     labels:
       - "com.centurylinklabs.watchtower.enable=false"
 

@@ -20,7 +20,7 @@ services:
       - 20019:8191
 
   prowlarr:
-    image: ghcr.io/realzombee/prowlarr:develop
+    image: ghcr.io/actuallyevan/prowlarr:latest
     container_name: prowlarr
     hostname: prowlarr
     restart: unless-stopped
@@ -53,7 +53,7 @@ services:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
 
   radarr:
-    image: ghcr.io/realzombee/radarr:develop
+    image: ghcr.io/actuallyevan/radarr:latest
     container_name: radarr
     hostname: radarr
     restart: unless-stopped
@@ -67,6 +67,8 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - IMPROVE_QUEUE_RESPONSIVENESS=true
+      - DISABLE_MEDIA_COVER_CACHE=true
       - UMASK_SET=002
     volumes:
       - /mnt/Docker/Apps/Radarr:/config
@@ -86,7 +88,7 @@ services:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
 
   radarranime:
-    image: ghcr.io/realzombee/radarr:develop
+    image: ghcr.io/actuallyevan/radarr:latest
     container_name: radarranime
     hostname: radarranime
     restart: unless-stopped
@@ -100,6 +102,8 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - IMPROVE_QUEUE_RESPONSIVENESS=true
+      - DISABLE_MEDIA_COVER_CACHE=true
       - UMASK_SET=002
     volumes:
       - /mnt/Docker/Apps/RadarrAnime:/config
@@ -119,7 +123,7 @@ services:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
 
   sonarr:
-    image: ghcr.io/realzombee/sonarr:develop
+    image: ghcr.io/actuallyevan/sonarr:latest
     container_name: sonarr
     hostname: sonarr
     restart: unless-stopped
@@ -133,6 +137,8 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - IMPROVE_QUEUE_RESPONSIVENESS=true
+      - DISABLE_MEDIA_COVER_CACHE=true
       - UMASK_SET=002
     volumes:
       - /mnt/Docker/Apps/Sonarr:/config
@@ -152,7 +158,7 @@ services:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
 
   sonarranime:
-    image: ghcr.io/realzombee/sonarr:develop
+    image: ghcr.io/actuallyevan/sonarr:latest
     container_name: sonarranime
     hostname: sonarranime
     restart: unless-stopped
@@ -166,6 +172,8 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
+      - IMPROVE_QUEUE_RESPONSIVENESS=true
+      - DISABLE_MEDIA_COVER_CACHE=true
       - FIX_ANIME_SEASON_SEARCH=true
       - UMASK_SET=002
     volumes:
@@ -210,7 +218,7 @@ services:
       - "com.centurylinklabs.watchtower.depends-on=sonarr,radarr,prowlarr"
 
   houndarr:
-    image: ghcr.io/av1155/houndarr:v1.12.1
+    image: ghcr.io/av1155/houndarr:latest
     container_name: houndarr
     hostname: houndarr
     restart: unless-stopped

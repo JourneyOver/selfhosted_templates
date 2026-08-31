@@ -33,6 +33,7 @@ services:
       - TZ=${TZ}
       - COLLECTIONS=${COLLECTIONS}
       - CUSTOM_HOSTNAME=crowdsec
+      - BOUNCER_KEY_swag=${CROWDSEC_API_KEY}
     volumes:
       - /mnt/Docker/Apps/Crowdsec/config:/etc/crowdsec:rw
       - /mnt/Docker/Apps/Crowdsec/data:/var/lib/crowdsec/data:rw
@@ -47,9 +48,11 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
+    labels:
+      - "com.centurylinklabs.watchtower.depends-on=postgres"
 
   swag:
-    image: lscr.io/linuxserver/swag:latest
+    image: lscr.io/linuxserver/swag:5.7.0-ls477
     container_name: swag
     hostname: swag
     restart: unless-stopped
