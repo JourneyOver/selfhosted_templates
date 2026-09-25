@@ -1,7 +1,10 @@
+volumes:
+  altmount:
+
 services:
 
   altmount:
-    image: ghcr.io/drondeseries/altmount:dev # https://github.com/drondeseries/altmount/commit/7f34dba34b1f4b927afc3d6473dd84a0ebe0e291
+    image: ghcr.io/kipsilabs/altmount:dev_20260925-0302 # https://github.com/kipsilabs/altmount/commit/630cad9a845e88018dc521554d8e2f3bd86bc436
     container_name: altmount
     hostname: altmount
     restart: unless-stopped
@@ -23,11 +26,14 @@ services:
       - /mnt/Docker/Apps/AltMount:/config
       - /altmount:/altmount:rshared
       - /mnt/Abyss/altmountcache:/cache
+      - altmount:/metadata
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock
     security_opt:
       - apparmor:unconfined
+    group_add:
+      - "983"
     ports:
       - 20033:8080
     healthcheck:

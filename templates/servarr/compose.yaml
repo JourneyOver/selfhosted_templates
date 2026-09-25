@@ -36,7 +36,8 @@ services:
       - TZ=${TZ}
       - UMASK_SET=002
       - CACHE_TTL_MINS=10
-      - CACHE_MAX_SIZE_MB=100
+      - ENABLE_DOWNLOAD_CACHE=false
+      - DOWNLOAD_CACHE_MAX_SIZE_MB=1000
     volumes:
       - /mnt/Docker/Apps/Prowlarr:/config
       - /etc/timezone:/etc/timezone:ro
@@ -193,29 +194,29 @@ services:
     labels:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
 
-  clonarr:
-    image: ghcr.io/prophetse7en/clonarr:dev
-    container_name: clonarr
-    hostname: clonarr
-    restart: unless-stopped
-    networks:
-      - bunni_network
-    depends_on:
-      - sonarr
-      - radarr
-      - prowlarr
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-    volumes:
-      - /mnt/Docker/Apps/Clonarr:/config
-      - /etc/timezone:/etc/timezone:ro
-      - /etc/localtime:/etc/localtime:ro
-    ports:
-      - 20044:6060
-    labels:
-      - "com.centurylinklabs.watchtower.depends-on=sonarr,radarr,prowlarr"
+#  clonarr:
+#    image: ghcr.io/prophetse7en/clonarr:dev
+#    container_name: clonarr
+#    hostname: clonarr
+#    restart: unless-stopped
+#    networks:
+#      - bunni_network
+#    depends_on:
+#      - sonarr
+#      - radarr
+#      - prowlarr
+#    environment:
+#      - PUID=${PUID}
+#      - PGID=${PGID}
+#      - TZ=${TZ}
+#    volumes:
+#      - /mnt/Docker/Apps/Clonarr:/config
+#      - /etc/timezone:/etc/timezone:ro
+#      - /etc/localtime:/etc/localtime:ro
+#    ports:
+#      - 20044:6060
+#    labels:
+#      - "com.centurylinklabs.watchtower.depends-on=sonarr,radarr,prowlarr"
 
   houndarr:
     image: ghcr.io/av1155/houndarr:latest

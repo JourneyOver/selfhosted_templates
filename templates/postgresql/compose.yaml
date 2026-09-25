@@ -23,7 +23,7 @@ services:
       - 20050:5432
 
   databasus:
-    image: ghcr.io/databasus/databasus:latest
+    image: ghcr.io/databasus/databasus:v3.60.0
     container_name: databasus
     hostname: databasus
     restart: unless-stopped

@@ -1,0 +1,13 @@
+# ================================
+# Environment & secrets
+# ================================
+
+# Environment files
+.env
+.env.*
+*.env
+*.env.*
+
+# Keep safe, shareable environment templates
+!.env.example
+!*.env.example

@@ -1,0 +1,7 @@
+{
+  "name": "Dockhand",
+  "description": "Modern Docker management app with real-time container management, Compose stack orchestration, and multi-environment support.",
+  "version": "1.0.0",
+  "author": "JourneyOver",
+  "tags": ["docker", "management", "containers", "compose", "self-hosted", "web-ui"]
+}

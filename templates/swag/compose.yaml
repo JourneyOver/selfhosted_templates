@@ -52,7 +52,7 @@ services:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
 
   swag:
-    image: lscr.io/linuxserver/swag:5.7.0-ls477
+    image: lscr.io/linuxserver/swag:5.8.0-ls486
     container_name: swag
     hostname: swag
     restart: unless-stopped
