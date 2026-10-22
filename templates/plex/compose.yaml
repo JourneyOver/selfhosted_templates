@@ -57,6 +57,36 @@ services:
       start_period: 90s
       timeout: 10s
 
+  anibridge:
+    image: ghcr.io/anibridge/anibridge:2.1.4
+    container_name: anibridge
+    hostname: anibridge
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    depends_on:
+      plex:
+        condition: service_healthy
+        required: true
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    volumes:
+      - /mnt/Docker/Apps/AniBridge/data:/config
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 21033:4848
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:4848/readyz | grep -q '\"status\":\"ok\"' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 160s
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false"
+
   crosswatch:
     image: ghcr.io/journeydocker/crosswatch:main
     container_name: crosswatch
