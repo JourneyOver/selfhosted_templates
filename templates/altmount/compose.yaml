@@ -4,7 +4,7 @@ volumes:
 services:
 
   altmount:
-    image: ghcr.io/kipsilabs/altmount:dev_20261009-1521 # https://github.com/kipsilabs/altmount/commit/391688fcdc4485b01d7bcddde4c027b1f8c6fc45
+    image: ghcr.io/drondeseries/altmount:dev_20261012-1839 # https://github.com/drondeseries/altmount/commit/7200c4b2b1b365c8d733ea60ea5a59de157af0c9
     container_name: altmount
     hostname: altmount
     restart: unless-stopped

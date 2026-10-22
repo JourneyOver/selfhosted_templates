@@ -1,5 +1,7 @@
 volumes:
   flaresolverr:
+  sonarr-custom-cont-init:
+  sonarr-cont-init:
 
 services:
 
@@ -124,7 +126,7 @@ services:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
 
   sonarr:
-    image: ghcr.io/actuallyevan/sonarr:latest
+    image: lscr.io/linuxserver/sonarr:develop
     container_name: sonarr
     hostname: sonarr
     restart: unless-stopped
@@ -138,13 +140,15 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - IMPROVE_QUEUE_RESPONSIVENESS=true
-      - DISABLE_MEDIA_COVER_CACHE=true
+#      - IMPROVE_QUEUE_RESPONSIVENESS=true
+#      - DISABLE_MEDIA_COVER_CACHE=true
       - UMASK_SET=002
     volumes:
       - /mnt/Docker/Apps/Sonarr:/config
       - /mnt/Abyss:/data:rslave
       - /altmount:/altmount:rslave
+      - sonarr-custom-cont-init:/custom-cont-init.d
+      - sonarr-cont-init:/etc/cont-init.d
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
@@ -159,7 +163,7 @@ services:
       - "com.centurylinklabs.watchtower.depends-on=postgres"
 
   sonarranime:
-    image: ghcr.io/actuallyevan/sonarr:latest
+    image: lscr.io/linuxserver/sonarr:develop
     container_name: sonarranime
     hostname: sonarranime
     restart: unless-stopped
@@ -173,14 +177,16 @@ services:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
-      - IMPROVE_QUEUE_RESPONSIVENESS=true
-      - DISABLE_MEDIA_COVER_CACHE=true
-      - FIX_ANIME_SEASON_SEARCH=true
+#      - IMPROVE_QUEUE_RESPONSIVENESS=true
+#      - DISABLE_MEDIA_COVER_CACHE=true
+#      - FIX_ANIME_SEASON_SEARCH=true
       - UMASK_SET=002
     volumes:
       - /mnt/Docker/Apps/SonarrAnime:/config
       - /mnt/Abyss:/data:rslave
       - /altmount:/altmount:rslave
+      - sonarr-custom-cont-init:/custom-cont-init.d
+      - sonarr-cont-init:/etc/cont-init.d
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
