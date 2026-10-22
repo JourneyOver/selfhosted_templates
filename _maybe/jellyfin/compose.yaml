@@ -1,0 +1,30 @@
+services:
+
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: jellyfin
+    hostname: jellyfin
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    devices:
+      - /dev/dri:/dev/dri
+    volumes:
+      - /mnt/Docker/Apps/Jellyfin/config:/config
+      - /mnt/Docker/Apps/Jellyfin/cache:/cache
+      - /mnt/Abyss/Media:/media:rslave
+      - /altmount:/altmount:rslave
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 20027:8096
+    labels:
+      - "com.centurylinklabs.watchtower.enable=false"
+
+networks:
+  bunni_network:
+    external: true

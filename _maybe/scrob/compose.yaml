@@ -1,0 +1,25 @@
+services:
+
+  scrob:
+    image: ghcr.io/ellite/scrob:latest
+    container_name: scrob
+    hostname: scrob
+    restart: unless-stopped
+    networks:
+      - bunni_network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - DATABASE_URL=postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/scrob
+      - SECRET_KEY=${SECRET_KEY}
+    volumes:
+      - /mnt/Docker/Apps/Scrob:/app/backend/data
+    ports:
+      - 21040:7330
+    labels:
+      - "com.centurylinklabs.watchtower.depends-on=postgres"
+
+networks:
+  bunni_network:
+    external: true
